@@ -10,24 +10,33 @@ class Animals
 
   bool isLive = true;
 
-  int hurt(Animals enemy) {
-    int hitChance = ((enemy.speed.toDouble() / this.speed.toDouble()) * 100).toInt();
+  int atack(Animals enemy) {
+    int hitChance = calcHitChance(this.speed, enemy.speed);
     Random rnd = Random();
-    int lost = 0;
+    int damage = 0;
     if(hitChance >= rnd.nextInt(200)) {
-      lost = this.defence - enemy.strengh;
-      if(lost <= 0) {
-        lost = 1;
-      }
-      lost = rnd.nextInt(lost);
-      this.hp -= lost;
-      if(this.hp <= 0) {
-        this.hp = 0;
-        this.isLive = false;
-      }
+      damage = doDamage(this, enemy, rnd);
     }
-    return lost;
+    return damage;
   }
 
+  int calcHitChance(int atackerSpeed, int defendingSpeed) {
+    return ((atackerSpeed.toDouble() / defendingSpeed.toDouble()) * 100).toInt();
+  }
+
+  int doDamage(Animals atacker, Animals defending, Random rnd) {
+    int maxDamage = 0;
+    maxDamage = defending.defence - atacker.strengh;
+    if(maxDamage <= 0) {
+      maxDamage = 1;
+    }
+    int damage = rnd.nextInt(maxDamage);
+    defending.hp -= damage;
+    if(defending.hp <= 0) {
+      defending.hp = 0;
+      defending.isLive = false;
+    }
+    return damage;
+  } 
 
 }

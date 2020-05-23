@@ -10,12 +10,12 @@ void main() {
   bool whatFirst = (new Random()).nextBool(); //true robert, false marcin
 
   while (robert.isLive && marcin.isLive) {
-    if(whatFirst) {
-      int lost = marcin.hurt(robert);
-      print('${marcin.name} lost: $lost hp!');
+    if(!whatFirst) {
+      int damage = marcin.atack(robert);
+      print('${robert.name} lost: $damage hp! ${robert.name} has ${robert.hp} HP');
     } else {
-      int lost = robert.hurt(marcin);
-      print('${robert.name} lost: $lost hp!');
+      int damage = robert.atack(marcin);
+      print('${marcin.name} lost: $damage hp! ${marcin.name} has ${marcin.hp} HP');
     }
     if(!marcin.isLive) {
       print('${marcin.name} die!');
