@@ -1,5 +1,5 @@
-import 'dart:math';
-
+import 'animals/Animals.dart';
+import 'animals/Fight.dart';
 import 'animals/Fox.dart';
 
 void main() {
@@ -7,25 +7,10 @@ void main() {
   Fox robert = new Fox('Robert');
   Fox marcin = new Fox('Marcin');
 
-  bool whatFirst = (new Random()).nextBool(); //true robert, false marcin
-
-  while (robert.isLive && marcin.isLive) {
-    if(!whatFirst) {
-      int damage = marcin.atack(robert);
-      print('${robert.name} lost: $damage hp! ${robert.name} has ${robert.hp} HP');
-    } else {
-      int damage = robert.atack(marcin);
-      print('${marcin.name} lost: $damage hp! ${marcin.name} has ${marcin.hp} HP');
-    }
-    if(!marcin.isLive) {
-      print('${marcin.name} die!');
-    }
-    if(!robert.isLive) {
-      print('${robert.name} die!');
-    }
-    whatFirst = !whatFirst;
+  void printDamageMessage(int damage, Animals whoLost) {
+     print('${whoLost.name} lost: $damage hp! ${whoLost.name} has ${whoLost.acctualHp} HP');
   }
 
-
-
+  Fox winner = (Fight(marcin, robert).doFight(printDamageMessage));
+  print('Winner is: ${winner.name}!! Congratulations!!!');
 }

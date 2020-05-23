@@ -8,7 +8,7 @@ class Fox extends Animals {
 
   Fox(String name) {
     this.name = name;
-    this.hp = 25;
+    this.acctualHp = this.maxHp = 25;
     this.speed = 15;
     this.defence = 10;
     this.strengh = 3;

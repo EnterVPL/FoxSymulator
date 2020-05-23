@@ -3,7 +3,8 @@ import 'dart:math';
 class Animals
 {
   String name;
-  int hp;
+  int acctualHp;
+  int maxHp;
   int speed;
   int strengh;
   int defence;
@@ -31,9 +32,9 @@ class Animals
       maxDamage = 1;
     }
     int damage = rnd.nextInt(maxDamage);
-    defending.hp -= damage;
-    if(defending.hp <= 0) {
-      defending.hp = 0;
+    defending.acctualHp -= damage;
+    if(defending.acctualHp <= 0) {
+      defending.acctualHp = 0;
       defending.isLive = false;
     }
     return damage;
