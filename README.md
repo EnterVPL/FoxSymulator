@@ -1,4 +1,4 @@
-# FoxSymulator
+# FoxSimulator
 ## About project:
 It's my a first dart project what I created. I don't have a big plan.
 My plan is very simple:
@@ -7,10 +7,11 @@ My plan is very simple:
 3. I going to chill and after this I doing more fix.
 
 ## About game:
-It's a third game about Fox what I do. It's really funny, but I quite like foxes. In this game you can go hunting, sleaping, fighting, change locations. 
+It's a third game about Fox what I do. It's really funny, but I quite like foxes. In this game you can go hunting, sleaping, fighting, change locations.
+![screenshot](https://i.snipboard.io/BAzY40.jpg)
 
 ### Game progress:
-I don't know :) but just it can stay 5%
+#### 20% 
 
 ## About me:
 I still study English. If I do mistakes than remember: you can call to me and **point out mistakes**.

@@ -11,6 +11,16 @@ class Animals
 
   bool isLive = true;
 
+  Animals create(String name, int maxHp, int speed, int strengh, int defence) {
+    Animals animal = new Animals();
+    animal.name = name;
+    animal.maxHp = animal.acctualHp = maxHp;
+    animal.speed = speed;
+    animal.strengh = strengh;
+    animal.defence = defence;
+    return animal;
+  }
+
   int atack(Animals enemy) {
     int hitChance = calcHitChance(this.speed, enemy.speed);
     Random rnd = Random();
