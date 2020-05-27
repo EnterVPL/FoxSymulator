@@ -85,12 +85,12 @@ class Game
 
   int _printActions() {
     print('Enter number of action');
+    int upper = 1;
     hero.location.actions.asMap().forEach((index, action) {
-      print('${index}: ${action.name}');
+      print('${index + upper}: ${action.name}');
     });
-    print('${hero.location.actions.length}: Exit from game.');
     print('\nI will: ');
-    int choise = int.tryParse(stdin.readLineSync()) ?? -1;
+    int choise = int.tryParse(stdin.readLineSync()) - upper ?? -1;
     return choise;
 
   }
@@ -104,12 +104,13 @@ class Game
           break;
         case 'changeLocation': 
           _clearConsole();
+          int upper = 1;
           print('Select new location');
           locations.asMap().forEach((key, loc) {
-            print('${key}: ${loc.name}');
+            print('${key + upper}: ${loc.name}');
           });
           print('\nI will: ');
-          int choiseLoc = int.tryParse(stdin.readLineSync()) ?? -1;
+          int choiseLoc = int.tryParse(stdin.readLineSync()) - upper ?? -1;
           if(locations.asMap().containsKey(choiseLoc)) {
             hero.changeLocation(locations[choiseLoc]);
           } else {
@@ -118,11 +119,10 @@ class Game
             stdin.readLineSync();
           }
           break;
-        default:
+        case 'exit':
+          isExit = true;
+          break;
       }
-    }
-    if(choise == hero.location.actions.length) {
-      isExit = true;
     }
   }
 

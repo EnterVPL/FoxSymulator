@@ -1,5 +1,3 @@
-import '../animals/Fox.dart';
-
 class LocationList
 {
   static getJsonLocationList() {
@@ -23,6 +21,14 @@ class LocationList
           {
             'name' : 'Change location',
             'handlerName' : 'changeLocation'
+          },
+          {
+            'name' : 'Go sleep and save game',
+            'handlerName' : 'goSleep'
+          },
+          {
+            'name' : 'Exit from game',
+            'handlerName' : 'exit'
           }
         ]
       },
