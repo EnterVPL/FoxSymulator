@@ -19,7 +19,7 @@ class Location
 
   @override
   String toString() {
-    return 'Location: $name. Number of animals: ${animalList.length}';
+    return name;
   }
 
   void addAction(Actions action) {

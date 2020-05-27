@@ -19,6 +19,8 @@ class Game
   bool isExit = false;
   Fox hero;
 
+  String _saveFilePath = './your.foxy';
+
   Game() {
     _initGame();
   }
@@ -69,10 +71,14 @@ class Game
   }
 
   void _startGame() {
-      print('Enter your fox name: ');
-      String name = stdin.readLineSync();
-      hero.name = name;
-      hero.changeLocation(_locations.firstWhere((loc) => loc.name == 'Home')); 
+      if(load()) {
+        hero.changeLocation(_locations.firstWhere((loc) => loc.name == 'Home'));
+      } else {
+        print('Enter your fox name: ');
+        String name = stdin.readLineSync();
+        hero.name = name;
+        hero.changeLocation(_locations.firstWhere((loc) => loc.name == 'Home')); 
+      }
   }
 
   void _printStats() {
@@ -90,8 +96,8 @@ class Game
       print('${index + upper}: ${action.name}');
     });
     print('\nI will: ');
-    int choise = int.tryParse(stdin.readLineSync()) - upper ?? -1;
-    return choise;
+    int choise = int.tryParse(stdin.readLineSync()) ?? (-1);
+    return choise - upper;
 
   }
 
@@ -110,7 +116,8 @@ class Game
             print('${key + upper}: ${loc.name}');
           });
           print('\nI will: ');
-          int choiseLoc = int.tryParse(stdin.readLineSync()) - upper ?? -1;
+          int choiseLoc = int.tryParse(stdin.readLineSync()) ?? (-1);
+          choiseLoc -= upper;
           if(locations.asMap().containsKey(choiseLoc)) {
             hero.changeLocation(locations[choiseLoc]);
           } else {
@@ -122,7 +129,30 @@ class Game
         case 'exit':
           isExit = true;
           break;
+        case 'goSleep':
+          save();
+          break;
       }
+    }
+  }
+
+
+  void save() {
+    String data = hero.toString();
+    File(_saveFilePath).writeAsStringSync(data);
+    _clearConsole();
+    print('Game was saved');
+    print('| Please press enter to continue |');
+    stdin.readLineSync();
+  }
+
+  bool load() {
+    if (File(_saveFilePath).existsSync()) {
+      String data = File(_saveFilePath).readAsStringSync();
+      hero = Fox.loadFromString(data);
+      return true;
+    } else {
+      return false;
     }
   }
 

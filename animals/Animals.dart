@@ -8,7 +8,6 @@ class Animals
   int speed;
   int strengh;
   int defence;
-
   bool isLive = true;
 
   Animals create(String name, int maxHp, int speed, int strengh, int defence) {
