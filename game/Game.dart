@@ -18,7 +18,6 @@ class Game
 
   bool isExit = false;
   Fox hero;
-  //List<String> _options = ["100"];
 
   Game() {
     _initGame();
@@ -61,18 +60,22 @@ class Game
 
   void nextTurn() {
     if(hero.name != '') {
-      printStats();
-      doChoise(printActions());
+      _printStats();
+      _doChoise(_printActions());
     } else {
-      print('Enter your fox name: ');
-      String name = stdin.readLineSync();
-      hero.name = name;
-      hero.changeLocation(_locations.firstWhere((loc) => loc.name == 'Home')); 
+      _startGame();
     }
     _clearConsole();
   }
 
-  void printStats() {
+  void _startGame() {
+      print('Enter your fox name: ');
+      String name = stdin.readLineSync();
+      hero.name = name;
+      hero.changeLocation(_locations.firstWhere((loc) => loc.name == 'Home')); 
+  }
+
+  void _printStats() {
       print('Name: ${hero.name} \t Location: ${hero.location.name}');
       print('HP: ${hero.acctualHp}/${hero.maxHp} \t Strengh: ${hero.strengh} \t Defence: ${hero.defence} \t Speed: ${hero.speed}');
       int maxComfort = hero.minMaxComfort.reduce(max);
@@ -80,7 +83,7 @@ class Game
       print('\n');
   }
 
-  int printActions() {
+  int _printActions() {
     print('Enter number of action');
     hero.location.actions.asMap().forEach((index, action) {
       print('${index}: ${action.name}');
@@ -92,7 +95,7 @@ class Game
 
   }
 
-  void doChoise(int choise) {
+  void _doChoise(int choise) {
     if(hero.location.actions.asMap().containsKey(choise)) {
       switch (hero.location.actions[choise].handlerName) {
         case 'talkingWithFriend':
