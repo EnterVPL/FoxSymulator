@@ -124,16 +124,6 @@ class Game
     if(choise == hero.location.actions.length) {
       isExit = true;
     }
-    /*if(_options.contains(choise)) {
-      switch (choise) {
-        case "100":
-          isExit = true;
-          break;
-        default:
-          print('Unaccepted choise.');
-          break;
-      }
-    }*/
   }
 
 }

@@ -7,11 +7,11 @@ My plan is very simple:
 3. I going to chill and after this I doing more fix.
 
 ## About game:
-It's a third game about Fox what I do. It's really funny, but I quite like foxes. In this game you can go hunting, sleaping, fighting, change locations.
+It's a third game about Fox what I do. It's really funny, but I quite like foxes. In this game you can go hunting, sleeping, fighting, changing locations.
 ![screenshot](https://i.snipboard.io/BAzY40.jpg)
 
 ### Game progress:
-#### 20% 
+#### 21% 
 
 ## About me:
 I still study English. If I do mistakes than remember: you can call to me and **point out mistakes**.
