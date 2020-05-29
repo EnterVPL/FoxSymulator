@@ -1,3 +1,4 @@
+![Logo](https://raw.githubusercontent.com/EnterVPL/FoxSymulator/master/logo.png)
 # FoxSimulator
 ## About project:
 It's my a first dart project what I created. I don't have a big plan.
