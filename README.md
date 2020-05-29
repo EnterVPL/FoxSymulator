@@ -8,7 +8,7 @@ My plan is very simple:
 3. I going to chill and after this I doing more fix.
 
 ## About game:
-![socialimage](https://repository-images.githubusercontent.com/266304913/17587300-a1d5-11ea-8bc5-0277bc0c80e2)
+![socialimage](https://repository-images.githubusercontent.com/266304913/7b7d3600-a1d9-11ea-8749-81e38fbb6647)
 It's a third game about Fox what I do. It's really funny, but I quite like foxes. In this game you can go hunting, sleeping, fighting, changing locations. One mission: survive.
 My girlfriend asked me: Why a fox? Why not a dog, why not a cat?
 It's a very good question. My anwser is it: In this game you play fox because a fox is something between a pet and an animal. Fox is nice and likes to eat chickens like me. Survival is less brutal for a fox and more brutal for a dog or a cat. And foxes have a pretty good song about them. These are the reasons for why in this game you play fox.
