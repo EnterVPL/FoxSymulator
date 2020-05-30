@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'dart:math';
+import 'dart:mirrors';
 
 
 import '../animals/Animals.dart';
@@ -7,31 +8,27 @@ import '../animals/Fox.dart';
 import '../locations/Location.dart';
 import '../locations/LocationList.dart';
 import 'Actions.dart';
+import 'Handlers.dart';
 
 class Game 
 {
-  List<Location> _locations;
+  static List<Location> locations;
 
-  List<Location> get locations {
-    return _locations;
-  }
+  static bool isExit = false;
+  static Fox hero;
 
-  bool isExit = false;
-  Fox hero;
-
-  String _saveFilePath = './your.foxy';
+  static String saveFilePath = './your.foxy';
 
   Game() {
-    _initGame();
+    initGame();
   }
 
-  void _initGame() {
+  static void initGame() {
     hero = new Fox('', Location('Void'));
-    _locations = _initLocations();
-
+    locations = initLocations();
   }
 
-  List<Location> _initLocations() {
+  static List<Location> initLocations() {
     List<Location> locs = new List<Location>();
     var locationList = LocationList.getJsonLocationList();
     for(var loc in locationList) {
@@ -56,32 +53,32 @@ class Game
     return locs;
   }
 
-  void _clearConsole() {
+  static void clearConsole() {
     print("\x1B[2J\x1B[0;0H"); 
   }
 
-  void nextTurn() {
+  static void nextTurn() {
     if(hero.name != '') {
-      _printStats();
-      _doChoise(_printActions());
+      printStats();
+      doChoise(printActions());
     } else {
-      _startGame();
+      startGame();
     }
-    _clearConsole();
+    clearConsole();
   }
 
-  void _startGame() {
+  static void startGame() {
       if(load()) {
-        hero.changeLocation(_locations.firstWhere((loc) => loc.name == 'Home'));
+        hero.changeLocation(locations.firstWhere((loc) => loc.name == 'Home'));
       } else {
         print('Enter your fox name: ');
         String name = stdin.readLineSync();
         hero.name = name;
-        hero.changeLocation(_locations.firstWhere((loc) => loc.name == 'Home')); 
+        hero.changeLocation(locations.firstWhere((loc) => loc.name == 'Home')); 
       }
   }
 
-  void _printStats() {
+  static void printStats() {
       print('Name: ${hero.name} \t Location: ${hero.location.name}');
       print('HP: ${hero.acctualHp}/${hero.maxHp} \t Strengh: ${hero.strengh} \t Defence: ${hero.defence} \t Speed: ${hero.speed}');
       int maxComfort = hero.minMaxComfort.reduce(max);
@@ -89,7 +86,7 @@ class Game
       print('\n');
   }
 
-  int _printActions() {
+  static int printActions() {
     print('Enter number of action');
     int upper = 1;
     hero.location.actions.asMap().forEach((index, action) {
@@ -101,54 +98,28 @@ class Game
 
   }
 
-  void _doChoise(int choise) {
+  static doChoise(int choise) {
     if(hero.location.actions.asMap().containsKey(choise)) {
-      switch (hero.location.actions[choise].handlerName) {
-        case 'talkingWithFriend':
-          _clearConsole();
-          hero.talkingWithFriend();
-          break;
-        case 'changeLocation': 
-          _clearConsole();
-          int upper = 1;
-          print('Select new location');
-          locations.asMap().forEach((key, loc) {
-            print('${key + upper}: ${loc.name}');
-          });
-          print('\nI will: ');
-          int choiseLoc = int.tryParse(stdin.readLineSync()) ?? (-1);
-          choiseLoc -= upper;
-          if(locations.asMap().containsKey(choiseLoc)) {
-            hero.changeLocation(locations[choiseLoc]);
-          } else {
-            print('I know.. you may stay here..');
-            print('| Please press enter to continue |');
-            stdin.readLineSync();
-          }
-          break;
-        case 'exit':
-          isExit = true;
-          break;
-        case 'goSleep':
-          save();
-          break;
-      }
+      --hero.energy;
+      Symbol act = new Symbol(hero.location.actions[choise].handlerName);
+      final im = reflectClass(Handlers);
+      im.invoke(act, []);
     }
   }
 
 
-  void save() {
+   static save() {
     String data = hero.toString();
-    File(_saveFilePath).writeAsStringSync(data);
-    _clearConsole();
+    File(saveFilePath).writeAsStringSync(data);
+    clearConsole();
     print('Game was saved');
     print('| Please press enter to continue |');
     stdin.readLineSync();
   }
 
-  bool load() {
-    if (File(_saveFilePath).existsSync()) {
-      String data = File(_saveFilePath).readAsStringSync();
+  static bool load() {
+    if (File(saveFilePath).existsSync()) {
+      String data = File(saveFilePath).readAsStringSync();
       hero = Fox.loadFromString(data);
       return true;
     } else {
