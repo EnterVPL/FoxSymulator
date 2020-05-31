@@ -1,7 +1,9 @@
 import 'dart:io';
 
+import '../game/Game.dart';
 import '../locations/Location.dart';
 import 'Animals.dart';
+import 'Fight.dart';
 
 
 class Fox extends Animals {
@@ -30,10 +32,6 @@ class Fox extends Animals {
     print('Hi ${this.name}. I\'m really good.');
     print('| Please press enter to continue |');
     stdin.readLineSync();
-  }
-
-  void hunting() {
-    
   }
 
   @override
@@ -78,4 +76,22 @@ class Fox extends Animals {
     }
     return fox;
   }
+
+  void hunting() {
+    Game.printOptions('Choose animal:', Game.hero.location.animalList,
+      (choise) {
+        Game.clearConsole();
+        Animals winner = (new Fight(Game.hero, Game.hero.location.animalList[choise])).doFight((damage, an) {
+          print('${an.name} lost $damage HP. | ${an.name} has ${an.acctualHp}/${an.maxHp} HP');
+          sleep(Duration(seconds: 1)); 
+        });
+        print('| Fight is over. ${winner.name} is the winner! Please click enter to be continue |');
+        stdin.readLineSync();
+      },
+      (choise) {
+
+      }
+    );
+  }
+
 }

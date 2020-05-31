@@ -41,7 +41,6 @@ class LocationList
             'speed' : 10,
             'strengh' : 2,
             'defence' : 2,
-            'howMany' : 15
           },
           {
             'name' : 'Rabbit',
@@ -49,7 +48,6 @@ class LocationList
             'speed' : 20,
             'strengh' : 3,
             'defence' : 3,
-            'howMany' : 30
           },
         ],
         'actions' : [

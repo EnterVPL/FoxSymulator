@@ -39,4 +39,9 @@ class Handlers {
   static void exit() {
     Game.isExit = true;
   }
+
+  static void hunting() {
+    Game.hero.hunting();
+  }
+
 }

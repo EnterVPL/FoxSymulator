@@ -30,7 +30,7 @@ class Game
 
   static List<Location> initLocations() {
     List<Location> locs = new List<Location>();
-    var locationList = LocationList.getJsonLocationList();
+    dynamic locationList = LocationList.getJsonLocationList();
     for(var loc in locationList) {
       Location newLoc = new Location(loc['name']);
       if(loc['animals'] != null) {
@@ -124,6 +124,23 @@ class Game
       return true;
     } else {
       return false;
+    }
+  }
+
+  static void printOptions(String title, List optionsList, var handler, var handlerMistake) {
+    clearConsole();
+    int upper = 1;
+    print(title);
+    optionsList.asMap().forEach((key, val) {
+      print('${key + upper}: ${val.name}');
+    });
+    print('\nI will: ');
+    int choise = int.tryParse(stdin.readLineSync()) ?? (-1);
+    choise -= upper;
+    if(optionsList.asMap().containsKey(choise)) {
+      handler(choise);
+    } else {
+      handlerMistake(choise);
     }
   }
 
