@@ -19,7 +19,7 @@ class Fox extends Animals {
     this.acctualHp = this.maxHp = 25;
     this.speed = 15;
     this.defence = 10;
-    this.strengh = 3;
+    this.strengh = 5;
     this.location = location;
   }
 
@@ -83,7 +83,7 @@ class Fox extends Animals {
         Game.clearConsole();
         Animals winner = (new Fight(Game.hero, Game.hero.location.animalList[choise])).doFight((damage, an) {
           print('${an.name} lost $damage HP. | ${an.name} has ${an.acctualHp}/${an.maxHp} HP');
-          sleep(Duration(seconds: 1)); 
+          sleep(Duration(milliseconds: 300)); 
         });
         print('| Fight is over. ${winner.name} is the winner! Please click enter to be continue |');
         stdin.readLineSync();

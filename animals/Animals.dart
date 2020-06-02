@@ -36,11 +36,12 @@ class Animals
 
   int doDamage(Animals atacker, Animals defending, Random rnd) {
     int maxDamage = 0;
-    maxDamage = defending.defence - atacker.strengh;
+    maxDamage = atacker.strengh - defending.defence;
     if(maxDamage <= 0) {
       maxDamage = 1;
     }
-    int damage = rnd.nextInt(maxDamage);
+    
+    int damage = rnd.nextInt(maxDamage+1);
     defending.acctualHp -= damage;
     if(defending.acctualHp <= 0) {
       defending.acctualHp = 0;
