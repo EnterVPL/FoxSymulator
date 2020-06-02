@@ -69,6 +69,28 @@ class LocationList
             'handlerName' : 'changeLocation'
           }
         ]
+      },
+      {
+        'name' : 'Moutain',
+        'animals' : [
+          {
+            'name' : 'Goat',
+            'maxHp' : 10,
+            'speed' : 10,
+            'strengh' : 2,
+            'defence' : 2,
+          },
+        ],
+        'actions' : [
+          {
+            'name' : 'Hunting',
+            'handlerName' : 'hunting'
+          },
+          {
+            'name' : 'Change location',
+            'handlerName' : 'changeLocation'
+          }
+        ]
       }
     ];
   }
