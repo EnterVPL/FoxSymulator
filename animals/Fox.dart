@@ -82,14 +82,22 @@ class Fox extends Animals {
       (choise) {
         Game.clearConsole();
         Animals winner = (new Fight(Game.hero, Game.hero.location.animalList[choise])).doFight((damage, an) {
-          print('${an.name} lost $damage HP. | ${an.name} has ${an.acctualHp}/${an.maxHp} HP');
+          String message = an.name;
+          if(damage == 0) {
+            message += ' avoid the attack';
+          } else {
+            message +=  ' lost $damage HP. | ${an.name} has ${an.acctualHp}/${an.maxHp} HP';
+          }
+          print(message);
           sleep(Duration(milliseconds: 300)); 
         });
         print('| Fight is over. ${winner.name} is the winner! Please click enter to be continue |');
         stdin.readLineSync();
       },
       (choise) {
-
+        ++Game.hero.energy;
+        print('| Oh ok, we don\'t have hunt. Please click enter to be continue |');
+        stdin.readLineSync();
       }
     );
   }
