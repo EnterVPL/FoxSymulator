@@ -1,6 +1,6 @@
 import 'dart:io';
 import 'dart:math';
-import 'dart:mirrors';
+//import 'dart:mirrors';
 
 
 import '../animals/Animals.dart';
@@ -115,9 +115,7 @@ class Game
     static doChoise(int choise) {
         if(hero.location.actions.asMap().containsKey(choise)) {
             --hero.energy;
-            Symbol act = new Symbol(hero.location.actions[choise].handlerName);
-            final im = reflectClass(Handlers);
-            im.invoke(act, []);
+            Handlers.call(hero.location.actions[choise].handlerName);
         }
     }
 

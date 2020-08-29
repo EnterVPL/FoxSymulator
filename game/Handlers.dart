@@ -5,6 +5,29 @@ import 'Game.dart';
 
 class Handlers {
 
+    static bool call(String name) {
+        switch (name) {
+            case 'talkingWithFriend':
+                talkingWithFriend();
+                break;
+            case 'changeLocation':
+                changeLocation();
+                break;
+            case 'goSleep':
+                goSleep();
+                break;
+            case 'exit':
+                exit();
+                break;
+            case 'hunting':
+                hunting();
+                break;
+            default:
+                return false;
+        }
+        return true;
+    }
+
     static void talkingWithFriend() {
         Game.clearConsole();
         Game.hero.talkingWithFriend();
