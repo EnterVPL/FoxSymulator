@@ -1,10 +1,10 @@
 class Actions
 {
-  final String name;
-  final handlerName;
+    final String name;
+    final handlerName;
 
-  bool isActive = true;
+    bool isActive = true;
 
-  Actions(this.name, this.handlerName);
+    Actions(this.name, this.handlerName);
   
 }
