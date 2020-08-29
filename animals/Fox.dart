@@ -86,7 +86,7 @@ class Fox extends Animals
                 if(damage == 0) {
                     message += ' avoid the attack';
                 } else {
-                    message +=  ' lost $damage HP. | ${an.name} has ${an.acctualHp}/${an.maxHp} HP';
+                    message += ' lost $damage HP. | ${an.name} has ${an.acctualHp}/${an.maxHp} HP';
                 }
                 print(message);
                     sleep(Duration(milliseconds: 300)); 
