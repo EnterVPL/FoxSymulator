@@ -1,3 +1,4 @@
+/// Saved each location / action / animal / etc. etc.
 class LocationList
 {
   static getJsonLocationList() {

@@ -1,7 +1,5 @@
 import 'dart:io';
 import 'dart:math';
-//import 'dart:mirrors';
-
 
 import '../animals/Animals.dart';
 import '../animals/Fox.dart';
@@ -10,6 +8,7 @@ import '../locations/LocationList.dart';
 import 'Actions.dart';
 import 'Handlers.dart';
 
+/// Main game class
 class Game 
 {
     /// List of locations
