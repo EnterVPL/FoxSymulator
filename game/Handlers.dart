@@ -25,6 +25,9 @@ class Handlers {
             case 'hunting':
                 hunting();
                 break;
+            case 'changeLanguage':
+                changeLanguage();
+                break;
             default:
                 return false;
         }
@@ -43,7 +46,7 @@ class Handlers {
         int upper = 1;
         print('Select new location');
         Game.locations.asMap().forEach((key, loc) {
-            print('${key + upper}: ${loc.name}');
+            print('${key + upper}: ${loc}');
         });
         print('\nI will: ');
         int choiseLoc = int.tryParse(stdin.readLineSync()) ?? (-1);
@@ -73,6 +76,10 @@ class Handlers {
     /// Open hunting menu
     static void hunting() {
         Game.hero.hunting();
+    }
+
+    static void changeLanguage() {
+        Game.changeLanguage();
     }
 
 }

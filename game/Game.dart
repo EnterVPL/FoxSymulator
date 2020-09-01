@@ -3,6 +3,7 @@ import 'dart:math';
 
 import '../animals/Animals.dart';
 import '../animals/Fox.dart';
+import '../langs/Language.dart';
 import '../locations/Location.dart';
 import '../locations/LocationList.dart';
 import 'Actions.dart';
@@ -80,18 +81,18 @@ class Game
     /// Checking it is posible load game. If it is posible then load game else running making character
     static void startGame() {
         if(load()) {
-            hero.changeLocation(locations.firstWhere((loc) => loc.name == 'Home'));
+            hero.changeLocation(locations.firstWhere((loc) => loc.name == '{home}'));
         } else {
             print('Enter your fox name: ');
             String name = stdin.readLineSync();
             hero.name = name;
-            hero.changeLocation(locations.firstWhere((loc) => loc.name == 'Home')); 
+            hero.changeLocation(locations.firstWhere((loc) => loc.name == '{home}')); 
         }
     }
 
     /// Printing statistic
     static void printStats() {
-        print('Name: ${hero.name} \t Location: ${hero.location.name}');
+        print('Name: ${hero.name} \t Location: ${hero.location}');
         print('HP: ${hero.acctualHp}/${hero.maxHp} \t Strengh: ${hero.strengh} \t Defence: ${hero.defence} \t Speed: ${hero.speed}');
         int maxComfort = hero.minMaxComfort.reduce(max);
         print('Satiety ${hero.satiety}/$maxComfort \t Energy: ${hero.energy}/$maxComfort');
@@ -159,6 +160,12 @@ class Game
         } else {
             handlerMistake(choise);
         }
+    }
+
+    static void changeLanguage() {
+        String switchLang = (Language.currentLang == 'EN') ? 'PL' : 'EN';
+        Language.currentLang = switchLang;
+        ++Game.hero.energy;
     }
 
 }

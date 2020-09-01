@@ -1,99 +1,72 @@
 /// Saved each location / action / animal / etc. etc.
-class LocationList
-{
+class LocationList {
   static getJsonLocationList() {
-      return [
+    return [
       {
-        'name': 'Home',
+        'name': '{home}',
         'animals': [
           {
-            'name' : 'Friend',
-            'maxHp' : 50,
-            'speed' : 30,
-            'strengh' : 5,
-            'defence' : 20
+            'name': '{friend}',
+            'maxHp': 50,
+            'speed': 30,
+            'strengh': 5,
+            'defence': 20
           }
         ],
-        'actions' : [
-          {
-            'name' : 'Talking with Friend',
-            'handlerName' : 'talkingWithFriend'
-          },
-          {
-            'name' : 'Change location',
-            'handlerName' : 'changeLocation'
-          },
-          {
-            'name' : 'Go sleep and save game',
-            'handlerName' : 'goSleep'
-          },
-          {
-            'name' : 'Exit from game',
-            'handlerName' : 'exit'
-          }
+        'actions': [
+            {'name': '{Talking with Friend}', 'handlerName': 'talkingWithFriend'},
+            {'name': '{Change location}', 'handlerName': 'changeLocation'},
+            {'name': '{Go sleep and save game}', 'handlerName': 'goSleep'},
+            {'name': '{Change language}', 'handlerName': 'changeLanguage'},
+            {'name': '{Exit from game}', 'handlerName': 'exit'}
+
         ]
       },
       {
-        'name': 'Farm',
+        'name': '{farm}',
         'animals': [
           {
-            'name' : 'Chicken',
-            'maxHp' : 10,
-            'speed' : 10,
-            'strengh' : 2,
-            'defence' : 2,
+            'name': '{chicken}',
+            'maxHp': 10,
+            'speed': 10,
+            'strengh': 2,
+            'defence': 2,
           },
           {
-            'name' : 'Rabbit',
-            'maxHp' : 10,
-            'speed' : 20,
-            'strengh' : 3,
-            'defence' : 3,
+            'name': '{rabbit}',
+            'maxHp': 10,
+            'speed': 20,
+            'strengh': 3,
+            'defence': 3,
           },
         ],
-        'actions' : [
-          {
-            'name' : 'Hunting',
-            'handlerName' : 'hunting'
-          },
-          {
-            'name' : 'Change location',
-            'handlerName' : 'changeLocation'
-          }
+        'actions': [
+            {'name': '{Hunting}', 'handlerName': 'hunting'},
+            {'name': '{Change location}', 'handlerName': 'changeLocation'}
         ]
       },
       {
-        'name' : 'Void',
-        'actions' : [
-          {
-            'name' : 'Change location',
-            'handlerName' : 'changeLocation'
-          }
+        'name': '{void}',
+        'actions': [
+            {'name': '{Change location}', 'handlerName': 'changeLocation'}
         ]
       },
       {
-        'name' : 'Moutain',
-        'animals' : [
-          {
-            'name' : 'Goat',
-            'maxHp' : 10,
-            'speed' : 10,
-            'strengh' : 2,
-            'defence' : 2,
-          },
+        'name': '{moutain}',
+        'animals': [
+            {   
+                'name': '{goat}',
+                'maxHp': 10,
+                'speed': 10,
+                'strengh': 2,
+                'defence': 2,
+            },
         ],
-        'actions' : [
-          {
-            'name' : 'Hunting',
-            'handlerName' : 'hunting'
-          },
-          {
-            'name' : 'Change location',
-            'handlerName' : 'changeLocation'
-          }
+        'actions': [
+            {'name': '{Hunting}', 'handlerName': 'hunting'},
+            {'name': '{Change location}', 'handlerName': 'changeLocation'}
         ]
       }
     ];
   }
-  
 }

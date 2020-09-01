@@ -1,5 +1,7 @@
 import '../animals/Animals.dart';
 import '../game/Actions.dart';
+import '../langs/Language.dart';
+import '../langs/LanguagesTypes.dart';
 
 /// This class is used for creating locations from /locations/LocationsList.dart
 class Location
@@ -32,7 +34,8 @@ class Location
     /// Returned 'string' [name]
     @override
     String toString() {
-        return name;
+        //return name;
+        return Language.getTranslation(LanguagesTypes.LOCATIONS, name);
     }
 
     /// Adding action to list
