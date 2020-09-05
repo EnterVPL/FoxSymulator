@@ -1,0 +1,10 @@
+{
+	"{name}" : "Nazwa",
+	"{location}" : "Lokalizacja",
+	"{HP}" : "PŻ",
+	"{strengh}" : "Siła",
+	"{defence}" : "Obrona",
+	"{speed}" : "Szybkość",
+	"{satiety}" : "Sytość",
+	"{energy}" : "Energia"
+}

@@ -1,0 +1,10 @@
+{
+	"{name}" : "Name",
+	"{location}" : "Location",
+	"{HP}" : "HP",
+	"{strengh}" : "Strengh",
+	"{defence}" : "Defence",
+	"{speed}" : "Speed",
+	"{satiety}" : "Satiety",
+	"{energy}" : "Energy"
+}
