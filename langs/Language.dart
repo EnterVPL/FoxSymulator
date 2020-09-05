@@ -6,25 +6,24 @@ import 'LanguagesTypes.dart';
 class Language {
     static String currentLang = "EN";
     static Map<String, dynamic> translations = new Map();
+    static List<ActiveLanguage> activeLangs = [
+        new ActiveLanguage("EN"),
+        new ActiveLanguage("PL")
+    ];
 
     static String getTranslation(int type, String key) {
         return translations[currentLang][type][key];
     }
 
     static List<ActiveLanguage> getActive() {
-        List<ActiveLanguage> active = [
-            new ActiveLanguage("EN"),
-            new ActiveLanguage("PL")
-        ];
-        return active;
+        return activeLangs;
     }
 
     static void loadTranslations() {
-        List<ActiveLanguage> active = getActive();
-        active.forEach((lang) {
+        activeLangs.forEach((lang) {
             translations.putIfAbsent(lang.name, () => {});
         });
-        active.forEach((lang) {
+        activeLangs.forEach((lang) {
             for(int type = 0; type <= LanguagesTypes.LAST; type++) {
                 String path = 'langs/${lang.name}/';
                 switch (type) {
