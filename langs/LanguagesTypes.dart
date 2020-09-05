@@ -4,4 +4,6 @@ class LanguagesTypes {
     static const int STATS = 2;
     static const int ACTIONS = 3;
     static const int OPTIONS = 4;
+    /// Last from types
+    static const int LAST = 4;
 }
