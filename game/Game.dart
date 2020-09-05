@@ -34,6 +34,7 @@ class Game
     /// 
     /// Created hero object and initialize whole locations
     static void initGame() {
+        Language.loadTranslations();
         if (File(currnetLangPath).existsSync()) {
             String lang = File(currnetLangPath).readAsStringSync();
             List<ActiveLanguage> activeLangs = Language.getActive();
