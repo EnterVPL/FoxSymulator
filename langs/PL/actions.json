@@ -1,0 +1,10 @@
+{
+	"{Enter your fox name}" : "Wprowadź nazwę swojego lisa",
+	"{Enter number of action}": "Wprowadź numer akcji",
+	"{Talking with Friend}" : "Porozmawiaj z przyjacielem",
+	"{Change location}" : "Zmień lokalizację",
+	"{Go sleep and save game}" : "Idź spać i zapisz grę",
+	"{Change language}" : "Zmień język",
+	"{Exit from game}" : "Wyjdź z gry",
+	"{Hunting}" : "Polowanie"
+}

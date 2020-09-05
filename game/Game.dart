@@ -96,7 +96,7 @@ class Game
         if(load()) {
             hero.changeLocation(locations.firstWhere((loc) => loc.name == '{home}'));
         } else {
-            print('Enter your fox name: ');
+            print('${Language.getTranslation(LanguagesTypes.ACTIONS, "{Enter your fox name}")}: ');
             String name = stdin.readLineSync();
             hero.name = name;
             hero.changeLocation(locations.firstWhere((loc) => loc.name == '{home}')); 
@@ -127,10 +127,10 @@ class Game
 
     /// Printing possible actions from current location
     static int printActions() {
-        print('Enter number of action');
+        print(Language.getTranslation(LanguagesTypes.ACTIONS , '{Enter number of action}'));
         int upper = 1;
         hero.location.actions.asMap().forEach((index, action) {
-            print('${index + upper}: ${action.name}');
+            print('${index + upper}: ${Language.getTranslation(LanguagesTypes.ACTIONS, action.name)}');
         });
         print('\n${Language.getTranslation(LanguagesTypes.OPTIONS, "{I prefer}")}: ');
         int choise = int.tryParse(stdin.readLineSync()) ?? (-1);
