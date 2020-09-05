@@ -4,6 +4,7 @@ import 'dart:math';
 import '../animals/Animals.dart';
 import '../animals/Fox.dart';
 import '../langs/Language.dart';
+import '../langs/LanguagesTypes.dart';
 import '../locations/Location.dart';
 import '../locations/LocationList.dart';
 import 'Actions.dart';
@@ -23,6 +24,8 @@ class Game
     /// Path to save
     static String saveFilePath = './your.foxy';
 
+    static String currnetLangPath = './lang.foxy';
+
     Game() {
         initGame();
     }
@@ -31,6 +34,15 @@ class Game
     /// 
     /// Created hero object and initialize whole locations
     static void initGame() {
+        if (File(currnetLangPath).existsSync()) {
+            String lang = File(currnetLangPath).readAsStringSync();
+            List<ActiveLanguage> activeLangs = Language.getActive();
+            Iterable<ActiveLanguage> contain = activeLangs.where((element) => element.name == lang);
+            if(contain.isNotEmpty) {
+                Language.currentLang = lang;
+            }
+            
+        }
         hero = new Fox('', Location('Void'));
         locations = initLocations();
     }
@@ -92,11 +104,24 @@ class Game
 
     /// Printing statistic
     static void printStats() {
-        print('Name: ${hero.name} \t Location: ${hero.location}');
-        print('HP: ${hero.acctualHp}/${hero.maxHp} \t Strengh: ${hero.strengh} \t Defence: ${hero.defence} \t Speed: ${hero.speed}');
         int maxComfort = hero.minMaxComfort.reduce(max);
-        print('Satiety ${hero.satiety}/$maxComfort \t Energy: ${hero.energy}/$maxComfort');
+        String name = '${fastStatsTranslate("{name}")}: ${hero.name}';
+        String location = '${fastStatsTranslate("{location}")}: ${hero.location}';
+        String hp = '${fastStatsTranslate("{HP}")}: ${hero.acctualHp}/${hero.maxHp}';
+        String strengh = '${fastStatsTranslate("{strengh}")}: ${hero.strengh}';
+        String defence = '${fastStatsTranslate("{defence}")}: ${hero.defence}';
+        String speed = '${fastStatsTranslate("{speed}")}: ${hero.speed}';
+        String satiety = '${fastStatsTranslate("{satiety}")}: ${hero.satiety}/$maxComfort';
+        String energy = '${fastStatsTranslate("{energy}")}: ${hero.energy}/$maxComfort';
+
+        print('$name \t $location');
+        print('$hp \t $strengh \t $defence \t $speed');
+        print('$satiety \t $energy');
         print('\n');
+    }
+
+    static String fastStatsTranslate(key) {
+        return Language.getTranslation(LanguagesTypes.STATS, key);
     }
 
     /// Printing possible actions from current location
@@ -106,7 +131,7 @@ class Game
         hero.location.actions.asMap().forEach((index, action) {
             print('${index + upper}: ${action.name}');
         });
-        print('\nI will: ');
+        print('\n${Language.getTranslation(LanguagesTypes.OPTIONS, "{I prefer}")}: ');
         int choise = int.tryParse(stdin.readLineSync()) ?? (-1);
         return choise - upper;
     }
@@ -163,9 +188,20 @@ class Game
     }
 
     static void changeLanguage() {
-        String switchLang = (Language.currentLang == 'EN') ? 'PL' : 'EN';
-        Language.currentLang = switchLang;
+        printOptions(Language.getTranslation(LanguagesTypes.OPTIONS, '{change language}'), Language.getActive(), 
+            (choise) {
+                Language.currentLang = Language.getActive()[choise].name;
+                String data = Language.currentLang;
+                File(currnetLangPath).writeAsStringSync(data);
+            },
+            (choise) {
+                print('| ${Language.getTranslation(LanguagesTypes.OPTIONS, '{incorrect choise}')} |');
+                stdin.readLineSync();
+            }
+        );
+
         ++Game.hero.energy;
+
     }
 
 }
