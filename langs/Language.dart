@@ -5,7 +5,6 @@ import 'LanguagesTypes.dart';
 
 class Language {
     static String currentLang = "EN";
-    static List<String> activeLangs = ["EN", "PL"];
 
     static String getTranslation(int type, String key) {
 
@@ -45,4 +44,23 @@ class Language {
         return dataJson[key];
     }
 
+    static List<ActiveLanguage> getActive() {
+        List<ActiveLanguage> active = [
+            new ActiveLanguage("EN"),
+            new ActiveLanguage("PL")
+        ];
+        return active;
+    }
+
 }
+
+class ActiveLanguage {
+    final String name;
+    ActiveLanguage(this.name);
+
+    @override
+    String toString() {
+        return this.name;
+    }
+}
+
