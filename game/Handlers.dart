@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:io';
 import 'dart:math';
 
@@ -5,33 +6,26 @@ import 'Game.dart';
 
 /// Handlers for actions in /locations/LocationsList.dart
 class Handlers {
+
+    static Map<String, Function> callerMap = {
+        'talkingWithFriend' : talkingWithFriend,
+        'changeLocation' : changeLocation,
+        'goSleep' : goSleep,
+        'exit' : exit,
+        'hunting' : hunting,
+        'changeLanguage' : changeLanguage
+    };
+
     /// Run method using method [name]
-    /// 
+    ///
     /// Returned 'true' if method is exists or 'false' if method is not exists
     static bool call(String name) {
-        switch (name) {
-            case 'talkingWithFriend':
-                talkingWithFriend();
-                break;
-            case 'changeLocation':
-                changeLocation();
-                break;
-            case 'goSleep':
-                goSleep();
-                break;
-            case 'exit':
-                exit();
-                break;
-            case 'hunting':
-                hunting();
-                break;
-            case 'changeLanguage':
-                changeLanguage();
-                break;
-            default:
-                return false;
+        if(callerMap.containsKey(name)) {
+            callerMap[name]();
+            return true;
+        } else {
+            return false;
         }
-        return true;
     }
 
     /// Talking with hero friend
