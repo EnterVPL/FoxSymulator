@@ -13,7 +13,7 @@ class Animals {
   bool isLive = true;
 
   String get name {
-    return Language.getTranslation(LanguagesTypes.ANIMALS, name);
+    return Language.getTranslation(LanguagesTypes.ANIMALS, this._name);
   }
 
   Animals create(String name, int maxHp, int speed, int strengh, int defence) {
