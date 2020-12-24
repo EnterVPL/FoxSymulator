@@ -1,3 +1,6 @@
 {
-    "{chicken}": "Chicken"
+    "{friend}": "Friend",
+    "{chicken}": "Chicken",
+    "{rabbit}": "Rabbit",
+    "{goat}": "Goat"
 }
