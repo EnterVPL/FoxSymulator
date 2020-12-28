@@ -1,4 +1,5 @@
 {
+	"{select location}": "Select new location",
 	"{home}": "Home",
 	"{farm}": "Farm",
 	"{void}": "Void",
