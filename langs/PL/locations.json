@@ -2,6 +2,6 @@
 	"{select location}": "Wybierz nową lokalizację",
 	"{home}": "Dom",
 	"{farm}": "Farma",
-	
+	"{void}": "Pustka",
 	"{moutain}": "Góry"
 }
