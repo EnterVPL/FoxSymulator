@@ -1,6 +1,8 @@
 import 'dart:io';
 
 import '../game/Game.dart';
+import '../langs/Language.dart';
+import '../langs/LanguagesTypes.dart';
 import '../locations/Location.dart';
 import 'Animals.dart';
 import 'Fight.dart';
@@ -27,9 +29,11 @@ class Fox extends Animals {
   }
 
   void talkingWithFriend() {
-    print('Hi Friend. How are you?');
-    print('Hi ${this.name}. I\'m really good.');
-    print('| Please press enter to continue |');
+    print(Language.getTranslation(LanguagesTypes.FRIEND, "{hi_hero}"));
+    print(Language.getTranslation(LanguagesTypes.FRIEND, "{hi_friend}")
+        .replaceAll("{name}", this.name));
+    print("\n" +
+        Language.getTranslation(LanguagesTypes.OPTIONS, "{enter to continue}"));
     stdin.readLineSync();
   }
 
@@ -77,29 +81,36 @@ class Fox extends Animals {
   }
 
   void hunting() {
-    Game.printOptions('Choose animal:', Game.hero.location.animalList,
-        (choise) {
+    String title =
+        Language.getTranslation(LanguagesTypes.ANIMALS, "{Choose animal}");
+    String avoid =
+        Language.getTranslation(LanguagesTypes.ANIMALS, "{avoid the attack}");
+    String lost_hp =
+        Language.getTranslation(LanguagesTypes.ANIMALS, "{lost_hp}");
+    Game.printOptions('${title}:', Game.hero.location.animalList, (choise) {
       Game.clearConsole();
       Animals winner =
           (new Fight(Game.hero, Game.hero.location.animalList[choise]))
               .doFight((damage, an) {
         String message = an.name;
         if (damage == 0) {
-          message += ' avoid the attack';
+          message += ' ${avoid}';
         } else {
-          message +=
-              ' lost $damage HP. | ${an.name} has ${an.acctualHp}/${an.maxHp} HP';
+          message += lost_hp
+              .replaceAll("{damage}", damage.toString())
+              .replaceAll("{name}", an.name)
+              .replaceAll("{acctualHp}", an.acctualHp.toString())
+              .replaceAll("{maxHp}", an.maxHp.toString());
         }
         print(message);
         sleep(Duration(milliseconds: 300));
       });
-      print(
-          '| Fight is over. ${winner.name} is the winner! Please click enter to be continue |');
+      print(Language.getTranslation(LanguagesTypes.ANIMALS, "{fight_over}")
+          .replaceAll("{winner}", winner.name));
       stdin.readLineSync();
     }, (choise) {
       ++Game.hero.energy;
-      print(
-          '| Oh ok, we don\'t have hunt. Please click enter to be continue |');
+      print(Language.getTranslation(LanguagesTypes.ANIMALS, "{not_hunt}"));
       stdin.readLineSync();
     });
   }
