@@ -2,5 +2,6 @@
 	"{change language}" : "Change language",
 	"{incorrect choise}" : "Incorrect choise",
 	"{I prefer}" : "I prefer",
-	"{enter to continue}": "| Please press enter to continue |"
+	"{enter to continue}": "| Please press enter to continue |",
+	"{Game was saved}": "Game was saved"
 }
