@@ -3,5 +3,6 @@
 	"{incorrect choise}" : "Nieprawidłowy wybór",
 	"{I prefer}" : "Wolę",
 	"{enter to continue}": "| Naciśnij enter, aby kontynuować |",
-	"{Game was saved}": "Gra została zapisana"
+	"{Game was saved}": "Gra została zapisana",
+	"{game_over_energy}": "Twój lis nie ma energi i umarł..\nOtwórz ponownie grę, aby wczytać ostatni zapis\n\n| Naciśnij enter, aby wyjść |"
 }
