@@ -2,7 +2,7 @@
     "{Choose animal}": "Wybierz zwierze",
     "{avoid the attack}": "unika ataku",
     "{lost_hp}": "traci {damage} PŻ. | {name} ma {acctualHp}/{maxHp} PŻ",
-    "{fight_over}": "| Koniec walki. Zwycięzca jest {winner}! Naciśnij enter, aby kontynuować |",
+    "{fight_over}": "| Koniec walki. Zwycięzcą jest {winner}! Naciśnij enter, aby kontynuować |",
     "{not_hunt}": "| No dobra, nie polujemy. Naciśnij enter, aby kontynuować |",
     "{friend}": "Przyjaciel",
     "{chicken}": "Kurczak",
