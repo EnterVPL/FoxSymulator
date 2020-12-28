@@ -96,7 +96,7 @@ class Fox extends Animals {
         if (damage == 0) {
           message += ' ${avoid}';
         } else {
-          message += lost_hp
+          message += ' $lost_hp'
               .replaceAll("{damage}", damage.toString())
               .replaceAll("{name}", an.name)
               .replaceAll("{acctualHp}", an.acctualHp.toString())
