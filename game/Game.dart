@@ -154,7 +154,12 @@ class Game {
   static doChoise(int choise) {
     if (hero.location.actions.asMap().containsKey(choise)) {
       --hero.energy;
-      Handlers.call(hero.location.actions[choise].handlerName);
+      if (hero.energy > 0 ||
+          hero.location.actions[choise].handlerName == "goSleep") {
+        Handlers.call(hero.location.actions[choise].handlerName);
+      } else if (hero.energy <= 0) {
+        Handlers.call('game_over');
+      }
     }
   }
 

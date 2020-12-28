@@ -13,7 +13,8 @@ class Handlers {
     'goSleep': goSleep,
     'exit': exit,
     'hunting': hunting,
-    'changeLanguage': changeLanguage
+    'changeLanguage': changeLanguage,
+    'game_over': gameOver
   };
 
   /// Run method using method [name]
@@ -79,5 +80,13 @@ class Handlers {
 
   static void changeLanguage() {
     Game.changeLanguage();
+  }
+
+  static void gameOver() {
+    Game.clearConsole();
+    print(
+        Language.getTranslation(LanguagesTypes.OPTIONS, "{game_over_energy}"));
+    stdin.readLineSync();
+    Game.isExit = true;
   }
 }
