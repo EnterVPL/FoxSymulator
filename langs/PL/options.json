@@ -1,5 +1,7 @@
 {
 	"{change language}" : "Zmień język",
 	"{incorrect choise}" : "Nieprawidłowy wybór",
-	"{I prefer}" : "Wolę"
+	"{I prefer}" : "Wolę",
+	"{enter to continue}": "| Naciśnij enter, aby kontynuować |",
+	"{Game was saved}": "Gra została zapisana"
 }

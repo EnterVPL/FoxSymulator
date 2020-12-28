@@ -1,4 +1,6 @@
 {
+	"{select location}": "Select new location",
+	"{I know.. you have stay here..}": "I know.. you have stay here..",
 	"{home}": "Home",
 	"{farm}": "Farm",
 	"{void}": "Void",
