@@ -6,14 +6,28 @@ import '../langs/LanguagesTypes.dart';
 import '../locations/Location.dart';
 import 'Animals.dart';
 import 'Fight.dart';
+import 'Stats.dart';
 
 class Fox extends Animals {
   String name;
   Location location;
 
   List<int> minMaxComfort = [1, 10];
-  int satiety = 8;
-  int energy = 10;
+  int get satiety {
+    return stats[StatsType.SATIETY];
+  }
+
+  set satiety(int count) {
+    stats[StatsType.SATIETY] = count;
+  }
+
+  int get energy {
+    return stats[StatsType.ENERGY];
+  }
+
+  set energy(int count) {
+    stats[StatsType.ENERGY] = count;
+  }
 
   Fox(String name, Location location) {
     this.name = name;
@@ -22,6 +36,8 @@ class Fox extends Animals {
     this.defence = 10;
     this.strengh = 5;
     this.location = location;
+    this.satiety = 10;
+    this.energy = 10;
   }
 
   void changeLocation(Location location) {

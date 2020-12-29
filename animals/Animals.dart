@@ -2,15 +2,52 @@ import 'dart:math';
 
 import '../langs/Language.dart';
 import '../langs/LanguagesTypes.dart';
+import 'Stats.dart';
 
 class Animals {
   String _name;
-  int acctualHp;
-  int maxHp;
-  int speed;
-  int strengh;
-  int defence;
+  Map<int, int> stats = new Map();
   bool isLive = true;
+
+  int get acctualHp {
+    return stats[StatsType.ACCTUALHP];
+  }
+
+  set acctualHp(int count) {
+    stats[StatsType.ACCTUALHP] = count;
+  }
+
+  int get maxHp {
+    return stats[StatsType.MAXHP];
+  }
+
+  set maxHp(int count) {
+    stats[StatsType.MAXHP] = count;
+  }
+
+  int get speed {
+    return stats[StatsType.SPEED];
+  }
+
+  set speed(int count) {
+    stats[StatsType.SPEED] = count;
+  }
+
+  int get strengh {
+    return stats[StatsType.STRENGH];
+  }
+
+  set strengh(int count) {
+    stats[StatsType.STRENGH] = count;
+  }
+
+  int get defence {
+    return stats[StatsType.DEFENCE];
+  }
+
+  set defence(int count) {
+    stats[StatsType.DEFENCE] = count;
+  }
 
   String get name {
     return Language.getTranslation(LanguagesTypes.ANIMALS, this._name);
