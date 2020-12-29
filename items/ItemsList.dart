@@ -56,6 +56,14 @@ class ItemsList {
             StatsType.SPEED: 4
           }
         },
+        {
+          'id': 7,
+          'name': "{Crunchy goose}",
+          'benefits': {
+            StatsType.SATIETY: 4,
+            StatsType.ACCTUALHP: 2,
+          }
+        }
       ],
       ItemTypes.SHIELD: [
         {
