@@ -53,6 +53,9 @@ class Language {
           case LanguagesTypes.FRIEND:
             path += 'friend';
             break;
+          case LanguagesTypes.FRIEND:
+            path += 'items';
+            break;
         }
         String data = File('$path.json').readAsStringSync();
         if (data == '') continue;
