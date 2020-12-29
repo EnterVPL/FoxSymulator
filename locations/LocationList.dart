@@ -14,12 +14,11 @@ class LocationList {
           }
         ],
         'actions': [
-            {'name': '{Talking with Friend}', 'handlerName': 'talkingWithFriend'},
-            {'name': '{Change location}', 'handlerName': 'changeLocation'},
-            {'name': '{Go sleep and save game}', 'handlerName': 'goSleep'},
-            {'name': '{Change language}', 'handlerName': 'changeLanguage'},
-            {'name': '{Exit from game}', 'handlerName': 'exit'}
-
+          {'name': '{Talking with Friend}', 'handlerName': 'talkingWithFriend'},
+          {'name': '{Change location}', 'handlerName': 'changeLocation'},
+          {'name': '{Go sleep and save game}', 'handlerName': 'goSleep'},
+          {'name': '{Change language}', 'handlerName': 'changeLanguage'},
+          {'name': '{Exit from game}', 'handlerName': 'exit'}
         ]
       },
       {
@@ -41,30 +40,33 @@ class LocationList {
           },
         ],
         'actions': [
-            {'name': '{Hunting}', 'handlerName': 'hunting'},
-            {'name': '{Change location}', 'handlerName': 'changeLocation'}
+          {'name': '{Hunting}', 'handlerName': 'hunting'},
+          {'name': '{Change location}', 'handlerName': 'changeLocation'},
+          {'name': '{Go to home}', 'handlerName': 'gotoHome'}
         ]
       },
       {
         'name': '{void}',
         'actions': [
-            {'name': '{Change location}', 'handlerName': 'changeLocation'}
+          {'name': '{Change location}', 'handlerName': 'changeLocation'},
+          {'name': '{Go to home}', 'handlerName': 'gotoHome'}
         ]
       },
       {
         'name': '{moutain}',
         'animals': [
-            {   
-                'name': '{goat}',
-                'maxHp': 10,
-                'speed': 10,
-                'strengh': 2,
-                'defence': 2,
-            },
+          {
+            'name': '{goat}',
+            'maxHp': 10,
+            'speed': 10,
+            'strengh': 2,
+            'defence': 2,
+          },
         ],
         'actions': [
-            {'name': '{Hunting}', 'handlerName': 'hunting'},
-            {'name': '{Change location}', 'handlerName': 'changeLocation'}
+          {'name': '{Hunting}', 'handlerName': 'hunting'},
+          {'name': '{Change location}', 'handlerName': 'changeLocation'},
+          {'name': '{Go to home}', 'handlerName': 'gotoHome'}
         ]
       }
     ];
