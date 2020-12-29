@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 
 import '../game/Game.dart';
@@ -162,7 +163,18 @@ class Fox extends Animals {
     });
   }
 
-  void loadBagFromJson(String data) {}
+  void loadInventory(String data, Inventory inventor) {
+    Map<String, dynamic> dataJson = json.decode(data);
+    dataJson.forEach((type_id, item) {
+      inventor.items[item["type"]][item["id"]].count = item["count"];
+    });
+  }
 
-  void loadWorehouseFromJson(String data) {}
+  void loadBagFromJson(String data) {
+    loadInventory(data, bag);
+  }
+
+  void loadWorehouseFromJson(String data) {
+    loadInventory(data, warehouse);
+  }
 }
