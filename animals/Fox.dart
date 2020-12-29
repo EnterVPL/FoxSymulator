@@ -1,6 +1,9 @@
 import 'dart:io';
 
 import '../game/Game.dart';
+import '../inventory/Inventory.dart';
+import '../items/Item.dart';
+import '../items/ItemsList.dart';
 import '../langs/Language.dart';
 import '../langs/LanguagesTypes.dart';
 import '../locations/Location.dart';
@@ -11,6 +14,8 @@ import 'Stats.dart';
 class Fox extends Animals {
   String name;
   Location location;
+  Inventory bag;
+  Inventory warehouse;
 
   List<int> minMaxComfort = [1, 10];
   int get satiety {
@@ -38,6 +43,9 @@ class Fox extends Animals {
     this.location = location;
     this.satiety = 10;
     this.energy = 10;
+    this.bag = new Inventory(30);
+    this.warehouse = new Inventory(90000);
+    _generateItems();
   }
 
   void changeLocation(Location location) {
@@ -130,4 +138,31 @@ class Fox extends Animals {
       stdin.readLineSync();
     });
   }
+
+  String getBagToSave() {
+    return bag.toJson();
+  }
+
+  String getWarehouseToSave() {
+    return warehouse.toJson();
+  }
+
+  void _generateItems() {
+    Map<int, List<Map<String, dynamic>>> items = ItemsList.getIt();
+    items.forEach((typeId, list) {
+      int type = typeId;
+      list.asMap().forEach((key, value) {
+        int id = value['id'];
+        String name = value['name'];
+        Map<int, int> benefits = value['benefits'];
+        Item item = new Item(id, name, type, benefits);
+        bag.addItem(item);
+        warehouse.addItem(item);
+      });
+    });
+  }
+
+  void loadBagFromJson(String data) {}
+
+  void loadWorehouseFromJson(String data) {}
 }
