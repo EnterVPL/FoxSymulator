@@ -9,7 +9,9 @@ class Item {
   final Map<int, int> benefits;
   int count;
 
-  Item(this.id, this.name, this.type, this.benefits);
+  Item(this.id, this.name, this.type, this.benefits) {
+    this.count = 0;
+  }
 
   Map<int, int> useIt() {
     if (count <= 0) {
@@ -17,6 +19,15 @@ class Item {
     }
     count--;
     return benefits;
+  }
+
+  @override
+  String toString() {
+    Map<String, int> ben = new Map();
+    benefits.forEach((stat, count) {
+      ben.putIfAbsent('"$stat"', () => count);
+    });
+    return '{ "id": $id, "name": "$name", "type": $type, "benefits": $ben, "count": $count }';
   }
 }
 
