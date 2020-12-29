@@ -53,7 +53,7 @@ class Language {
           case LanguagesTypes.FRIEND:
             path += 'friend';
             break;
-          case LanguagesTypes.FRIEND:
+          case LanguagesTypes.ITEMS:
             path += 'items';
             break;
         }
