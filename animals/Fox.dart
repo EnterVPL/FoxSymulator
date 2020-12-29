@@ -1,19 +1,39 @@
+import 'dart:convert';
 import 'dart:io';
 
 import '../game/Game.dart';
+import '../inventory/Inventory.dart';
+import '../items/Item.dart';
+import '../items/ItemsList.dart';
 import '../langs/Language.dart';
 import '../langs/LanguagesTypes.dart';
 import '../locations/Location.dart';
 import 'Animals.dart';
 import 'Fight.dart';
+import 'Stats.dart';
 
 class Fox extends Animals {
   String name;
   Location location;
+  Inventory bag;
+  Inventory warehouse;
 
   List<int> minMaxComfort = [1, 10];
-  int satiety = 8;
-  int energy = 10;
+  int get satiety {
+    return stats[StatsType.SATIETY];
+  }
+
+  set satiety(int count) {
+    stats[StatsType.SATIETY] = count;
+  }
+
+  int get energy {
+    return stats[StatsType.ENERGY];
+  }
+
+  set energy(int count) {
+    stats[StatsType.ENERGY] = count;
+  }
 
   Fox(String name, Location location) {
     this.name = name;
@@ -22,6 +42,11 @@ class Fox extends Animals {
     this.defence = 10;
     this.strengh = 5;
     this.location = location;
+    this.satiety = 10;
+    this.energy = 10;
+    this.bag = new Inventory(30);
+    this.warehouse = new Inventory(90000);
+    _generateItems();
   }
 
   void changeLocation(Location location) {
@@ -113,5 +138,43 @@ class Fox extends Animals {
       print(Language.getTranslation(LanguagesTypes.ANIMALS, "{not_hunt}"));
       stdin.readLineSync();
     });
+  }
+
+  String getBagToSave() {
+    return bag.toJson();
+  }
+
+  String getWarehouseToSave() {
+    return warehouse.toJson();
+  }
+
+  void _generateItems() {
+    Map<int, List<Map<String, dynamic>>> items = ItemsList.getIt();
+    items.forEach((typeId, list) {
+      int type = typeId;
+      list.asMap().forEach((key, value) {
+        int id = value['id'];
+        String name = value['name'];
+        Map<int, int> benefits = value['benefits'];
+        Item item = new Item(id, name, type, benefits);
+        bag.addItem(item);
+        warehouse.addItem(item);
+      });
+    });
+  }
+
+  void loadInventory(String data, Inventory inventor) {
+    Map<String, dynamic> dataJson = json.decode(data);
+    dataJson.forEach((type_id, item) {
+      inventor.items[item["type"]][item["id"]].count = item["count"];
+    });
+  }
+
+  void loadBagFromJson(String data) {
+    loadInventory(data, bag);
+  }
+
+  void loadWorehouseFromJson(String data) {
+    loadInventory(data, warehouse);
   }
 }
