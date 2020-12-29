@@ -23,6 +23,8 @@ class Game {
 
   /// Path to save
   static String saveFilePath = './your.foxy';
+  static String saveBagPath = './bag.foxy';
+  static String saveWorehousePath = './worehouse.foxy';
 
   static String currnetLangPath = './lang.foxy';
 
@@ -167,6 +169,10 @@ class Game {
   static save() {
     String data = hero.toString();
     File(saveFilePath).writeAsStringSync(data);
+    String bag = hero.getBagToSave();
+    File(saveBagPath).writeAsStringSync(bag);
+    String worehouse = hero.getWarehouseToSave();
+    File(saveWorehousePath).writeAsStringSync(worehouse);
     clearConsole();
     print(Language.getTranslation(LanguagesTypes.OPTIONS, "{Game was saved}"));
     print(
@@ -179,6 +185,10 @@ class Game {
     if (File(saveFilePath).existsSync()) {
       String data = File(saveFilePath).readAsStringSync();
       hero = Fox.loadFromString(data);
+      String bag = File(saveBagPath).readAsStringSync();
+      String worehouse = File(saveWorehousePath).readAsStringSync();
+      hero.loadBagFromJson(bag);
+      hero.loadWorehouseFromJson(worehouse);
       return true;
     } else {
       return false;
