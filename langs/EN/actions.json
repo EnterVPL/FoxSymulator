@@ -6,5 +6,6 @@
 	"{Go sleep and save game}" : "Go sleep and save game",
 	"{Change language}" : "Change language",
 	"{Exit from game}" : "Exit from game",
-	"{Hunting}" : "Hunting"
+	"{Hunting}" : "Hunting",
+	"{Go to home}": "Go to home"
 }
