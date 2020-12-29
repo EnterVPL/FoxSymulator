@@ -3,6 +3,7 @@ import 'dart:math';
 
 import '../langs/Language.dart';
 import '../langs/LanguagesTypes.dart';
+
 import 'Game.dart';
 
 /// Handlers for actions in /locations/LocationsList.dart
@@ -14,7 +15,8 @@ class Handlers {
     'exit': exit,
     'hunting': hunting,
     'changeLanguage': changeLanguage,
-    'game_over': gameOver
+    'game_over': gameOver,
+    'gotoHome': gotoHome
   };
 
   /// Run method using method [name]
@@ -88,5 +90,10 @@ class Handlers {
         Language.getTranslation(LanguagesTypes.OPTIONS, "{game_over_energy}"));
     stdin.readLineSync();
     Game.isExit = true;
+  }
+
+  static void gotoHome() {
+    Game.clearConsole();
+    Game.hero.changeLocation(Game.locations[0]);
   }
 }
