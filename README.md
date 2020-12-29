@@ -15,7 +15,7 @@ It's a very good question. My anwser is it: In this game you play fox because a 
 ![screenshot](https://i.snipboard.io/BAzY40.jpg)
 
 ### Game progress:
-#### 40% 
+#### 65% 
 
 ## About me:
 I still study English. If I do mistakes than remember: you can call to me and **point out mistakes**.
