@@ -92,7 +92,7 @@ class BagMenu {
     List<BagAction> listType = new List();
     Map<int, Item> items = Game.hero.bag.items[_itemType];
     items.forEach((key, item) {
-      String tName = item.tName;
+      String tName = item.isWear ? Game.text_bold(item.tName) : item.tName;
       String cOfTab = " \t\t";
       if (tName.length > 20) {
         cOfTab = " ";
