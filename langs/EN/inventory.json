@@ -1,0 +1,14 @@
+{
+    "{WarehouseMenuActionTitle}": "What do you prefer?",
+    "{Get items}": "Get items",
+    "{Use items}": "Use items",
+    "{Put items}": "Put items",
+    "{Remove items}": "Remove items",
+    "{Back}": "Back",
+    "{WarehouseMenuTypeTitle}" : "Choose type of equipment",
+    "{Food}": "Food",
+    "{Shield}": "Shield",
+    "{Armmor}": "Armmor",
+    "{Weapon}": "Weapon",
+    "{WarehouseMenuItemTitle}" : "Choose item"
+}
