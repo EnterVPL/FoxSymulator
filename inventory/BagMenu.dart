@@ -118,7 +118,7 @@ class BagMenu {
 
   static void doAction(int typeOfAction, int itemType, int itemId) {
     InventoryActions.doAction(typeOfAction, itemType, itemId, Game.hero.bag,
-        max: BagMenuActionTypes.MAX);
+        type: 1);
   }
 }
 
@@ -131,10 +131,10 @@ class BagMenuTypes {
 }
 
 class BagMenuActionTypes {
-  static const int USE = 1;
-  static const int REMOVE = 2;
+  static const int USE = 0;
+  static const int REMOVE = 1;
 
-  static const int MAX = 2;
+  static const int MAX = 1;
 }
 
 class BagAction {

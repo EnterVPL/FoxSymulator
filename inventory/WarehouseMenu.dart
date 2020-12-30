@@ -120,8 +120,7 @@ class WarehouseMenu {
 
   static void doAction(int typeOfAction, int itemType, int itemId) {
     InventoryActions.doAction(
-        typeOfAction, itemType, itemId, Game.hero.warehouse,
-        max: WarehouseMenuActionTypes.MAX);
+        typeOfAction, itemType, itemId, Game.hero.warehouse);
   }
 }
 

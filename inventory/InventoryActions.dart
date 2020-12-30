@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import '../animals/Stats.dart';
 import '../game/Game.dart';
 import '../items/Item.dart';
@@ -8,8 +10,8 @@ import 'WarehouseMenu.dart';
 class InventoryActions {
   static void doAction(
       int typeOfAction, int itemType, int itemId, Inventory inventor,
-      {max = 2}) {
-    if (max > 2) {
+      {type = 0}) {
+    if (type == 0) {
       switch (typeOfAction) {
         case WarehouseMenuActionTypes.GET:
           getItem(itemType, itemId);
@@ -62,24 +64,24 @@ class InventoryActions {
   }
 
   static void useItem(int itemType, int itemId, Inventory inventor) {
-    Item item = inventor.items[itemType][itemId];
-    if (item.count > 0) {
-      if (item.type != ItemTypes.FOOD) {
-        switch (item.type) {
+    if (inventor.items[itemType][itemId].count > 0) {
+      if (inventor.items[itemType][itemId].type != ItemTypes.FOOD) {
+        switch (inventor.items[itemType][itemId].type) {
           case ItemTypes.ARMMOR:
             Game.hero.usingArmmor;
             if (Game.hero.usingArmmor != null) {
-              if (Game.hero.usingArmmor.id == item.id) break;
+              if (Game.hero.usingArmmor.id ==
+                  inventor.items[itemType][itemId].id) break;
               Game.hero.usingArmmor.benefits.forEach((type, value) {
                 Game.hero.stats[type] -= value;
               });
-              Game.hero.usingArmmor = item;
-              item.benefits.forEach((type, value) {
+              Game.hero.usingArmmor = inventor.items[itemType][itemId];
+              inventor.items[itemType][itemId].benefits.forEach((type, value) {
                 Game.hero.stats[type] += value;
               });
             } else {
-              Game.hero.usingArmmor = item;
-              item.benefits.forEach((type, value) {
+              Game.hero.usingArmmor = inventor.items[itemType][itemId];
+              inventor.items[itemType][itemId].benefits.forEach((type, value) {
                 Game.hero.stats[type] += value;
               });
             }
@@ -87,17 +89,18 @@ class InventoryActions {
           case ItemTypes.SHIELD:
             Game.hero.usingShield;
             if (Game.hero.usingShield != null) {
-              if (Game.hero.usingShield.id == item.id) break;
+              if (Game.hero.usingShield.id ==
+                  inventor.items[itemType][itemId].id) break;
               Game.hero.usingShield.benefits.forEach((type, value) {
                 Game.hero.stats[type] -= value;
               });
-              Game.hero.usingShield = item;
-              item.benefits.forEach((type, value) {
+              Game.hero.usingShield = inventor.items[itemType][itemId];
+              inventor.items[itemType][itemId].benefits.forEach((type, value) {
                 Game.hero.stats[type] += value;
               });
             } else {
-              Game.hero.usingShield = item;
-              item.benefits.forEach((type, value) {
+              Game.hero.usingShield = inventor.items[itemType][itemId];
+              inventor.items[itemType][itemId].benefits.forEach((type, value) {
                 Game.hero.stats[type] += value;
               });
             }
@@ -105,25 +108,26 @@ class InventoryActions {
           case ItemTypes.WEAPON:
             Game.hero.usingWeapon;
             if (Game.hero.usingWeapon != null) {
-              if (Game.hero.usingWeapon.id == item.id) break;
+              if (Game.hero.usingWeapon.id ==
+                  inventor.items[itemType][itemId].id) break;
               Game.hero.usingWeapon.benefits.forEach((type, value) {
                 Game.hero.stats[type] -= value;
               });
-              Game.hero.usingWeapon = item;
-              item.benefits.forEach((type, value) {
+              Game.hero.usingWeapon = inventor.items[itemType][itemId];
+              inventor.items[itemType][itemId].benefits.forEach((type, value) {
                 Game.hero.stats[type] += value;
               });
             } else {
-              Game.hero.usingWeapon = item;
-              item.benefits.forEach((type, value) {
+              Game.hero.usingWeapon = inventor.items[itemType][itemId];
+              inventor.items[itemType][itemId].benefits.forEach((type, value) {
                 Game.hero.stats[type] += value;
               });
             }
             break;
         }
       } else {
-        item.count -= 1;
-        item.benefits.forEach((type, value) {
+        inventor.items[itemType][itemId].count -= 1;
+        inventor.items[itemType][itemId].benefits.forEach((type, value) {
           Game.hero.stats[type] += value;
         });
       }
@@ -131,6 +135,10 @@ class InventoryActions {
     if (Game.hero.stats[StatsType.ACCTUALHP] >
         Game.hero.stats[StatsType.MAXHP]) {
       Game.hero.stats[StatsType.ACCTUALHP] = Game.hero.stats[StatsType.MAXHP];
+    }
+    if (Game.hero.stats[StatsType.SATIETY] >
+        Game.hero.minMaxComfort.reduce(max)) {
+      Game.hero.stats[StatsType.SATIETY] = Game.hero.minMaxComfort.reduce(max);
     }
   }
 }
