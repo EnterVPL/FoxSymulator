@@ -81,10 +81,16 @@ class WarehouseMenu {
   static void selectType() {
     List<WarehouseAction> listType = new List();
     List<String> itemTypesList = ItemTypes.asList();
-    itemTypesList.forEach((element) {
-      listType.add(new WarehouseAction(_translate(element)));
-    });
-    _maxTypes = itemTypesList.length;
+    if (_typeOfAction == WarehouseMenuActionTypes.USE) {
+      listType.add(new WarehouseAction(_translate("{Food}")));
+    } else {
+      itemTypesList.forEach((element) {
+        listType.add(new WarehouseAction(_translate(element)));
+      });
+    }
+
+    _maxTypes = listType.length;
+
     listType.add(new WarehouseAction(_translate('{Back}')));
 
     Game.printOptions(_titleType, listType, _handlerAction, (int no) {});
