@@ -56,6 +56,9 @@ class Language {
           case LanguagesTypes.ITEMS:
             path += 'items';
             break;
+          case LanguagesTypes.INVENTORY:
+            path += 'inventory';
+            break;
         }
         String data = File('$path.json').readAsStringSync();
         if (data == '') continue;

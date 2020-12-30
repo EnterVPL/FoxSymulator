@@ -17,6 +17,9 @@ class Fox extends Animals {
   Location location;
   Inventory bag;
   Inventory warehouse;
+  Item usingWeapon;
+  Item usingShield;
+  Item usingArmmor;
 
   List<int> minMaxComfort = [1, 10];
   int get satiety {
@@ -156,9 +159,11 @@ class Fox extends Animals {
         int id = value['id'];
         String name = value['name'];
         Map<int, int> benefits = value['benefits'];
-        Item item = new Item(id, name, type, benefits);
-        bag.addItem(item);
-        warehouse.addItem(item);
+        Map<String, int> chance = value['chance'];
+        Item itemB = new Item(id, name, type, benefits, chance, false);
+        bag.addItem(itemB);
+        Item itemW = new Item(id, name, type, benefits, chance, false);
+        warehouse.addItem(itemW);
       });
     });
   }
@@ -167,6 +172,20 @@ class Fox extends Animals {
     Map<String, dynamic> dataJson = json.decode(data);
     dataJson.forEach((type_id, item) {
       inventor.items[item["type"]][item["id"]].count = item["count"];
+      inventor.items[item["type"]][item["id"]].isWear = item["isWear"];
+      if (item["isWear"]) {
+        switch (item["type"]) {
+          case ItemTypes.ARMMOR:
+            usingArmmor = inventor.items[item["type"]][item["id"]];
+            break;
+          case ItemTypes.WEAPON:
+            usingWeapon = inventor.items[item["type"]][item["id"]];
+            break;
+          case ItemTypes.SHIELD:
+            usingShield = inventor.items[item["type"]][item["id"]];
+            break;
+        }
+      }
     });
   }
 

@@ -7,7 +7,8 @@ class LanguagesTypes {
   static const int OPTIONS = 4;
   static const int FRIEND = 5;
   static const int ITEMS = 6;
+  static const int INVENTORY = 7;
 
   /// Last from types
-  static const int LAST = 6;
+  static const int LAST = 7;
 }

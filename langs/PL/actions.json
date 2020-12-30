@@ -7,5 +7,7 @@
 	"{Change language}" : "Zmień język",
 	"{Exit from game}" : "Wyjdź z gry",
 	"{Hunting}" : "Polowanie",
-	"{Go to home}": "Idź do domu"
+	"{Go to home}": "Idź do domu",
+	"{Check warehouse}": "Sprawdź magazy",
+	"{Check bag}": "Sprawdź plecak"
 }

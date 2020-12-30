@@ -1,6 +1,8 @@
 import 'dart:io';
 import 'dart:math';
 
+import '../inventory/BagMenu.dart';
+import '../inventory/WarehouseMenu.dart';
 import '../langs/Language.dart';
 import '../langs/LanguagesTypes.dart';
 
@@ -16,7 +18,9 @@ class Handlers {
     'hunting': hunting,
     'changeLanguage': changeLanguage,
     'game_over': gameOver,
-    'gotoHome': gotoHome
+    'gotoHome': gotoHome,
+    'warehouseInventory': warehouseInventory,
+    'bagInventory': bagInventory
   };
 
   /// Run method using method [name]
@@ -95,5 +99,13 @@ class Handlers {
   static void gotoHome() {
     Game.clearConsole();
     Game.hero.changeLocation(Game.locations[0]);
+  }
+
+  static void warehouseInventory() {
+    WarehouseMenu.show(restart: true);
+  }
+
+  static void bagInventory() {
+    BagMenu.show(restart: true);
   }
 }
