@@ -1,3 +1,6 @@
+import '../langs/Language.dart';
+import '../langs/LanguagesTypes.dart';
+
 class Item {
   final int id;
   final String name;
@@ -29,6 +32,10 @@ class Item {
     });
     return '{ "id": $id, "name": "$name", "type": $type, "benefits": $ben, "count": $count }';
   }
+
+  String get tName {
+    return Language.getTranslation(LanguagesTypes.ITEMS, name);
+  }
 }
 
 class ItemTypes {
@@ -36,4 +43,13 @@ class ItemTypes {
   static const int SHIELD = 1;
   static const int ARMMOR = 2;
   static const int WEAPON = 3;
+
+  static List<String> asList() {
+    return [
+      "{Food}",
+      "{Shield}",
+      "{Armmor}",
+      "{Weapon}",
+    ];
+  }
 }
