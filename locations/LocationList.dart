@@ -17,6 +17,7 @@ class LocationList {
           {'name': '{Talking with Friend}', 'handlerName': 'talkingWithFriend'},
           {'name': '{Change location}', 'handlerName': 'changeLocation'},
           {'name': '{Go sleep and save game}', 'handlerName': 'goSleep'},
+          {'name': '{Check warehouse}', 'handlerName': 'warehouseInventory'},
           {'name': '{Change language}', 'handlerName': 'changeLanguage'},
           {'name': '{Exit from game}', 'handlerName': 'exit'}
         ]
