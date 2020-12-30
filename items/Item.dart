@@ -10,9 +10,12 @@ class Item {
 
   /// map<stat, count>
   final Map<int, int> benefits;
+  final Map<String, int> chance;
+  bool isWear;
+
   int count;
 
-  Item(this.id, this.name, this.type, this.benefits) {
+  Item(this.id, this.name, this.type, this.benefits, this.chance, this.isWear) {
     this.count = 0;
   }
 
@@ -30,7 +33,7 @@ class Item {
     benefits.forEach((stat, count) {
       ben.putIfAbsent('"$stat"', () => count);
     });
-    return '{ "id": $id, "name": "$name", "type": $type, "benefits": $ben, "count": $count }';
+    return '{ "id": $id, "name": "$name", "type": $type, "benefits": $ben, "count": $count, "chance": {"min": ${chance["min"]}, "max": ${chance["max"]}}, "isWear": $isWear}';
   }
 
   String get tName {
