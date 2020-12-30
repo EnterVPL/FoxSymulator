@@ -17,6 +17,9 @@ class Fox extends Animals {
   Location location;
   Inventory bag;
   Inventory warehouse;
+  Item usingWeapon;
+  Item usingShield;
+  Item usingArmmor;
 
   List<int> minMaxComfort = [1, 10];
   int get satiety {
@@ -156,9 +159,10 @@ class Fox extends Animals {
         int id = value['id'];
         String name = value['name'];
         Map<int, int> benefits = value['benefits'];
-        Item item = new Item(id, name, type, benefits);
-        bag.addItem(item);
-        warehouse.addItem(item);
+        Item itemB = new Item(id, name, type, benefits);
+        bag.addItem(itemB);
+        Item itemW = new Item(id, name, type, benefits);
+        warehouse.addItem(itemW);
       });
     });
   }
