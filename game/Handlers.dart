@@ -1,7 +1,8 @@
 import 'dart:io';
 import 'dart:math';
 
-import '../inventory/InventoryMenu.dart';
+import '../inventory/BagMenu.dart';
+import '../inventory/WarehouseMenu.dart';
 import '../langs/Language.dart';
 import '../langs/LanguagesTypes.dart';
 
@@ -18,7 +19,8 @@ class Handlers {
     'changeLanguage': changeLanguage,
     'game_over': gameOver,
     'gotoHome': gotoHome,
-    'warehouseInventory': warehouseInventory
+    'warehouseInventory': warehouseInventory,
+    'bagInventory': bagInventory
   };
 
   /// Run method using method [name]
@@ -100,6 +102,10 @@ class Handlers {
   }
 
   static void warehouseInventory() {
-    WarehouseMenu.selectAction();
+    WarehouseMenu.show(restart: true);
+  }
+
+  static void bagInventory() {
+    BagMenu.show(restart: true);
   }
 }
