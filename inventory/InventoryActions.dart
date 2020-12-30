@@ -75,11 +75,14 @@ class InventoryActions {
               Game.hero.usingArmmor.benefits.forEach((type, value) {
                 Game.hero.stats[type] -= value;
               });
+              Game.hero.usingArmmor.isWear = false;
+              inventor.items[itemType][itemId].isWear = true;
               Game.hero.usingArmmor = inventor.items[itemType][itemId];
               inventor.items[itemType][itemId].benefits.forEach((type, value) {
                 Game.hero.stats[type] += value;
               });
             } else {
+              inventor.items[itemType][itemId].isWear = true;
               Game.hero.usingArmmor = inventor.items[itemType][itemId];
               inventor.items[itemType][itemId].benefits.forEach((type, value) {
                 Game.hero.stats[type] += value;
@@ -94,11 +97,14 @@ class InventoryActions {
               Game.hero.usingShield.benefits.forEach((type, value) {
                 Game.hero.stats[type] -= value;
               });
+              Game.hero.usingShield.isWear = false;
+              inventor.items[itemType][itemId].isWear = true;
               Game.hero.usingShield = inventor.items[itemType][itemId];
               inventor.items[itemType][itemId].benefits.forEach((type, value) {
                 Game.hero.stats[type] += value;
               });
             } else {
+              inventor.items[itemType][itemId].isWear = true;
               Game.hero.usingShield = inventor.items[itemType][itemId];
               inventor.items[itemType][itemId].benefits.forEach((type, value) {
                 Game.hero.stats[type] += value;
@@ -113,11 +119,14 @@ class InventoryActions {
               Game.hero.usingWeapon.benefits.forEach((type, value) {
                 Game.hero.stats[type] -= value;
               });
+              Game.hero.usingWeapon.isWear = false;
+              inventor.items[itemType][itemId].isWear = true;
               Game.hero.usingWeapon = inventor.items[itemType][itemId];
               inventor.items[itemType][itemId].benefits.forEach((type, value) {
                 Game.hero.stats[type] += value;
               });
             } else {
+              inventor.items[itemType][itemId].isWear = true;
               Game.hero.usingWeapon = inventor.items[itemType][itemId];
               inventor.items[itemType][itemId].benefits.forEach((type, value) {
                 Game.hero.stats[type] += value;
