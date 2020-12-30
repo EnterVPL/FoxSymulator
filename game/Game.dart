@@ -87,6 +87,10 @@ class Game {
     print("\x1B[2J\x1B[0;0H");
   }
 
+  static String text_bold(String text) {
+    return "\x1b[1m${text}\x1b[0m";
+  }
+
   /// Checking game is continued.
   /// If game is not continuing (if it is first run or normal run) then the game is running 'startGame()' method
   static void nextTurn() {
