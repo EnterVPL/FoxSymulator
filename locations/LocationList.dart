@@ -32,6 +32,7 @@ class LocationList {
             'speed': 10,
             'strengh': 2,
             'defence': 2,
+            'loot': {"min": 1, "max": 20}
           },
           {
             'name': '{rabbit}',
@@ -39,6 +40,7 @@ class LocationList {
             'speed': 20,
             'strengh': 3,
             'defence': 3,
+            'loot': {"min": 1, "max": 30}
           },
         ],
         'actions': [
@@ -65,6 +67,7 @@ class LocationList {
             'speed': 10,
             'strengh': 2,
             'defence': 2,
+            'loot': {"min": 50, "max": 205}
           },
         ],
         'actions': [

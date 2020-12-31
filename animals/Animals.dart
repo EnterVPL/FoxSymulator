@@ -8,6 +8,7 @@ class Animals {
   String _name;
   Map<int, int> stats = new Map();
   bool isLive = true;
+  Map<String, int> loots = new Map();
 
   int get acctualHp {
     return stats[StatsType.ACCTUALHP];
@@ -53,13 +54,15 @@ class Animals {
     return Language.getTranslation(LanguagesTypes.ANIMALS, this._name);
   }
 
-  Animals create(String name, int maxHp, int speed, int strengh, int defence) {
+  Animals create(String name, int maxHp, int speed, int strengh, int defence,
+      Map<String, int> loots) {
     Animals animal = new Animals();
     animal._name = name;
     animal.maxHp = animal.acctualHp = maxHp;
     animal.speed = speed;
     animal.strengh = strengh;
     animal.defence = defence;
+    animal.loots = loots;
     return animal;
   }
 

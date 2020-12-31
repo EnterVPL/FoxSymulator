@@ -28,6 +28,8 @@ class Game {
 
   static String currnetLangPath = './lang.foxy';
 
+  static int stepCounter = 0;
+
   Game() {
     initGame();
   }
@@ -65,11 +67,17 @@ class Game {
                   animal['maxHp'],
                   animal['speed'],
                   animal['strengh'],
-                  animal['defence']));
+                  animal['defence'],
+                  animal['loot']));
             }
           } else {
-            newLoc.addAnimal((Animals()).create(animal['name'], animal['maxHp'],
-                animal['speed'], animal['strengh'], animal['defence']));
+            newLoc.addAnimal((Animals()).create(
+                animal['name'],
+                animal['maxHp'],
+                animal['speed'],
+                animal['strengh'],
+                animal['defence'],
+                animal['loot']));
           }
         }
       }
@@ -160,11 +168,20 @@ class Game {
   static doChoise(int choise) {
     if (hero.location.actions.asMap().containsKey(choise)) {
       --hero.energy;
+      ++stepCounter;
+      if (stepCounter % 2 == 0) {
+        --hero.satiety;
+      }
       if (hero.energy > 0 ||
           hero.location.actions[choise].handlerName == "goSleep") {
         Handlers.call(hero.location.actions[choise].handlerName);
       } else if (hero.energy <= 0) {
-        Handlers.call('game_over');
+        Handlers.call('game_over_energy');
+      }
+      if (hero.satiety <= 0) {
+        Handlers.call('game_over_satiety');
+      } else if (hero.acctualHp <= 0) {
+        Handlers.call('game_over_hp');
       }
     }
   }
@@ -237,5 +254,6 @@ class Game {
     });
 
     ++Game.hero.energy;
+    --Game.stepCounter;
   }
 }
