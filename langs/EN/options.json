@@ -4,5 +4,7 @@
 	"{I prefer}" : "I prefer",
 	"{enter to continue}": "| Please press enter to continue |",
 	"{Game was saved}": "Game was saved",
-	"{game_over_energy}": "Your fox has not energy to live and die..\nReopen the game to load the last save\n\n| Press enter to exit |"
+	"{game_over_energy}": "Your fox has not energy to live and died..\nReopen the game to load the last save\n\n| Press enter to exit |",
+	"{game_over_satiety}": "Your fox was too hungry and died..\nReopen the game to load the last save\n\n| Press enter to exit |",
+	"{game_over_hp}": "Your fox was killed and died..\nReopen the game to load the last save\n\n| Press enter to exit |"
 }

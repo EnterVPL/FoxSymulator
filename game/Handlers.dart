@@ -17,7 +17,9 @@ class Handlers {
     'exit': exit,
     'hunting': hunting,
     'changeLanguage': changeLanguage,
-    'game_over': gameOver,
+    'game_over_energy': gameOverEnergy,
+    'game_over_satiety': gameOverSatiety,
+    'game_over_hp': gameOverHP,
     'gotoHome': gotoHome,
     'warehouseInventory': warehouseInventory,
     'bagInventory': bagInventory
@@ -71,6 +73,10 @@ class Handlers {
   /// Go sleep and save the game
   static void goSleep() {
     Game.hero.energy = Game.hero.minMaxComfort.reduce(max);
+    Game.hero.acctualHp += 3;
+    if (Game.hero.acctualHp > Game.hero.maxHp) {
+      Game.hero.acctualHp = Game.hero.maxHp;
+    }
     Game.save();
   }
 
@@ -88,10 +94,25 @@ class Handlers {
     Game.changeLanguage();
   }
 
-  static void gameOver() {
+  static void gameOverEnergy() {
     Game.clearConsole();
     print(
         Language.getTranslation(LanguagesTypes.OPTIONS, "{game_over_energy}"));
+    stdin.readLineSync();
+    Game.isExit = true;
+  }
+
+  static void gameOverSatiety() {
+    Game.clearConsole();
+    print(
+        Language.getTranslation(LanguagesTypes.OPTIONS, "{game_over_satiety}"));
+    stdin.readLineSync();
+    Game.isExit = true;
+  }
+
+  static void gameOverHP() {
+    Game.clearConsole();
+    print(Language.getTranslation(LanguagesTypes.OPTIONS, "{game_over_hp}"));
     stdin.readLineSync();
     Game.isExit = true;
   }
