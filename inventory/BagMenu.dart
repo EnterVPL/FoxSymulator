@@ -1,4 +1,5 @@
 import '../animals/Stats.dart';
+import '../game/Color.dart';
 import '../game/Game.dart';
 import '../items/Item.dart';
 import '../langs/Language.dart';
@@ -92,12 +93,14 @@ class BagMenu {
     List<BagAction> listType = new List();
     Map<int, Item> items = Game.hero.bag.items[_itemType];
     items.forEach((key, item) {
-      String tName = item.isWear ? Game.text_bold(item.tName) : item.tName;
-      String cOfTab = " \t\t";
-      if (tName.length > 20) {
-        cOfTab = " ";
-      } else if (tName.length >= 12) {
+      int highTextLen = Color.cyanBold("").length;
+      String tName = item.isWear ? Color.cyanBold(item.tName) : item.tName;
+      int tNameLen = item.isWear ? tName.length - highTextLen : tName.length;
+      String cOfTab = " \t\t\t";
+      if (tNameLen >= 20) {
         cOfTab = " \t";
+      } else if (tNameLen >= 12) {
+        cOfTab = " \t\t";
       }
       String benefits = '';
       item.benefits.forEach((stat, value) {

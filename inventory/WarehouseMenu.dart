@@ -101,11 +101,11 @@ class WarehouseMenu {
     Map<int, Item> items = Game.hero.warehouse.items[_itemType];
     items.forEach((key, item) {
       String tName = item.tName;
-      String cOfTab = " \t\t";
-      if (tName.length > 20) {
-        cOfTab = " ";
-      } else if (tName.length >= 12) {
+      String cOfTab = " \t\t\t";
+      if (tName.length >= 20) {
         cOfTab = " \t";
+      } else if (tName.length >= 12) {
+        cOfTab = " \t\t";
       }
       String benefits = '';
       item.benefits.forEach((stat, value) {
