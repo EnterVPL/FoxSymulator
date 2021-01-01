@@ -8,6 +8,7 @@ import '../langs/LanguagesTypes.dart';
 import '../locations/Location.dart';
 import '../locations/LocationList.dart';
 import 'Actions.dart';
+import 'Color.dart';
 import 'Handlers.dart';
 
 /// Main game class
@@ -129,15 +130,33 @@ class Game {
     int maxComfort = hero.minMaxComfort.reduce(max);
     String name = '${fastStatsTranslate("{name}")}: ${hero.name}';
     String location = '${fastStatsTranslate("{location}")}: ${hero.location}';
+    String acctualHpString = "${hero.acctualHp}";
+    if (hero.acctualHp <= hero.maxHp / 2 && hero.acctualHp > hero.maxHp / 5) {
+      acctualHpString = Color.yellowBold(acctualHpString);
+    } else if (hero.acctualHp <= 3) {
+      acctualHpString = Color.redBold(acctualHpString);
+    }
     String hp =
-        '${fastStatsTranslate("{HP}")}: ${hero.acctualHp}/${hero.maxHp}';
+        '${fastStatsTranslate("{HP}")}: ${acctualHpString}/${hero.maxHp}';
     String strengh = '${fastStatsTranslate("{strengh}")}: ${hero.strengh}';
     String defence = '${fastStatsTranslate("{defence}")}: ${hero.defence}';
     String speed = '${fastStatsTranslate("{speed}")}: ${hero.speed}';
+    String satietyString = "${hero.satiety}";
+    if (hero.satiety <= 5 && hero.satiety > 3) {
+      satietyString = Color.yellowBold(satietyString);
+    } else if (hero.satiety <= 3) {
+      satietyString = Color.redBold(satietyString);
+    }
     String satiety =
-        '${fastStatsTranslate("{satiety}")}: ${hero.satiety}/$maxComfort';
+        '${fastStatsTranslate("{satiety}")}: ${satietyString}/$maxComfort';
+    String energyString = "${hero.energy}";
+    if (hero.energy <= 5 && hero.energy > 3) {
+      energyString = Color.yellowBold(energyString);
+    } else if (hero.energy <= 3) {
+      energyString = Color.redBold(energyString);
+    }
     String energy =
-        '${fastStatsTranslate("{energy}")}: ${hero.energy}/$maxComfort';
+        '${fastStatsTranslate("{energy}")}: ${energyString}/$maxComfort';
 
     print('$name \t $location');
     print('$hp \t $strengh \t $defence \t $speed');
