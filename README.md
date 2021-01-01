@@ -16,6 +16,7 @@ It's a very good question. My anwser is it: In this game you play fox because a 
 
 # Game releases:
 ## 1.0.0 [First full verion](https://github.com/EnterVPL/FoxSymulator/releases/tag/1.0.0)
+## 1.0.1 [Path](https://github.com/EnterVPL/FoxSymulator/releases/tag/1.0.1)
 
 ## About me:
 I still study English. If I do mistakes than remember: you can call to me and **point out mistakes**.
