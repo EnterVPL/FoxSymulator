@@ -10,6 +10,6 @@
     "{Shield}": "Tarcza",
     "{Armmor}": "Pancerz",
     "{Weapon}": "Broń",
-    "{WarehouseMenuItemTitle}" : "Wybierz przedmiot",
+    "{WarehouseMenuItemTitle}" : "Wybierz przedmiot\nZamknięcie - nic nie pisz i naciśnij enter\n",
     "{Loot_title}": "Zdobywasz"
 }

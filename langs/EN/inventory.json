@@ -10,6 +10,6 @@
     "{Shield}": "Shield",
     "{Armmor}": "Armmor",
     "{Weapon}": "Weapon",
-    "{WarehouseMenuItemTitle}" : "Choose item",
+    "{WarehouseMenuItemTitle}" : "Choose item\nClose - don't write anything and press enter\n",
     "{Loot_title}": "You get"
 }
