@@ -46,7 +46,8 @@ class BagMenu {
   }
 
   static void selectAction() {
-    Game.printOptions(_titleAction, _listAction, _handlerAction, (int no) {});
+    Game.printOptions(_titleAction, _listAction, _handlerAction, (int no) {},
+        isPirntStats: true);
   }
 
   static void _handlerAction(int no) {
@@ -86,7 +87,8 @@ class BagMenu {
     _maxTypes = itemTypesList.length;
     listType.add(new BagAction(_translate('{Back}')));
 
-    Game.printOptions(_titleType, listType, _handlerAction, (int no) {});
+    Game.printOptions(_titleType, listType, _handlerAction, (int no) {},
+        isPirntStats: true);
   }
 
   static void selectItem() {
@@ -116,7 +118,8 @@ class BagMenu {
           .add(new BagAction("${tName}${cOfTab}(${item.count})\t${benefits}"));
     });
     listType.add(new BagAction(_translate('{Back}')));
-    Game.printOptions(_titleItem, listType, _handlerAction, (int no) {});
+    Game.printOptions(_titleItem, listType, _handlerAction, (int no) {},
+        isPirntStats: true);
   }
 
   static void doAction(int typeOfAction, int itemType, int itemId) {

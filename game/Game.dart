@@ -222,8 +222,12 @@ class Game {
   ///
   /// [handlerMistake] is using if number of choise is not recognized
   static void printOptions(
-      String title, List optionsList, var handler, var handlerMistake) {
+      String title, List optionsList, var handler, var handlerMistake,
+      {bool isPirntStats: false}) {
     clearConsole();
+    if (isPirntStats) {
+      printStats();
+    }
     int upper = 1;
     print(title);
     optionsList.asMap().forEach((key, val) {

@@ -47,7 +47,8 @@ class WarehouseMenu {
   }
 
   static void selectAction() {
-    Game.printOptions(_titleAction, _listAction, _handlerAction, (int no) {});
+    Game.printOptions(_titleAction, _listAction, _handlerAction, (int no) {},
+        isPirntStats: true);
   }
 
   static void _handlerAction(int no) {
@@ -93,7 +94,8 @@ class WarehouseMenu {
 
     listType.add(new WarehouseAction(_translate('{Back}')));
 
-    Game.printOptions(_titleType, listType, _handlerAction, (int no) {});
+    Game.printOptions(_titleType, listType, _handlerAction, (int no) {},
+        isPirntStats: true);
   }
 
   static void selectItem() {
@@ -121,7 +123,8 @@ class WarehouseMenu {
           new WarehouseAction("${tName}${cOfTab}(${item.count})\t${benefits}"));
     });
     listType.add(new WarehouseAction(_translate('{Back}')));
-    Game.printOptions(_titleItem, listType, _handlerAction, (int no) {});
+    Game.printOptions(_titleItem, listType, _handlerAction, (int no) {},
+        isPirntStats: true);
   }
 
   static void doAction(int typeOfAction, int itemType, int itemId) {
