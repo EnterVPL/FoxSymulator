@@ -1,6 +1,8 @@
 import 'dart:io';
 import 'dart:math';
 
+import '../inventory/BagMenu.dart';
+import '../inventory/WarehouseMenu.dart';
 import '../langs/Language.dart';
 import '../langs/LanguagesTypes.dart';
 
@@ -15,8 +17,12 @@ class Handlers {
     'exit': exit,
     'hunting': hunting,
     'changeLanguage': changeLanguage,
-    'game_over': gameOver,
-    'gotoHome': gotoHome
+    'game_over_energy': gameOverEnergy,
+    'game_over_satiety': gameOverSatiety,
+    'game_over_hp': gameOverHP,
+    'gotoHome': gotoHome,
+    'warehouseInventory': warehouseInventory,
+    'bagInventory': bagInventory
   };
 
   /// Run method using method [name]
@@ -67,6 +73,10 @@ class Handlers {
   /// Go sleep and save the game
   static void goSleep() {
     Game.hero.energy = Game.hero.minMaxComfort.reduce(max);
+    Game.hero.acctualHp += 3;
+    if (Game.hero.acctualHp > Game.hero.maxHp) {
+      Game.hero.acctualHp = Game.hero.maxHp;
+    }
     Game.save();
   }
 
@@ -84,7 +94,7 @@ class Handlers {
     Game.changeLanguage();
   }
 
-  static void gameOver() {
+  static void gameOverEnergy() {
     Game.clearConsole();
     print(
         Language.getTranslation(LanguagesTypes.OPTIONS, "{game_over_energy}"));
@@ -92,8 +102,31 @@ class Handlers {
     Game.isExit = true;
   }
 
+  static void gameOverSatiety() {
+    Game.clearConsole();
+    print(
+        Language.getTranslation(LanguagesTypes.OPTIONS, "{game_over_satiety}"));
+    stdin.readLineSync();
+    Game.isExit = true;
+  }
+
+  static void gameOverHP() {
+    Game.clearConsole();
+    print(Language.getTranslation(LanguagesTypes.OPTIONS, "{game_over_hp}"));
+    stdin.readLineSync();
+    Game.isExit = true;
+  }
+
   static void gotoHome() {
     Game.clearConsole();
     Game.hero.changeLocation(Game.locations[0]);
+  }
+
+  static void warehouseInventory() {
+    WarehouseMenu.show(restart: true);
+  }
+
+  static void bagInventory() {
+    BagMenu.show(restart: true);
   }
 }

@@ -2,3 +2,7 @@ bin/
 your.foxy
 .vscode/
 lang.foxy
+bag.foxy
+worehouse.foxy
+FoxSimulator.run
+FoxSimulator.exe

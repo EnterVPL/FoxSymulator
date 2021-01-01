@@ -1,0 +1,15 @@
+{
+    "{WarehouseMenuActionTitle}": "Co wolisz?",
+    "{Get items}": "Wziąć przedmioty",
+    "{Use items}": "Użyć przedmioty",
+    "{Put items}": "Schować przedmioty",
+    "{Remove items}": "Usunąć przedmioty",
+    "{Back}": "Wrócić",
+    "{WarehouseMenuTypeTitle}" : "Wybierz typ ekwipunku",
+    "{Food}": "Jedzenie",
+    "{Shield}": "Tarcza",
+    "{Armmor}": "Pancerz",
+    "{Weapon}": "Broń",
+    "{WarehouseMenuItemTitle}" : "Wybierz przedmiot\nZamknięcie - nic nie pisz i naciśnij enter\n",
+    "{Loot_title}": "Zdobywasz"
+}

@@ -14,8 +14,9 @@ My girlfriend asked me: Why a fox? Why not a dog, why not a cat?
 It's a very good question. My anwser is it: In this game you play fox because a fox is something between a pet and an animal. Fox is nice and likes to eat chickens like me. Survival is less brutal for a fox and more brutal for a dog or a cat. And foxes have a pretty good song about them. These are the reasons for why in this game you play fox.
 ![screenshot](https://i.snipboard.io/BAzY40.jpg)
 
-### Game progress:
-#### 40% 
+# Game releases:
+## 1.0.0 [First full verion](https://github.com/EnterVPL/FoxSymulator/releases/tag/1.0.0)
+## 1.0.1 [Path](https://github.com/EnterVPL/FoxSymulator/releases/tag/1.0.1)
 
 ## About me:
 I still study English. If I do mistakes than remember: you can call to me and **point out mistakes**.

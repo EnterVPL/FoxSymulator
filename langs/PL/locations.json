@@ -4,5 +4,12 @@
 	"{home}": "Dom",
 	"{farm}": "Farma",
 	"{void}": "Pustka",
-	"{moutain}": "Góry"
+	"{moutain}": "Góry",
+	"{chicken_farm}": "Ferma drobiu",
+	"{Rabbit_farm}": "Ferma królików",
+	"{Dairy_farm}": "Gospodarstwo mleczne",
+	"{Sunny forest}": "Słoneczny las",
+	"{Picnic forest}": "Piknikowy las",
+	"{riven}": "Popularna rzeka",
+	"{Landfill}": "Składowisko odpadów"
 }
