@@ -37,33 +37,33 @@ class LocationList {
         'animals': [
           {
             'name': '{chicken}',
-            'maxHp': 10,
-            'speed': 10,
-            'strengh': 2,
+            'maxHp': 8,
+            'speed': 14,
+            'strengh': 4,
             'defence': 2,
             'loot': {"min": 1, "max": 20}
           },
           {
             'name': '{Turkey}',
-            'maxHp': 20,
+            'maxHp': 22,
             'speed': 13,
-            'strengh': 3,
-            'defence': 2,
+            'strengh': 11,
+            'defence': 6,
             'loot': {"min": 1, "max": 45}
           },
           {
             'name': '{small_dog}',
-            'maxHp': 20,
-            'speed': 15,
-            'strengh': 4,
-            'defence': 5,
+            'maxHp': 14,
+            'speed': 24,
+            'strengh': 7,
+            'defence': 3,
             'loot': {"min": 3, "max": 50}
           },
           {
             'name': '{normal_dog}',
             'maxHp': 30,
-            'speed': 20,
-            'strengh': 5,
+            'speed': 48,
+            'strengh': 15,
             'defence': 7,
             'loot': {"min": 10, "max": 65}
           },
@@ -75,25 +75,25 @@ class LocationList {
         'animals': [
           {
             'name': '{rabbit}',
-            'maxHp': 10,
-            'speed': 20,
+            'maxHp': 6,
+            'speed': 70,
             'strengh': 3,
-            'defence': 2,
+            'defence': 1,
             'loot': {"min": 1, "max": 40}
           },
           {
             'name': '{small_dog}',
-            'maxHp': 20,
-            'speed': 15,
-            'strengh': 4,
-            'defence': 5,
+            'maxHp': 14,
+            'speed': 24,
+            'strengh': 7,
+            'defence': 3,
             'loot': {"min": 3, "max": 50}
           },
           {
             'name': '{normal_dog}',
             'maxHp': 30,
-            'speed': 20,
-            'strengh': 5,
+            'speed': 48,
+            'strengh': 15,
             'defence': 7,
             'loot': {"min": 10, "max": 65}
           }
@@ -105,33 +105,33 @@ class LocationList {
         'animals': [
           {
             'name': '{cow}',
-            'maxHp': 40,
-            'speed': 10,
-            'strengh': 6,
-            'defence': 5,
+            'maxHp': 1440,
+            'speed': 40,
+            'strengh': 720,
+            'defence': 360,
             'loot': {"min": 15, "max": 65}
           },
           {
             'name': '{pig}',
-            'maxHp': 20,
-            'speed': 10,
-            'strengh': 5,
-            'defence': 3,
+            'maxHp': 500,
+            'speed': 18,
+            'strengh': 250,
+            'defence': 125,
             'loot': {"min": 5, "max": 40}
           },
           {
-            'name': '{small_dog}',
-            'maxHp': 20,
-            'speed': 15,
-            'strengh': 4,
-            'defence': 5,
+           'name': '{small_dog}',
+            'maxHp': 14,
+            'speed': 24,
+            'strengh': 7,
+            'defence': 3,
             'loot': {"min": 3, "max": 50}
           },
           {
             'name': '{normal_dog}',
             'maxHp': 30,
-            'speed': 20,
-            'strengh': 5,
+            'speed': 48,
+            'strengh': 15,
             'defence': 7,
             'loot': {"min": 10, "max": 65}
           },
@@ -145,10 +145,10 @@ class LocationList {
           },
           {
             'name': '{hot_dog}',
-            'maxHp': 60,
-            'speed': 30,
-            'strengh': 9,
-            'defence': 8,
+            'maxHp': 36,
+            'speed': 69,
+            'strengh': 18,
+            'defence': 9,
             'loot': {"min": 50, "max": 110}
           },
         ],
@@ -159,47 +159,47 @@ class LocationList {
         'animals': [
           {
             'name': '{deer}',
-            'maxHp': 40,
-            'speed': 20,
-            'strengh': 6,
-            'defence': 5,
+            'maxHp': 1600,
+            'speed': 48,
+            'strengh': 80,
+            'defence': 40,
             'loot': {"min": 15, "max": 65}
           },
           {
             'name': '{Bear}',
-            'maxHp': 50,
-            'speed': 15,
-            'strengh': 10,
-            'defence': 5,
+            'maxHp': 1240,
+            'speed': 35,
+            'strengh': 620,
+            'defence': 310,
             'loot': {"min": 40, "max": 120}
           },
           {
             'name': '{Fox}',
-            'maxHp': 25,
-            'speed': 15,
-            'strengh': 5,
-            'defence': 10,
+            'maxHp': 36,
+            'speed': 50,
+            'strengh': 14,
+            'defence': 7,
             'loot': {"min": 1, "max": 1000}
           },
           {
             'name': '{Lynx}',
-            'maxHp': 20,
-            'speed': 13,
-            'strengh': 4,
-            'defence': 7,
+            'maxHp': 18,
+            'speed': 80,
+            'strengh': 9,
+            'defence': 4,
             'loot': {"min": 4, "max": 50}
           },
           {
             'name': '{Wolf}',
-            'maxHp': 28,
-            'speed': 17,
-            'strengh': 8,
-            'defence': 8,
+            'maxHp': 160,
+            'speed': 60,
+            'strengh': 80,
+            'defence': 40,
             'loot': {"min": 20, "max": 70}
           },
           {
             'name': '{Rat}',
-            'maxHp': 5,
+            'maxHp': 4,
             'speed': 15,
             'strengh': 2,
             'defence': 1,
@@ -215,10 +215,10 @@ class LocationList {
           },
           {
             'name': '{Forester}',
-            'maxHp': 25,
-            'speed': 10,
-            'strengh': 6,
-            'defence': 5,
+            'maxHp': 160,
+            'speed': 25,
+            'strengh': 80,
+            'defence': 40,
             'loot': {"min": 15, "max": 65}
           },
         ],
@@ -267,10 +267,10 @@ class LocationList {
         'animals': [
           {
             'name': '{goat}',
-            'maxHp': 10,
-            'speed': 10,
-            'strengh': 2,
-            'defence': 2,
+            'maxHp': 280,
+            'speed': 24,
+            'strengh': 140,
+            'defence': 70,
             'loot': {"min": 50, "max": 205}
           },
           {
