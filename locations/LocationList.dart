@@ -1,3 +1,5 @@
+import '../animals/AnimalsList.dart';
+
 /// Saved each location / action / animal / etc. etc.
 class LocationList {
   static List<Map<String, dynamic>> get globalActions {
@@ -35,14 +37,7 @@ class LocationList {
       {
         'name': '{chicken_farm}',
         'animals': [
-          {
-            'name': '{chicken}',
-            'maxHp': 10,
-            'speed': 10,
-            'strengh': 2,
-            'defence': 2,
-            'loot': {"min": 1, "max": 20}
-          },
+          AnimalsList.getter["Chicken"],
           {
             'name': '{Turkey}',
             'maxHp': 20,
