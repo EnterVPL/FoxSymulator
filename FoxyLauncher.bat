@@ -5,7 +5,6 @@ IF "%1" == "" (
     EXIT
 ) else ( >NUL REG DELETE HKCU\Console\GameEngine /f )
 
-ECHO Hello, I'm in a different font^!
-PAUSE
+FoxSimulator.exe
 EXIT
 @ECHO ON
