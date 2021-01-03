@@ -97,7 +97,6 @@ class Game {
   static void clearConsole() {
     final console = Console();
     console.clearScreen();
-    console.resetCursorPosition();
   }
 
   static String text_bold(String text) {
