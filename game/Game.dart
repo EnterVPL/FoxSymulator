@@ -94,7 +94,9 @@ class Game {
   /// Universal method to clear console for Windows and Linux
   static void clearConsole() {
     if (Platform.isWindows) {
-      Process.runSync("cls", [], runInShell: true).stdout;
+      for (int i = 0; i < stdout.terminalLines; i++) {
+        stdout.writeln();
+      }
     } else {
       print("\x1B[2J\x1B[0;0H");
     }
