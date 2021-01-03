@@ -1,0 +1,15 @@
+{
+    "{WarehouseMenuActionTitle}": "あなたは何を好むか？",
+    "{Get items}": "アイテムを取得する",
+    "{Use items}": "アイテムを使用する",
+    "{Put items}": "アイテムを入れる",
+    "{Remove items}": "アイテムの削除",
+    "{Back}": "戻る",
+    "{WarehouseMenuTypeTitle}" : "機器の種類を選択する",
+    "{Food}": "食品",
+    "{Shield}": "シールド",
+    "{Armmor}": "鎧",
+    "{Weapon}": "武器",
+    "{WarehouseMenuItemTitle}" : "アイテムの選択\n閉じる - 何も書き込みしないで Enter キーを押す\n",
+    "{Loot_title}": "あなたは得る"
+}
