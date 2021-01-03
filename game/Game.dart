@@ -1,6 +1,8 @@
 import 'dart:io';
 import 'dart:math';
 
+import 'package:dart_console/dart_console.dart';
+
 import '../animals/Animals.dart';
 import '../animals/Fox.dart';
 import '../langs/Language.dart';
@@ -93,7 +95,8 @@ class Game {
 
   /// Universal method to clear console for Windows and Linux
   static void clearConsole() {
-    print("\x1B[2J\x1B[0;0H");
+    final console = Console();
+    console.clearScreen();
   }
 
   static String text_bold(String text) {
@@ -117,6 +120,9 @@ class Game {
     if (load()) {
       hero.changeLocation(locations.firstWhere((loc) => loc.name == '{home}'));
     } else {
+      changeLanguage(isStart: true);
+      hero.energy--;
+      clearConsole();
       print(
           '${Language.getTranslation(LanguagesTypes.ACTIONS, "{Enter your fox name}")}: ');
       String name = stdin.readLineSync();
@@ -263,10 +269,11 @@ class Game {
     }
   }
 
-  static void changeLanguage() {
-    printOptions(
-        Language.getTranslation(LanguagesTypes.OPTIONS, '{change language}'),
-        Language.getActive(), (choise) {
+  static void changeLanguage({bool isStart: false}) {
+    String _title = (!isStart
+        ? Language.getTranslation(LanguagesTypes.OPTIONS, '{change language}')
+        : Language.getTranslation(LanguagesTypes.OPTIONS, '{set language}'));
+    printOptions(_title, Language.getActive(), (choise) {
       Language.currentLang = Language.getActive()[choise].name;
       String data = Language.currentLang;
       File(currnetLangPath).writeAsStringSync(data);

@@ -1,0 +1,13 @@
+{
+	"{Enter your fox name}" : "キツネの名前を変更する",
+	"{Enter number of action}": "アクションの数を入力してください",
+	"{Talking with Friend}" : "友達と話す",
+	"{Change location}" : "地域を変更",
+	"{Go sleep and save game}" : "寝てゲームを保存する",
+	"{Change language}" : "言語を変えてください",
+	"{Exit from game}" : "ゲームを終了する",
+	"{Hunting}" : "狩猟",
+	"{Go to home}": "家に帰る",
+	"{Check warehouse}": "倉庫の確認",
+	"{Check bag}": "小切手袋"
+}

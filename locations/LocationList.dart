@@ -56,6 +56,7 @@ class LocationList {
       {
         'name': '{Dairy_farm}',
         'animals': [
+
           AnimalsList.getter["Cow"],
           AnimalsList.getter["Pig"],
           AnimalsList.getter["Small_dog"],
@@ -68,6 +69,7 @@ class LocationList {
       {
         'name': '{Sunny forest}',
         'animals': [
+
           AnimalsList.getter["Deer"],
           AnimalsList.getter["Bear"],
           AnimalsList.getter["Fox"],
