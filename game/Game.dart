@@ -96,7 +96,6 @@ class Game {
     if (Platform.isWindows) {
       Process.runSync("cls", [], runInShell: true).stdout;
       Process.runSync("cls", [], runInShell: true);
-      Process.runSync("cls", []);
     } else {
       print("\x1B[2J\x1B[0;0H");
     }
