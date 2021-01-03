@@ -117,6 +117,9 @@ class Game {
     if (load()) {
       hero.changeLocation(locations.firstWhere((loc) => loc.name == '{home}'));
     } else {
+      changeLanguage(isStart: true);
+      hero.energy--;
+      clearConsole();
       print(
           '${Language.getTranslation(LanguagesTypes.ACTIONS, "{Enter your fox name}")}: ');
       String name = stdin.readLineSync();
@@ -263,10 +266,11 @@ class Game {
     }
   }
 
-  static void changeLanguage() {
-    printOptions(
-        Language.getTranslation(LanguagesTypes.OPTIONS, '{change language}'),
-        Language.getActive(), (choise) {
+  static void changeLanguage({bool isStart: false}) {
+    String _title = (!isStart
+        ? Language.getTranslation(LanguagesTypes.OPTIONS, '{change language}')
+        : Language.getTranslation(LanguagesTypes.OPTIONS, '{set language}'));
+    printOptions(_title, Language.getActive(), (choise) {
       Language.currentLang = Language.getActive()[choise].name;
       String data = Language.currentLang;
       File(currnetLangPath).writeAsStringSync(data);
