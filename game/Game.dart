@@ -1,6 +1,8 @@
 import 'dart:io';
 import 'dart:math';
 
+import 'package:dart_console/dart_console.dart';
+
 import '../animals/Animals.dart';
 import '../animals/Fox.dart';
 import '../langs/Language.dart';
@@ -93,7 +95,9 @@ class Game {
 
   /// Universal method to clear console for Windows and Linux
   static void clearConsole() {
-    print("\x1B[2J\x1B[0;0H");
+    final console = Console();
+    console.clearScreen();
+    console.resetCursorPosition();
   }
 
   static String text_bold(String text) {
