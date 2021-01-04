@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'game/Game.dart';
 
 void main() {
