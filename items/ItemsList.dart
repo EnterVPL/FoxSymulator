@@ -29,15 +29,21 @@ class ItemsList {
           'benefits': {StatsType.SATIETY: 2},
           'chance': {"min": 15, "max": 30}
         },
+         {
+          'id': 1,
+          'name': '{Meat}',
+          'benefits': {StatsType.SATIETY: 2},
+          'chance': {"min": 15, "max": 30}
+        },
        {
           'id': 2,
-          'name': '{Goat}',
+          'name': '{Goat meat}',
           'benefits': {StatsType.SATIETY: 3},
           'chance': {"min": 15, "max": 30}
         },
         {
           'id': 3,
-          'name': '{Deer}',
+          'name': '{Venison}',
           'benefits': {StatsType.SATIETY: 5},
           'chance': {"min": 15, "max": 30}
         },
