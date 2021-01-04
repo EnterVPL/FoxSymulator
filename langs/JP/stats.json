@@ -1,0 +1,10 @@
+{
+	"{name}" : "名前",
+	"{location}" : "場所",
+	"{HP}" : "HP",
+	"{strengh}" : "強度",
+	"{defence}" : "防衛",
+	"{speed}" : "速度",
+	"{satiety}" : "満腹 感",
+	"{energy}" : "エネルギー"
+}
