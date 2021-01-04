@@ -9,3 +9,4 @@ FoxSimulator.exe
 pubspec.lock
 .dart_tool
 .packages
+doc
