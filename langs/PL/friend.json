@@ -1,4 +1,10 @@
 {
-    "{hi_hero}": "Cześć przyjacielu, jak się masz?",
-    "{hi_friend}": "Cześć {name}. U mnie wszysto w porząsiu."
+    "{hi_hero}": "Cześć przyjacielu ...",
+    "{hi_friend}": "Cześć {name}. Co dzisiaj porobimy?",
+    "{friend_title}": "Wybierz odpowiedź",
+    "{I want to strengthen myself}": "Chcę się wzmocnić",
+    "{frined_mistake_handler}" : "Ok... Dozo!",
+    "{sell_points_title}": "Co chcesz wyćwiczyć?",
+    "{back}": "Pogadamy o czymś innym?",
+    "{exit}": "Odejdź"
 }
