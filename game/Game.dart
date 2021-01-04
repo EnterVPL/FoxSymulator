@@ -63,17 +63,7 @@ class Game {
       Location newLoc = new Location(loc['name']);
       if (loc['animals'] != null) {
         for (var animal in loc['animals']) {
-          if (animal['howMany'] != null) {
-            for (int i = 1; i <= animal['howMany']; i++) {
-              newLoc.addAnimal((Animals()).create(
-                  animal['name'],
-                  animal['maxHp'],
-                  animal['speed'],
-                  animal['strengh'],
-                  animal['defence'],
-                  animal['loot']));
-            }
-          } else {
+         if(animal == null) continue;
             newLoc.addAnimal((Animals()).create(
                 animal['name'],
                 animal['maxHp'],
@@ -81,7 +71,7 @@ class Game {
                 animal['strengh'],
                 animal['defence'],
                 animal['loot']));
-          }
+          
         }
       }
       for (var act in loc['actions']) {
