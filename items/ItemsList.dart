@@ -25,36 +25,54 @@ class ItemsList {
         },
         {
           'id': 1,
-          'name': '{Meat}',
+          'name': '{Poultry}',
           'benefits': {StatsType.SATIETY: 2},
           'chance': {"min": 15, "max": 30}
         },
-        {
+       {
           'id': 2,
+          'name': '{Goat}',
+          'benefits': {StatsType.SATIETY: 3},
+          'chance': {"min": 15, "max": 30}
+        },
+        {
+          'id': 3,
+          'name': '{Deer}',
+          'benefits': {StatsType.SATIETY: 5},
+          'chance': {"min": 15, "max": 30}
+        },
+         {
+          'id': 4,
+          'name': '{Beef}',
+          'benefits': {StatsType.SATIETY: 10},
+          'chance': {"min": 15, "max": 30}
+        },
+        {
+          'id': 5,
           'name': '{Cake}',
           'benefits': {StatsType.SATIETY: 3},
           'chance': {"min": 40, "max": 60}
         },
         {
-          'id': 3,
+          'id': 6,
           'name': '{Cake of meat}',
           'benefits': {StatsType.SATIETY: 4, StatsType.ACCTUALHP: 1},
           'chance': {"min": 50, "max": 60}
         },
         {
-          'id': 4,
+          'id': 7,
           'name': '{Energy bar}',
           'benefits': {StatsType.SATIETY: 3, StatsType.ENERGY: 1},
           'chance': {"min": 55, "max": 70}
         },
         {
-          'id': 5,
+          'id': 8,
           'name': '{Spicy hot dog}',
           'benefits': {StatsType.SATIETY: 6, StatsType.ACCTUALHP: -1},
           'chance': {"min": 50, "max": 60}
         },
         {
-          'id': 6,
+          'id': 9,
           'name': '{Golden donut}',
           'benefits': {
             StatsType.SATIETY: 4,
@@ -64,7 +82,7 @@ class ItemsList {
           'chance': {"min": 100, "max": 105}
         },
         {
-          'id': 7,
+          'id': 10,
           'name': "{Crunchy goose}",
           'benefits': {
             StatsType.SATIETY: 4,
@@ -73,11 +91,17 @@ class ItemsList {
           'chance': {"min": 70, "max": 110}
         },
         {
-          'id': 8,
+          'id': 11,
           'name': '{Strawberry cake}',
           'benefits': {StatsType.SATIETY: 5, StatsType.ACCTUALHP: 2},
           'chance': {"min": 80, "max": 110}
-        }
+        },
+        {
+          'id': 12,
+          'name': '{Raw fish}',
+          'benefits': {StatsType.SATIETY: 2},
+          'chance': {"min": 15, "max": 30}
+        },
       ],
       ItemTypes.SHIELD: [
         {
