@@ -9,6 +9,9 @@ class StatsType {
   static const int DEFENCE = 4;
   static const int SATIETY = 5;
   static const int ENERGY = 6;
+  static const int COMFORT = 7;
+  static const int EXP = 8;
+  static const int LVL = 9;
 
   static String getName(int type) {
     String tName = '';
@@ -31,6 +34,15 @@ class StatsType {
         break;
       case ENERGY:
         tName = Language.getTranslation(LanguagesTypes.STATS, "{energy}");
+        break;
+      case COMFORT:
+        tName = Language.getTranslation(LanguagesTypes.STATS, "{comfort}");
+        break;  
+      case EXP:
+        tName = Language.getTranslation(LanguagesTypes.STATS, "{experience}");
+        break;  
+      case LVL:
+        tName = Language.getTranslation(LanguagesTypes.STATS, "{level}");
         break;
     }
     return tName;
