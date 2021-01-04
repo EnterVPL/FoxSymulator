@@ -38,6 +38,22 @@ class Fox extends Animals {
     stats[StatsType.ENERGY] = count;
   }
 
+  int get exp {
+    return stats[StatsType.EXP];
+  }
+
+  set exp(int count) {
+    stats[StatsType.EXP] = count;
+  }
+
+  int get lvl {
+    return stats[StatsType.LVL];
+  }
+
+  set lvl(int count) {
+    stats[StatsType.LVL] = count;
+  }
+
   Fox(String name, Location location) {
     this.name = name;
     this.acctualHp = this.maxHp = 25;
@@ -50,6 +66,8 @@ class Fox extends Animals {
     this.bag = new Inventory(30);
     this.warehouse = new Inventory(90000);
     _generateItems();
+    this.exp = 0;
+    this.lvl = 1;
   }
 
   void changeLocation(Location location) {
