@@ -82,79 +82,115 @@ class ItemsList {
       ItemTypes.SHIELD: [
         {
           'id': 0,
-          'name': '{Weak shield}',
+          'name': '{Wood shield}',
           'benefits': {StatsType.DEFENCE: 1},
           'chance': {"min": 30, "max": 40}
         },
         {
           'id': 1,
-          'name': '{Normal shield}',
+          'name': '{Iron shield}',
           'benefits': {StatsType.DEFENCE: 2},
           'chance': {"min": 60, "max": 70}
         },
         {
           'id': 2,
+          'name': '{Mithril shield}',
+          'benefits': {StatsType.DEFENCE: 3, StatsType.STRENGH: 1},
+          'chance': {"min": 60, "max": 70}
+        },
+        {
+          'id': 3,
           'name': '{Energy shield}',
           'benefits': {StatsType.DEFENCE: 3, StatsType.SPEED: 1},
           'chance': {"min": 100, "max": 110}
         },
         {
-          'id': 3,
+          'id': 4,
           'name': '{Ironing board}',
           'benefits': {StatsType.DEFENCE: 4, StatsType.SPEED: 2},
+          'chance': {"min": 200, "max": 205}
+        },
+        {
+          'id': 5,
+          'name': '{Crystal shield}',
+          'benefits': {StatsType.DEFENCE: 5},
           'chance': {"min": 200, "max": 205}
         },
       ],
       ItemTypes.ARMMOR: [
         {
           'id': 0,
-          'name': '{Weak Armmor}',
+          'name': '{Wood Armmor}',
           'benefits': {StatsType.DEFENCE: 1},
           'chance': {"min": 30, "max": 40}
         },
         {
           'id': 1,
-          'name': '{Normal Armmor}',
+          'name': '{Iron Armmor}',
           'benefits': {StatsType.DEFENCE: 2},
           'chance': {"min": 60, "max": 70}
         },
         {
           'id': 2,
+          'name': '{Mithril Armmor}',
+          'benefits': {StatsType.DEFENCE: 3, StatsType.STRENGH: 1},
+          'chance': {"min": 60, "max": 70}
+        },
+        {
+          'id': 3,
           'name': '{Energy Armmor}',
           'benefits': {StatsType.DEFENCE: 3, StatsType.SPEED: 1},
           'chance': {"min": 100, "max": 110}
         },
         {
-          'id': 3,
+          'id': 4,
           'name': '{Pan Armmor}',
           'benefits': {StatsType.DEFENCE: 4, StatsType.SPEED: 2},
           'chance': {"min": 200, "max": 205}
+        },
+        {
+          'id': 5,
+          'name': '{Crtystal Armmor}',
+          'benefits': {StatsType.DEFENCE: 5},
+          'chance': {"min": 100, "max": 110}
         },
       ],
       ItemTypes.WEAPON: [
         {
           'id': 0,
-          'name': '{Weak Weapon}',
+          'name': '{Wood Weapon}',
           'benefits': {StatsType.STRENGH: 1},
           'chance': {"min": 30, "max": 40}
         },
         {
           'id': 1,
-          'name': '{Normal Weapon}',
+          'name': '{Iron Weapon}',
           'benefits': {StatsType.STRENGH: 2},
           'chance': {"min": 60, "max": 70}
         },
         {
           'id': 2,
+          'name': '{Mithril Weapon}',
+          'benefits': {StatsType.STRENGH: 4},
+          'chance': {"min": 60, "max": 70}
+        },
+        {
+          'id': 3,
           'name': '{Energy Weapon}',
           'benefits': {StatsType.STRENGH: 3, StatsType.SPEED: 1},
           'chance': {"min": 100, "max": 110}
         },
         {
-          'id': 3,
+          'id': 4,
           'name': "{Dragon's breath sword}",
           'benefits': {StatsType.STRENGH: 4, StatsType.SPEED: 2},
           'chance': {"min": 200, "max": 205}
+        },
+        {
+          'id': 5,
+          'name': '{Crystal Weapon}',
+          'benefits': {StatsType.STRENGH: 3, StatsType.DEFENCE: 2},
+          'chance': {"min": 100, "max": 110}
         },
       ]
     };
