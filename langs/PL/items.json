@@ -1,5 +1,6 @@
 {
     "{Apple}": "Jabłko",
+    "{Poultry}": "Drób",
     "{Meat}": "Mięso",
     "{Goat meat}": "Kozina",
     "{Venison}": "Sarnina",
@@ -21,8 +22,7 @@
     "{Mithril Armmor}": "Mitrilowy pancerz",
     "{Energy Armmor}": "Energetyczna Pancerz",
     "{Pan Armmor}": "Patelniany Pancerz",
-    "{Weak Weapon}": "Słaba Broń",
-    "{Crtystal Armmor": "Kryształowy pancerz",
+    "{Crtystal Armmor}": "Kryształowy pancerz",
     "{Wood Weapon}": "Drewniana broń",
     "{Iron Weapon}": "Żelazna broń",
     "{Mithril Weapon}": "Mitrilowa broń",

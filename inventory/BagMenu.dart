@@ -95,6 +95,7 @@ class BagMenu {
     List<BagAction> listType = new List();
     Map<int, Item> items = Game.hero.bag.items[_itemType];
     items.forEach((key, item) {
+      print(item.name);
       int highTextLen = Color.cyanBold("").length;
       String tName = item.isWear ? Color.cyanBold(item.tName) : item.tName;
       int tNameLen = item.isWear ? tName.length - highTextLen : tName.length;
