@@ -136,10 +136,10 @@ class AnimalsList {
     },
     "Fox": {
       'name': '{Fox}',
-      'maxHp': 25,
-      'speed': 15,
-      'strengh': 5,
-      'defence': 10,
+      'maxHp': 28,
+      'speed': 13,
+      'strengh': 14,
+      'defence': 7,
       'loot': {"min": 1, "max": 1000},
       'drop': {
         "itemType": ItemTypes.FOOD,
