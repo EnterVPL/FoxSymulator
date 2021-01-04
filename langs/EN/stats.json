@@ -9,5 +9,7 @@
 	"{energy}" : "Energy",
 	"{comfort}" : "Comfort",
 	"{experience}" : "Experience",
-	"{level}" : "Level"
+	"{level}" : "Level",
+	"{skill points}": "Skill points",
+	"{next_lvl}": "Next"
 }

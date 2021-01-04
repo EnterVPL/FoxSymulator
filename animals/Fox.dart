@@ -10,6 +10,7 @@ import '../langs/LanguagesTypes.dart';
 import '../locations/Location.dart';
 import 'Animals.dart';
 import 'Fight.dart';
+import 'Friend.dart';
 import 'Stats.dart';
 
 class Fox extends Animals {
@@ -20,6 +21,8 @@ class Fox extends Animals {
   Item usingWeapon;
   Item usingShield;
   Item usingArmmor;
+  int _skill_points;
+  int _toNextLvl = 100;
 
   List<int> minMaxComfort = [1, 10];
   int get satiety {
@@ -54,20 +57,38 @@ class Fox extends Animals {
     stats[StatsType.LVL] = count;
   }
 
+  int get comfort {
+    return stats[StatsType.COMFORT];
+  }
+
+  set comfort(int count) {
+    stats[StatsType.COMFORT] = count;
+  }
+
+  int get skill_points {
+    return _skill_points;
+  }
+
+  int get nextLvl {
+    return _toNextLvl;
+  }
+
   Fox(String name, Location location) {
     this.name = name;
-    this.acctualHp = this.maxHp = 25;
-    this.speed = 15;
-    this.defence = 10;
-    this.strengh = 5;
+    this.acctualHp = this.maxHp = 28;
+    this.speed = 13;
+    this.defence = 14;
+    this.strengh = 7;
     this.location = location;
     this.satiety = 10;
     this.energy = 10;
+    this.comfort = 10;
     this.bag = new Inventory(30);
     this.warehouse = new Inventory(90000);
     _generateItems();
     this.exp = 0;
     this.lvl = 1;
+    this._skill_points = 0;
   }
 
   void changeLocation(Location location) {
@@ -75,17 +96,12 @@ class Fox extends Animals {
   }
 
   void talkingWithFriend() {
-    print(Language.getTranslation(LanguagesTypes.FRIEND, "{hi_hero}"));
-    print(Language.getTranslation(LanguagesTypes.FRIEND, "{hi_friend}")
-        .replaceAll("{name}", this.name));
-    print("\n" +
-        Language.getTranslation(LanguagesTypes.OPTIONS, "{enter to continue}"));
-    stdin.readLineSync();
+    Friend.talkingWithFriend();
   }
 
   @override
   String toString() {
-    return 'name:$name,acctualHp:$acctualHp,maxHp:$maxHp,speed:$speed,strengh:$strengh,defence:$defence,isLive:$isLive,location:${location.toString()},satiety:$satiety,energy:$energy';
+    return 'name:$name,acctualHp:$acctualHp,maxHp:$maxHp,speed:$speed,strengh:$strengh,defence:$defence,isLive:$isLive,location:${location.toString()},satiety:$satiety,energy:$energy,comfort:$comfort,exp:$exp,lvl:$lvl,lvl_points:$_skill_points';
   }
 
   static Fox loadFromString(String data) {
@@ -121,8 +137,21 @@ class Fox extends Animals {
         case 'energy':
           fox.energy = int.parse(pv[1]);
           break;
+        case 'comfort':
+          fox.comfort = int.parse(pv[1]);
+          break;
+        case 'exp':
+          fox.exp = int.parse(pv[1]);
+          break;
+        case 'lvl':
+          fox.lvl = int.parse(pv[1]);
+          break;
+        case 'lvl_points':
+          fox._skill_points = int.parse(pv[1]);
+          break;
       }
     }
+    fox.refreshNextLvl();
     return fox;
   }
 
@@ -213,5 +242,36 @@ class Fox extends Animals {
 
   void loadWorehouseFromJson(String data) {
     loadInventory(data, warehouse);
+  }
+
+  void addExp(int count) {
+    exp += count;
+    refreshLvl();
+  }
+
+  void refreshLvl() {
+    if (exp >= _toNextLvl) {
+      lvl += 1;
+      addLvlPoints(3);
+      refreshNextLvl();
+    }
+  }
+
+  void refreshNextLvl() {
+    _toNextLvl = (lvl * 100) + ((lvl - 1) * 100);
+  }
+
+  void addLvlPoints(int count) {
+    _skill_points += 3;
+  }
+
+  bool train(int stat) {
+    if (_skill_points > 0) {
+      _skill_points -= 1;
+      stats[stat] += 1;
+      return true;
+    } else {
+      return false;
+    }
   }
 }

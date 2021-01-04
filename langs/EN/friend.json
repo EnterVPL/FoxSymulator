@@ -1,4 +1,10 @@
 {
-    "{hi_hero}": "Hi Friend. How are you?",
-    "{hi_friend}": "Hi {name}. I'm really good."
+    "{hi_hero}": "Hi Friend ...",
+    "{hi_friend}": "Hi {name}. What we do today?",
+    "{friend_title}": "Choose answer",
+    "{I want to strengthen myself}": "I want to strengthen myself",
+    "{frined_mistake_handler}" : "Oh.. okay. See you!",
+    "{sell_points_title}": "What do you want to train?",
+    "{back}": "Shall we talk about something else?",
+    "{exit}": "Exit"
 }
