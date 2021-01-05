@@ -98,11 +98,13 @@ class BagMenu {
       int highTextLen = Color.cyanBold("").length;
       String tName = item.isWear ? Color.cyanBold(item.tName) : item.tName;
       int tNameLen = item.isWear ? tName.length - highTextLen : tName.length;
-      String cOfTab = " \t\t\t";
+      String cOfTab = " \t\t\t\t";
       if (tNameLen >= 20) {
         cOfTab = " \t";
-      } else if (tNameLen >= 12) {
+      } else if (tNameLen >= 11) {
         cOfTab = " \t\t";
+      } else if (tNameLen > 3) {
+        cOfTab = " \t\t\t";
       }
       String benefits = '';
       item.benefits.forEach((stat, value) {
