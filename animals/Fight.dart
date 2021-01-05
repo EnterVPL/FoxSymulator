@@ -63,9 +63,11 @@ class Fight {
     loots.forEach((items) {
       maxDrop += items["ids"].length;
     });
+
     maxDrop = rnd.nextInt(maxDrop);
+
     int currentDrop = 0;
-    while (currentDrop < maxDrop) {
+    while (currentDrop <= maxDrop) {
       Map<String, dynamic> drop = loots.elementAt(rnd.nextInt(loots.length));
       int type = drop["type"];
       int id = drop["ids"].elementAt(rnd.nextInt(drop["ids"].length));
