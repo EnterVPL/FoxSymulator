@@ -9,6 +9,7 @@ class Animals {
   Map<int, int> stats = new Map();
   bool isLive = true;
   Map<String, int> loots = new Map();
+  int dropExp; 
 
   int get acctualHp {
     return stats[StatsType.ACCTUALHP];
@@ -55,7 +56,7 @@ class Animals {
   }
 
   Animals create(String name, int maxHp, int speed, int strengh, int defence,
-      Map<String, int> loots) {
+      Map<String, int> loots, int dropExp) {
     Animals animal = new Animals();
     animal._name = name;
     animal.maxHp = animal.acctualHp = maxHp;
@@ -63,6 +64,7 @@ class Animals {
     animal.strengh = strengh;
     animal.defence = defence;
     animal.loots = loots;
+    animal.dropExp = dropExp;
     return animal;
   }
 

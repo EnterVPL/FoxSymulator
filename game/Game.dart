@@ -69,7 +69,8 @@ class Game {
               animal['speed'],
               animal['strengh'],
               animal['defence'],
-              animal['loot']));
+              animal['loot'],
+              animal["drop"]["exp"]));
         }
       }
       for (var act in loc['actions']) {
@@ -158,11 +159,11 @@ class Game {
         ((hero.skill_points > 0
             ? ": ${Color.cyanBold('${hero.skill_points}')}"
             : ": ${hero.skill_points}"));
-    String nextlvl = fastStatsTranslate("{next_lvl}") + ": ${hero.nextLvl}";
+    String nextlvl = "${hero.nextLvl}";
 
     print('$name \t $location \t');
-    print('$lvl \t $nextlvl');
-    print('$exp \t $skill_points');
+    print('$lvl \t $exp/$nextlvl');
+    print('$skill_points');
     print('$hp \t $strengh \t $defence \t $speed');
     print('$satiety \t $energy');
     print('\n');
