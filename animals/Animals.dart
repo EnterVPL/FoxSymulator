@@ -99,3 +99,13 @@ class Animals {
     return damage;
   }
 }
+
+class AnimalSpecialName {
+  final String name;
+  AnimalSpecialName(this.name);
+
+  @override
+  String toString() {
+    return this.name;
+  }
+}
