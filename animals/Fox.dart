@@ -76,7 +76,7 @@ class Fox extends Animals {
   Fox(String name, Location location) {
     this.name = name;
     this.acctualHp = this.maxHp = 28;
-    this.speed = 13;
+    this.speed = 50;
     this.defence = 14;
     this.strengh = 7;
     this.location = location;
