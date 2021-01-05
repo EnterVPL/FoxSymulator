@@ -44,7 +44,7 @@ class AnimalsList {
         "items": [
           {
             "type": ItemTypes.FOOD,
-            "ids": [1],
+            "ids": [2],
           }
         ],
         "exp": 20
@@ -60,7 +60,7 @@ class AnimalsList {
         "items": [
           {
             "type": ItemTypes.FOOD,
-            "ids": [1],
+            "ids": [2, 2, 8],
           }
         ],
         "exp": 40
@@ -76,7 +76,7 @@ class AnimalsList {
         "items": [
           {
             "type": ItemTypes.FOOD,
-            "ids": [1],
+            "ids": [2, 2, 2, 9, 10],
           }
         ],
         "exp": 80
@@ -92,7 +92,7 @@ class AnimalsList {
         "items": [
           {
             "type": ItemTypes.FOOD,
-            "ids": [1],
+            "ids": [10, 10, 10, 2, 9],
           }
         ],
         "exp": 100
@@ -108,7 +108,7 @@ class AnimalsList {
         "items": [
           {
             "type": ItemTypes.FOOD,
-            "ids": [1],
+            "ids": [2],
           }
         ],
         "exp": 4
@@ -124,7 +124,7 @@ class AnimalsList {
         "items": [
           {
             "type": ItemTypes.FOOD,
-            "ids": [1],
+            "ids": [5, 7, 8, 11],
           }
         ],
         "exp": 720
@@ -140,7 +140,7 @@ class AnimalsList {
         "items": [
           {
             "type": ItemTypes.FOOD,
-            "ids": [1],
+            "ids": [2, 2, 2],
           }
         ],
         "exp": 600
@@ -156,7 +156,7 @@ class AnimalsList {
         "items": [
           {
             "type": ItemTypes.FOOD,
-            "ids": [1],
+            "ids": [4, 8],
           }
         ],
         "exp": 140
@@ -172,7 +172,7 @@ class AnimalsList {
         "items": [
           {
             "type": ItemTypes.FOOD,
-            "ids": [1],
+            "ids": [10, 12, 13],
           }
         ],
         "exp": 1200
@@ -188,7 +188,7 @@ class AnimalsList {
         "items": [
           {
             "type": ItemTypes.FOOD,
-            "ids": [1],
+            "ids": [1, 12, 2, 1, 1, 1],
           }
         ],
         "exp": 28
@@ -204,7 +204,7 @@ class AnimalsList {
         "items": [
           {
             "type": ItemTypes.FOOD,
-            "ids": [1],
+            "ids": [1, 2, 8, 7],
           }
         ],
         "exp": 60
@@ -220,7 +220,11 @@ class AnimalsList {
         "items": [
           {
             "type": ItemTypes.FOOD,
-            "ids": [1],
+            "ids": [
+              8,
+              10,
+              12,
+            ],
           }
         ],
         "exp": 160
@@ -252,7 +256,7 @@ class AnimalsList {
         "items": [
           {
             "type": ItemTypes.FOOD,
-            "ids": [1],
+            "ids": [1, 2],
           }
         ],
         "exp": 8
@@ -268,7 +272,7 @@ class AnimalsList {
         "items": [
           {
             "type": ItemTypes.FOOD,
-            "ids": [1],
+            "ids": [1, 1, 2, 2],
           }
         ],
         "exp": 20
@@ -292,34 +296,42 @@ class AnimalsList {
     },
     "Too_big_spider": {
       'name': '{too_big_spider}',
-      'maxHp': 60,
-      'speed': 30,
-      'strengh': 15,
-      'defence': 10,
+      'maxHp': 120,
+      'speed': 70,
+      'strengh': 60,
+      'defence': 30,
       'drop': {
         "items": [
           {
             "type": ItemTypes.FOOD,
-            "ids": [1],
+            "ids": [8, 10, 12],
           }
         ],
-        "exp": 60
+        "exp": 120
       },
     },
     "Forester": {
       'name': '{Forester}',
-      'maxHp': 25,
-      'speed': 10,
-      'strengh': 6,
-      'defence': 5,
+      'maxHp': 140,
+      'speed': 30,
+      'strengh': 70,
+      'defence': 35,
       'drop': {
         "items": [
           {
+            "type": ItemTypes.SHIELD,
+            "ids": [0, 1],
+          },
+          {
+            "type": ItemTypes.ARMMOR,
+            "ids": [0, 1],
+          },
+          {
             "type": ItemTypes.FOOD,
-            "ids": [1],
+            "ids": [8, 11, 12, 13, 9, 10, 7, 6],
           }
         ],
-        "exp": 25
+        "exp": 140
       },
     },
     "Goat": {
@@ -332,7 +344,7 @@ class AnimalsList {
         "items": [
           {
             "type": ItemTypes.FOOD,
-            "ids": [1],
+            "ids": [1, 3, 8],
           }
         ],
         "exp": 280
@@ -348,7 +360,7 @@ class AnimalsList {
         "items": [
           {
             "type": ItemTypes.FOOD,
-            "ids": [1],
+            "ids": [13],
           }
         ],
         "exp": 5
@@ -364,7 +376,7 @@ class AnimalsList {
         "items": [
           {
             "type": ItemTypes.FOOD,
-            "ids": [1],
+            "ids": [13, 13, 13],
           }
         ],
         "exp": 20
@@ -380,7 +392,7 @@ class AnimalsList {
         "items": [
           {
             "type": ItemTypes.FOOD,
-            "ids": [1],
+            "ids": [13, 13, 13, 13, 13, 13, 13, 8, 8, 8],
           }
         ],
         "exp": 600
@@ -396,7 +408,11 @@ class AnimalsList {
         "items": [
           {
             "type": ItemTypes.FOOD,
-            "ids": [1],
+            "ids": [0, 0],
+          },
+          {
+            "type": ItemTypes.ARMMOR,
+            "ids": [0, 0],
           }
         ],
         "exp": 18
@@ -411,7 +427,15 @@ class AnimalsList {
       'drop': {
         "items": [
           {
-            "type": ItemTypes.FOOD,
+            "type": ItemTypes.WEAPON,
+            "ids": [1],
+          },
+          {
+            "type": ItemTypes.SHIELD,
+            "ids": [1],
+          },
+          {
+            "type": ItemTypes.ARMMOR,
             "ids": [1],
           }
         ],
