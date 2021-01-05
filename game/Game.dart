@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'dart:math';
 
 import 'package:dart_console/dart_console.dart';
 
@@ -63,15 +62,14 @@ class Game {
       Location newLoc = new Location(loc['name']);
       if (loc['animals'] != null) {
         for (var animal in loc['animals']) {
-         if(animal == null) continue;
-            newLoc.addAnimal((Animals()).create(
-                animal['name'],
-                animal['maxHp'],
-                animal['speed'],
-                animal['strengh'],
-                animal['defence'],
-                animal['loot']));
-          
+          if (animal == null) continue;
+          newLoc.addAnimal((Animals()).create(
+              animal['name'],
+              animal['maxHp'],
+              animal['speed'],
+              animal['strengh'],
+              animal['defence'],
+              animal['loot']));
         }
       }
       for (var act in loc['actions']) {
@@ -123,7 +121,7 @@ class Game {
 
   /// Printing statistic
   static void printStats() {
-    int maxComfort = hero.minMaxComfort.reduce(max);
+    int maxComfort = hero.comfort;
     String name = '${fastStatsTranslate("{name}")}: ${hero.name}';
     String location = '${fastStatsTranslate("{location}")}: ${hero.location}';
     String acctualHpString = "${hero.acctualHp}";
@@ -154,7 +152,17 @@ class Game {
     String energy =
         '${fastStatsTranslate("{energy}")}: ${energyString}/$maxComfort';
 
-    print('$name \t $location');
+    String lvl = fastStatsTranslate("{level}") + ": ${hero.lvl}";
+    String exp = fastStatsTranslate("{experience}") + ": ${hero.exp}";
+    String skill_points = fastStatsTranslate("{skill points}") +
+        ((hero.skill_points > 0
+            ? ": ${Color.cyanBold('${hero.skill_points}')}"
+            : ": ${hero.skill_points}"));
+    String nextlvl = fastStatsTranslate("{next_lvl}") + ": ${hero.nextLvl}";
+
+    print('$name \t $location \t');
+    print('$lvl \t $nextlvl');
+    print('$exp \t $skill_points');
     print('$hp \t $strengh \t $defence \t $speed');
     print('$satiety \t $energy');
     print('\n');

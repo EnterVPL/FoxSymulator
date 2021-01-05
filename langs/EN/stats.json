@@ -6,5 +6,10 @@
 	"{defence}" : "Defence",
 	"{speed}" : "Speed",
 	"{satiety}" : "Satiety",
-	"{energy}" : "Energy"
+	"{energy}" : "Energy",
+	"{comfort}" : "Comfort",
+	"{experience}" : "Experience",
+	"{level}" : "Level",
+	"{skill points}": "Skill points",
+	"{next_lvl}": "Next"
 }

@@ -6,5 +6,10 @@
 	"{defence}" : "Obrona",
 	"{speed}" : "Szybkość",
 	"{satiety}" : "Sytość",
-	"{energy}" : "Energia"
+	"{energy}" : "Energia",
+	"{comfort}" : "Komfort",
+	"{experience}" : "Doświadczenie",
+	"{level}" : "Poziom",
+	"{skill points}": "Punkty doświadczenia",
+	"{next_lvl}": "Następny za"
 }
