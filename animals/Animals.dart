@@ -8,8 +8,8 @@ class Animals {
   String _name;
   Map<int, int> stats = new Map();
   bool isLive = true;
-  Map<String, int> loots = new Map();
-  int dropExp; 
+  List<Map<String, dynamic>> loots = new List();
+  int dropExp;
 
   int get acctualHp {
     return stats[StatsType.ACCTUALHP];
@@ -56,7 +56,7 @@ class Animals {
   }
 
   Animals create(String name, int maxHp, int speed, int strengh, int defence,
-      Map<String, int> loots, int dropExp) {
+      List<Map<String, dynamic>> loots, int dropExp) {
     Animals animal = new Animals();
     animal._name = name;
     animal.maxHp = animal.acctualHp = maxHp;
@@ -97,5 +97,15 @@ class Animals {
       defending.isLive = false;
     }
     return damage;
+  }
+}
+
+class AnimalSpecialName {
+  final String name;
+  AnimalSpecialName(this.name);
+
+  @override
+  String toString() {
+    return this.name;
   }
 }

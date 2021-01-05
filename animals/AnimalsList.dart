@@ -8,10 +8,13 @@ class AnimalsList {
       'speed': 14,
       'strengh': 4,
       'defence': 2,
-      'loot': {"min": 1, "max": 20},
       'drop': {
-        "itemType": ItemTypes.FOOD,
-        "ids": [1],
+        "items": [
+          {
+            "type": ItemTypes.FOOD,
+            "ids": [1],
+          }
+        ],
         "exp": 8
       }
     },
@@ -21,10 +24,13 @@ class AnimalsList {
       'speed': 40,
       'strengh': 18,
       'defence': 9,
-      'loot': {"min": 1, "max": 45},
       'drop': {
-        "itemType": ItemTypes.FOOD,
-        "ids": [1],
+        "items": [
+          {
+            "type": ItemTypes.FOOD,
+            "ids": [1],
+          }
+        ],
         "exp": 20
       }
     },
@@ -34,10 +40,13 @@ class AnimalsList {
       'speed': 30,
       'strengh': 10,
       'defence': 5,
-      'loot': {"min": 3, "max": 50},
       'drop': {
-        "itemType": ItemTypes.FOOD,
-        "ids": [1],
+        "items": [
+          {
+            "type": ItemTypes.FOOD,
+            "ids": [2],
+          }
+        ],
         "exp": 20
       }
     },
@@ -47,10 +56,13 @@ class AnimalsList {
       'speed': 45,
       'strengh': 20,
       'defence': 10,
-      'loot': {"min": 10, "max": 65},
       'drop': {
-        "itemType": ItemTypes.FOOD,
-        "ids": [1],
+        "items": [
+          {
+            "type": ItemTypes.FOOD,
+            "ids": [2, 2, 8],
+          }
+        ],
         "exp": 40
       }
     },
@@ -60,10 +72,13 @@ class AnimalsList {
       'speed': 60,
       'strengh': 40,
       'defence': 20,
-      'loot': {"min": 20, "max": 100},
       'drop': {
-        "itemType": ItemTypes.FOOD,
-        "ids": [1],
+        "items": [
+          {
+            "type": ItemTypes.FOOD,
+            "ids": [2, 2, 2, 9, 10],
+          }
+        ],
         "exp": 80
       },
     },
@@ -73,10 +88,13 @@ class AnimalsList {
       'speed': 70,
       'strengh': 50,
       'defence': 30,
-      'loot': {"min": 50, "max": 110},
       'drop': {
-        "itemType": ItemTypes.FOOD,
-        "ids": [1],
+        "items": [
+          {
+            "type": ItemTypes.FOOD,
+            "ids": [10, 10, 10, 2, 9],
+          }
+        ],
         "exp": 100
       },
     },
@@ -86,10 +104,13 @@ class AnimalsList {
       'speed': 70,
       'strengh': 2,
       'defence': 1,
-      'loot': {"min": 1, "max": 40},
       'drop': {
-        "itemType": ItemTypes.FOOD,
-        "ids": [1],
+        "items": [
+          {
+            "type": ItemTypes.FOOD,
+            "ids": [2],
+          }
+        ],
         "exp": 4
       }
     },
@@ -99,10 +120,13 @@ class AnimalsList {
       'speed': 40,
       'strengh': 720,
       'defence': 360,
-      'loot': {"min": 15, "max": 65},
       'drop': {
-        "itemType": ItemTypes.FOOD,
-        "ids": [1],
+        "items": [
+          {
+            "type": ItemTypes.FOOD,
+            "ids": [5, 7, 8, 11],
+          }
+        ],
         "exp": 720
       },
     },
@@ -112,10 +136,13 @@ class AnimalsList {
       'speed': 20,
       'strengh': 300,
       'defence': 150,
-      'loot': {"min": 5, "max": 40},
       'drop': {
-        "itemType": ItemTypes.FOOD,
-        "ids": [1],
+        "items": [
+          {
+            "type": ItemTypes.FOOD,
+            "ids": [2, 2, 2],
+          }
+        ],
         "exp": 600
       },
     },
@@ -125,10 +152,13 @@ class AnimalsList {
       'speed': 70,
       'strengh': 35,
       'defence': 18,
-      'loot': {"min": 15, "max": 65},
       'drop': {
-        "itemType": ItemTypes.FOOD,
-        "ids": [1],
+        "items": [
+          {
+            "type": ItemTypes.FOOD,
+            "ids": [4, 8],
+          }
+        ],
         "exp": 140
       },
     },
@@ -138,10 +168,13 @@ class AnimalsList {
       'speed': 50,
       'strengh': 600,
       'defence': 300,
-      'loot': {"min": 40, "max": 120},
       'drop': {
-        "itemType": ItemTypes.FOOD,
-        "ids": [1],
+        "items": [
+          {
+            "type": ItemTypes.FOOD,
+            "ids": [10, 12, 13],
+          }
+        ],
         "exp": 1200
       },
     },
@@ -151,10 +184,13 @@ class AnimalsList {
       'speed': 50,
       'strengh': 14,
       'defence': 7,
-      'loot': {"min": 1, "max": 1000},
       'drop': {
-        "itemType": ItemTypes.FOOD,
-        "ids": [1],
+        "items": [
+          {
+            "type": ItemTypes.FOOD,
+            "ids": [1, 12, 2, 1, 1, 1],
+          }
+        ],
         "exp": 28
       },
     },
@@ -164,10 +200,13 @@ class AnimalsList {
       'speed': 64,
       'strengh': 30,
       'defence': 15,
-      'loot': {"min": 4, "max": 50},
       'drop': {
-        "itemType": ItemTypes.FOOD,
-        "ids": [1],
+        "items": [
+          {
+            "type": ItemTypes.FOOD,
+            "ids": [1, 2, 8, 7],
+          }
+        ],
         "exp": 60
       },
     },
@@ -177,10 +216,17 @@ class AnimalsList {
       'speed': 60,
       'strengh': 80,
       'defence': 40,
-      'loot': {"min": 20, "max": 70},
       'drop': {
-        "itemType": ItemTypes.FOOD,
-        "ids": [1],
+        "items": [
+          {
+            "type": ItemTypes.FOOD,
+            "ids": [
+              8,
+              10,
+              12,
+            ],
+          }
+        ],
         "exp": 160
       },
     },
@@ -190,10 +236,13 @@ class AnimalsList {
       'speed': 15,
       'strengh': 2,
       'defence': 1,
-      'loot': {"min": 1, "max": 20},
       'drop': {
-        "itemType": ItemTypes.FOOD,
-        "ids": [1],
+        "items": [
+          {
+            "type": ItemTypes.FOOD,
+            "ids": [1],
+          }
+        ],
         "exp": 5
       },
     },
@@ -203,10 +252,13 @@ class AnimalsList {
       'speed': 20,
       'strengh': 4,
       'defence': 3,
-      'loot': {"min": 5, "max": 30},
       'drop': {
-        "itemType": ItemTypes.FOOD,
-        "ids": [1],
+        "items": [
+          {
+            "type": ItemTypes.FOOD,
+            "ids": [1, 2],
+          }
+        ],
         "exp": 8
       },
     },
@@ -216,10 +268,13 @@ class AnimalsList {
       'speed': 30,
       'strengh': 10,
       'defence': 4,
-      'loot': {"min": 30, "max": 65},
       'drop': {
-        "itemType": ItemTypes.FOOD,
-        "ids": [1],
+        "items": [
+          {
+            "type": ItemTypes.FOOD,
+            "ids": [1, 1, 2, 2],
+          }
+        ],
         "exp": 20
       },
     },
@@ -229,37 +284,54 @@ class AnimalsList {
       'speed': 3,
       'strengh': 1,
       'defence': 1,
-      'loot': {"min": 1, "max": 10},
       'drop': {
-        "itemType": ItemTypes.FOOD,
-        "ids": [1],
+        "items": [
+          {
+            "type": ItemTypes.FOOD,
+            "ids": [1],
+          }
+        ],
         "exp": 5
       },
     },
     "Too_big_spider": {
       'name': '{too_big_spider}',
-      'maxHp': 60,
-      'speed': 30,
-      'strengh': 15,
-      'defence': 10,
-      'loot': {"min": 100, "max": 200},
+      'maxHp': 120,
+      'speed': 70,
+      'strengh': 60,
+      'defence': 30,
       'drop': {
-        "itemType": ItemTypes.FOOD,
-        "ids": [1],
-        "exp": 60
+        "items": [
+          {
+            "type": ItemTypes.FOOD,
+            "ids": [8, 10, 12],
+          }
+        ],
+        "exp": 120
       },
     },
     "Forester": {
       'name': '{Forester}',
-      'maxHp': 25,
-      'speed': 10,
-      'strengh': 6,
-      'defence': 5,
-      'loot': {"min": 15, "max": 65},
+      'maxHp': 140,
+      'speed': 30,
+      'strengh': 70,
+      'defence': 35,
       'drop': {
-        "itemType": ItemTypes.FOOD,
-        "ids": [1],
-        "exp": 25
+        "items": [
+          {
+            "type": ItemTypes.SHIELD,
+            "ids": [0, 1],
+          },
+          {
+            "type": ItemTypes.ARMMOR,
+            "ids": [0, 1],
+          },
+          {
+            "type": ItemTypes.FOOD,
+            "ids": [8, 11, 12, 13, 9, 10, 7, 6],
+          }
+        ],
+        "exp": 140
       },
     },
     "Goat": {
@@ -268,10 +340,13 @@ class AnimalsList {
       'speed': 24,
       'strengh': 140,
       'defence': 70,
-      'loot': {"min": 50, "max": 205},
       'drop': {
-        "itemType": ItemTypes.FOOD,
-        "ids": [1],
+        "items": [
+          {
+            "type": ItemTypes.FOOD,
+            "ids": [1, 3, 8],
+          }
+        ],
         "exp": 280
       },
     },
@@ -281,10 +356,13 @@ class AnimalsList {
       'speed': 40,
       'strengh': 1,
       'defence': 1,
-      'loot': {"min": 15, "max": 35},
       'drop': {
-        "itemType": ItemTypes.FOOD,
-        "ids": [1],
+        "items": [
+          {
+            "type": ItemTypes.FOOD,
+            "ids": [13],
+          }
+        ],
         "exp": 5
       },
     },
@@ -294,10 +372,13 @@ class AnimalsList {
       'speed': 80,
       'strengh': 10,
       'defence': 5,
-      'loot': {"min": 15, "max": 45},
       'drop': {
-        "itemType": ItemTypes.FOOD,
-        "ids": [1],
+        "items": [
+          {
+            "type": ItemTypes.FOOD,
+            "ids": [13, 13, 13],
+          }
+        ],
         "exp": 20
       },
     },
@@ -307,23 +388,33 @@ class AnimalsList {
       'speed': 160,
       'strengh': 300,
       'defence': 150,
-      'loot': {"min": 15, "max": 55},
       'drop': {
-        "itemType": ItemTypes.FOOD,
-        "ids": [1],
+        "items": [
+          {
+            "type": ItemTypes.FOOD,
+            "ids": [13, 13, 13, 13, 13, 13, 13, 8, 8, 8],
+          }
+        ],
         "exp": 600
       },
     },
     "Raccoon": {
       'name': '{Raccoon}',
       'maxHp': 18,
-      'speed':24,
+      'speed': 24,
       'strengh': 9,
       'defence': 5,
-      'loot': {"min": 10, "max": 50},
       'drop': {
-        "itemType": ItemTypes.FOOD,
-        "ids": [1],
+        "items": [
+          {
+            "type": ItemTypes.FOOD,
+            "ids": [0, 0],
+          },
+          {
+            "type": ItemTypes.ARMMOR,
+            "ids": [0, 0],
+          }
+        ],
         "exp": 18
       },
     },
@@ -333,10 +424,21 @@ class AnimalsList {
       'speed': 50,
       'strengh': 500,
       'defence': 300,
-      'loot': {"min": 60, "max": 205},
       'drop': {
-        "itemType": ItemTypes.FOOD,
-        "ids": [1],
+        "items": [
+          {
+            "type": ItemTypes.WEAPON,
+            "ids": [1],
+          },
+          {
+            "type": ItemTypes.SHIELD,
+            "ids": [1],
+          },
+          {
+            "type": ItemTypes.ARMMOR,
+            "ids": [1],
+          }
+        ],
         "exp": 1000
       },
     }

@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
+import '../game/Color.dart';
 import '../game/Game.dart';
 import '../inventory/Inventory.dart';
 import '../items/Item.dart';
@@ -76,7 +77,7 @@ class Fox extends Animals {
   Fox(String name, Location location) {
     this.name = name;
     this.acctualHp = this.maxHp = 28;
-    this.speed = 13;
+    this.speed = 50;
     this.defence = 14;
     this.strengh = 7;
     this.location = location;
@@ -162,7 +163,8 @@ class Fox extends Animals {
         Language.getTranslation(LanguagesTypes.ANIMALS, "{avoid the attack}");
     String lost_hp =
         Language.getTranslation(LanguagesTypes.ANIMALS, "{lost_hp}");
-    Game.printOptions('${title}:', Game.hero.location.animalList, (choise) {
+    Game.printOptions('${title}:', Game.hero.getAnimalsNamesWithStats(),
+        (choise) {
       Game.clearConsole();
       Animals winner =
           (new Fight(Game.hero, Game.hero.location.animalList[choise]))
@@ -187,7 +189,7 @@ class Fox extends Animals {
       ++Game.hero.energy;
       print(Language.getTranslation(LanguagesTypes.ANIMALS, "{not_hunt}"));
       stdin.readLineSync();
-    });
+    }, isPirntStats: true);
   }
 
   String getBagToSave() {
@@ -246,7 +248,9 @@ class Fox extends Animals {
 
   void addExp(int count) {
     exp += count;
-    refreshLvl();
+    while (exp >= _toNextLvl) {
+      refreshLvl();
+    }
   }
 
   void refreshLvl() {
@@ -273,5 +277,45 @@ class Fox extends Animals {
     } else {
       return false;
     }
+  }
+
+  List<AnimalSpecialName> getAnimalsNamesWithStats() {
+    List<AnimalSpecialName> list = new List();
+    Game.hero.location.animalList.forEach((animal) {
+      String str = animal.name;
+      int anNameLen = str.length;
+      String cOfTab = " \t\t\t\t";
+      if (anNameLen >= 20) {
+        cOfTab = " \t";
+      } else if (anNameLen >= 12) {
+        cOfTab = " \t\t";
+      } else if (anNameLen > 3) {
+        cOfTab = " \t\t\t";
+      }
+
+      if (animal.speed > Game.hero.speed * 2) {
+        str = Color.redBold(str);
+      } else if (animal.speed > Game.hero.speed) {
+        str = Color.yellowBold(str);
+      } else if (animal.speed == Game.hero.speed) {
+        str = Color.cyanBold(str);
+      } else {
+        str = Color.greenBold(str);
+      }
+
+      String statTrans(String key) {
+        return Language.getTranslation(LanguagesTypes.STATS, key);
+      }
+
+      String hpStr = statTrans("{HP}") + ": ${animal.maxHp}";
+      String speedStr = statTrans("{speed}") + ": ${animal.speed}";
+      String strenghStr = statTrans("{strengh}") + ": ${animal.strengh}";
+      String defenceStr = statTrans("{defence}") + ": ${animal.defence}";
+
+      str += cOfTab + "$hpStr | $speedStr | $strenghStr | $defenceStr";
+
+      list.add(new AnimalSpecialName(str));
+    });
+    return list;
   }
 }

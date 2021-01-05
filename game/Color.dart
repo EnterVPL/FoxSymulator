@@ -28,4 +28,8 @@ class Color {
   static String yellowBold(String text) {
     return _start.replaceAll("{color}", "33;1") + text + _end;
   }
+
+  static String greenBold(String text) {
+    return _start.replaceAll("{color}", "32;1") + text + _end;
+  }
 }
