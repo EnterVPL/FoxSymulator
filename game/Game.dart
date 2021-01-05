@@ -69,7 +69,7 @@ class Game {
               animal['speed'],
               animal['strengh'],
               animal['defence'],
-              animal['loot'],
+              animal['drop']["items"],
               animal["drop"]["exp"]));
         }
       }

@@ -246,7 +246,9 @@ class Fox extends Animals {
 
   void addExp(int count) {
     exp += count;
-    refreshLvl();
+    while (exp >= _toNextLvl) {
+      refreshLvl();
+    }
   }
 
   void refreshLvl() {
