@@ -36,7 +36,7 @@ class Fight {
     if (winner is Fox) {
       loser.acctualHp = loser.maxHp;
       lootMeesage(doLoot(winner, loser));
-      winner.addExp(100);
+      winner.addExp(loser.dropExp);
     } else {
       winner.acctualHp = winner.maxHp;
     }

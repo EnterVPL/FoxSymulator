@@ -11,7 +11,8 @@ class AnimalsList {
       'loot': {"min": 1, "max": 20},
       'drop': {
         "itemType": ItemTypes.FOOD,
-        "ids": [1]
+        "ids": [1],
+        "exp": 10
       }
     },
     "Turkey": {
@@ -23,7 +24,8 @@ class AnimalsList {
       'loot': {"min": 1, "max": 45},
       'drop': {
         "itemType": ItemTypes.FOOD,
-        "ids": [1]
+        "ids": [1],
+        "exp": 20
       }
     },
     "Small_dog": {
@@ -35,7 +37,8 @@ class AnimalsList {
       'loot': {"min": 3, "max": 50},
       'drop': {
         "itemType": ItemTypes.FOOD,
-        "ids": [1]
+        "ids": [1],
+        "exp": 20
       }
     },
     "Normal_dog": {
@@ -47,7 +50,8 @@ class AnimalsList {
       'loot': {"min": 10, "max": 65},
       'drop': {
         "itemType": ItemTypes.FOOD,
-        "ids": [1]
+        "ids": [1],
+        "exp": 30
       }
     },
     "Big_dog": {
@@ -59,7 +63,8 @@ class AnimalsList {
       'loot': {"min": 20, "max": 100},
       'drop': {
         "itemType": ItemTypes.FOOD,
-        "ids": [1]
+        "ids": [1],
+        "exp": 50
       },
     },
     "Hot_dog": {
@@ -71,7 +76,8 @@ class AnimalsList {
       'loot': {"min": 50, "max": 110},
       'drop': {
         "itemType": ItemTypes.FOOD,
-        "ids": [1]
+        "ids": [1],
+        "exp": 60
       },
     },
     "Rabbit": {
@@ -83,7 +89,8 @@ class AnimalsList {
       'loot': {"min": 1, "max": 40},
       'drop': {
         "itemType": ItemTypes.FOOD,
-        "ids": [1]
+        "ids": [1],
+        "exp": 10
       }
     },
     "Cow": {
@@ -95,7 +102,8 @@ class AnimalsList {
       'loot': {"min": 15, "max": 65},
       'drop': {
         "itemType": ItemTypes.FOOD,
-        "ids": [1]
+        "ids": [1],
+        "exp": 40
       },
     },
     "Pig": {
@@ -107,7 +115,8 @@ class AnimalsList {
       'loot': {"min": 5, "max": 40},
       'drop': {
         "itemType": ItemTypes.FOOD,
-        "ids": [1]
+        "ids": [1],
+        "exp": 20
       },
     },
     "Deer": {
@@ -119,7 +128,8 @@ class AnimalsList {
       'loot': {"min": 15, "max": 65},
       'drop': {
         "itemType": ItemTypes.FOOD,
-        "ids": [1]
+        "ids": [1],
+        "exp": 40
       },
     },
     "Bear": {
@@ -131,19 +141,21 @@ class AnimalsList {
       'loot': {"min": 40, "max": 120},
       'drop': {
         "itemType": ItemTypes.FOOD,
-        "ids": [1]
+        "ids": [1],
+        "exp": 50
       },
     },
     "Fox": {
       'name': '{Fox}',
-      'maxHp': 28,
-      'speed': 13,
-      'strengh': 14,
-      'defence': 7,
+      'maxHp': 25,
+      'speed': 15,
+      'strengh': 5,
+      'defence': 10,
       'loot': {"min": 1, "max": 1000},
       'drop': {
         "itemType": ItemTypes.FOOD,
-        "ids": [1]
+        "ids": [1],
+        "exp": 25
       },
     },
     "Lynx": {
@@ -155,7 +167,8 @@ class AnimalsList {
       'loot': {"min": 4, "max": 50},
       'drop': {
         "itemType": ItemTypes.FOOD,
-        "ids": [1]
+        "ids": [1],
+        "exp": 20
       },
     },
     "Wolf": {
@@ -167,7 +180,8 @@ class AnimalsList {
       'loot': {"min": 20, "max": 70},
       'drop': {
         "itemType": ItemTypes.FOOD,
-        "ids": [1]
+        "ids": [1],
+        "exp": 30
       },
     },
     "Rat": {
@@ -179,7 +193,8 @@ class AnimalsList {
       'loot': {"min": 1, "max": 20},
       'drop': {
         "itemType": ItemTypes.FOOD,
-        "ids": [1]
+        "ids": [1],
+        "exp": 5
       },
     },
     "Big rat": {
@@ -191,7 +206,8 @@ class AnimalsList {
       'loot': {"min": 5, "max": 30},
       'drop': {
         "itemType": ItemTypes.FOOD,
-        "ids": [1]
+        "ids": [1],
+        "exp": 10
       },
     },
     "Too big rat": {
@@ -203,7 +219,8 @@ class AnimalsList {
       'loot': {"min": 30, "max": 65},
       'drop': {
         "itemType": ItemTypes.FOOD,
-        "ids": [1]
+        "ids": [1],
+        "exp": 20
       },
     },
     "Spider": {
@@ -215,7 +232,8 @@ class AnimalsList {
       'loot': {"min": 1, "max": 10},
       'drop': {
         "itemType": ItemTypes.FOOD,
-        "ids": [1]
+        "ids": [1],
+        "exp": 5
       },
     },
     "Too_big_spider": {
@@ -227,7 +245,8 @@ class AnimalsList {
       'loot': {"min": 100, "max": 200},
       'drop': {
         "itemType": ItemTypes.FOOD,
-        "ids": [1]
+        "ids": [1],
+        "exp": 60
       },
     },
     "Forester": {
@@ -239,7 +258,8 @@ class AnimalsList {
       'loot': {"min": 15, "max": 65},
       'drop': {
         "itemType": ItemTypes.FOOD,
-        "ids": [1]
+        "ids": [1],
+        "exp": 25
       },
     },
     "Goat": {
@@ -251,7 +271,8 @@ class AnimalsList {
       'loot': {"min": 50, "max": 205},
       'drop': {
         "itemType": ItemTypes.FOOD,
-        "ids": [1]
+        "ids": [1],
+        "exp": 10
       },
     },
     "Small fish": {
@@ -263,7 +284,8 @@ class AnimalsList {
       'loot': {"min": 15, "max": 35},
       'drop': {
         "itemType": ItemTypes.FOOD,
-        "ids": [1]
+        "ids": [1],
+        "exp": 5
       },
     },
     "Normal fish": {
@@ -275,7 +297,8 @@ class AnimalsList {
       'loot': {"min": 15, "max": 45},
       'drop': {
         "itemType": ItemTypes.FOOD,
-        "ids": [1]
+        "ids": [1],
+        "exp": 10
       },
     },
     "Large fish": {
@@ -287,7 +310,8 @@ class AnimalsList {
       'loot': {"min": 15, "max": 55},
       'drop': {
         "itemType": ItemTypes.FOOD,
-        "ids": [1]
+        "ids": [1],
+        "exp": 20
       },
     },
     "Raccoon": {
@@ -299,7 +323,8 @@ class AnimalsList {
       'loot': {"min": 10, "max": 50},
       'drop': {
         "itemType": ItemTypes.FOOD,
-        "ids": [1]
+        "ids": [1],
+        "exp": 20
       },
     },
     "Clockwork dog": {
@@ -311,7 +336,8 @@ class AnimalsList {
       'loot': {"min": 60, "max": 205},
       'drop': {
         "itemType": ItemTypes.FOOD,
-        "ids": [1]
+        "ids": [1],
+        "exp": 20
       },
     }
   };
