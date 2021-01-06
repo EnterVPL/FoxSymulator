@@ -192,33 +192,9 @@ class Fox extends Animals {
   void hunting() {
     String title =
         Language.getTranslation(LanguagesTypes.ANIMALS, "{Choose animal}");
-    String avoid =
-        Language.getTranslation(LanguagesTypes.ANIMALS, "{avoid the attack}");
-    String lost_hp =
-        Language.getTranslation(LanguagesTypes.ANIMALS, "{lost_hp}");
-    Game.printOptions('${title}:', Game.hero.getAnimalsNamesWithStats(),
+    Game.printOptions(
+        '${title}:', Game.hero.getAnimalsNamesWithStats(), courseFight,
         (choise) {
-      Game.clearConsole();
-      Animals winner =
-          (new Fight(Game.hero, Game.hero.location.animalList[choise]))
-              .doFight((damage, an) {
-        String message = an.name;
-        if (damage == 0) {
-          message += ' ${avoid}';
-        } else {
-          message += ' $lost_hp'
-              .replaceAll("{damage}", damage.toString())
-              .replaceAll("{name}", an.name)
-              .replaceAll("{acctualHp}", an.acctualHp.toString())
-              .replaceAll("{maxHp}", an.maxHp.toString());
-        }
-        print(message);
-        sleep(Duration(milliseconds: 300));
-      });
-      print(Language.getTranslation(LanguagesTypes.ANIMALS, "{fight_over}")
-          .replaceAll("{winner}", winner.name));
-      stdin.readLineSync();
-    }, (choise) {
       ++Game.hero.energy;
       print(Language.getTranslation(LanguagesTypes.ANIMALS, "{not_hunt}"));
       stdin.readLineSync();
@@ -341,5 +317,49 @@ class Fox extends Animals {
       list.add(new AnimalSpecialName(str));
     });
     return list;
+  }
+
+  void courseFight(choise) {
+    Animals animal = Game.hero.location.animalList[choise];
+    String avoid =
+        Language.getTranslation(LanguagesTypes.ANIMALS, "{avoid the attack}");
+    String lost_hp =
+        Language.getTranslation(LanguagesTypes.ANIMALS, "{lost_hp}");
+    Game.clearConsole();
+
+    Animals winner = (new Fight(Game.hero, animal)).doFight((damage, an) {
+      Game.clearConsole();
+      String message = an.name;
+      if (damage == 0) {
+        message += ' ${avoid}';
+      } else {
+        message += ' $lost_hp'
+            .replaceAll("{damage}", damage.toString())
+            .replaceAll("{name}", an.name)
+            .replaceAll("{acctualHp}", an.acctualHp.toString())
+            .replaceAll("{maxHp}", an.maxHp.toString());
+      }
+
+      String interface = '\n';
+      interface += " 🦊\t" +
+          Game.hero.name +
+          "\t${Game.hero.acctualHp}/${Game.hero.maxHp}" +
+          "\n";
+      interface += "\t  " + Game.hero.hpBar + "\n";
+      interface += '\n\n';
+      interface +=
+          "\t" + animal.name + "\t${animal.acctualHp}/${animal.maxHp}" + "\n";
+      interface += "\t  " + animal.hpBar + "\n";
+      interface += "\n\n";
+
+      print(interface);
+      print(message);
+      sleep(Duration(milliseconds: 300));
+    });
+
+    print("\n" +
+        Language.getTranslation(LanguagesTypes.ANIMALS, "{fight_over}")
+            .replaceAll("{winner}", winner.name));
+    stdin.readLineSync();
   }
 }

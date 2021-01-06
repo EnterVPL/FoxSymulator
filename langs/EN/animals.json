@@ -1,7 +1,7 @@
 {
     "{Choose animal}": "Choose animal",
     "{avoid the attack}": "avoid the attack",
-    "{lost_hp}": "lost {damage} HP. | {name} has {acctualHp}/{maxHp} HP",
+    "{lost_hp}": "lost {damage} HP",
     "{fight_over}": "| Fight is over. {winner} is the winner! Please click enter to be continue |",
     "{not_hunt}": "| Oh ok, we don't have hunt. Please click enter to be continue |",
     "{friend}": "Friend",
