@@ -18,7 +18,6 @@ class Fox extends Animals {
   String name;
   Location location;
   Inventory bag;
-  Inventory warehouse;
   Map<int, Item> usingItems = new Map();
   int _skill_points;
   int _toNextLvl = 100;
@@ -117,8 +116,7 @@ class Fox extends Animals {
     this.satiety = 10;
     this.energy = 10;
     this.comfort = 10;
-    this.bag = new Inventory(30);
-    this.warehouse = new Inventory(90000);
+    this.bag = new Inventory();
     _generateItems();
     this.exp = 0;
     this.lvl = 1;
@@ -205,10 +203,6 @@ class Fox extends Animals {
     return bag.toJson();
   }
 
-  String getWarehouseToSave() {
-    return warehouse.toJson();
-  }
-
   void _generateItems() {
     Map<int, List<Map<String, dynamic>>> items = ItemsList.getIt();
     items.forEach((typeId, list) {
@@ -220,8 +214,6 @@ class Fox extends Animals {
         Map<String, int> chance = value['chance'];
         Item itemB = new Item(id, name, type, benefits, chance, false);
         bag.addItem(itemB);
-        Item itemW = new Item(id, name, type, benefits, chance, false);
-        warehouse.addItem(itemW);
       });
     });
   }
@@ -240,10 +232,6 @@ class Fox extends Animals {
 
   void loadBagFromJson(String data) {
     loadInventory(data, bag);
-  }
-
-  void loadWorehouseFromJson(String data) {
-    loadInventory(data, warehouse);
   }
 
   void addExp(int count) {

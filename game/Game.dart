@@ -216,8 +216,6 @@ class Game {
     File(saveFilePath).writeAsStringSync(data);
     String bag = hero.getBagToSave();
     File(saveBagPath).writeAsStringSync(bag);
-    String worehouse = hero.getWarehouseToSave();
-    File(saveWorehousePath).writeAsStringSync(worehouse);
     clearConsole();
     print(Language.getTranslation(LanguagesTypes.OPTIONS, "{Game was saved}"));
     print(
@@ -231,9 +229,7 @@ class Game {
       String data = File(saveFilePath).readAsStringSync();
       hero = Fox.loadFromString(data);
       String bag = File(saveBagPath).readAsStringSync();
-      String worehouse = File(saveWorehousePath).readAsStringSync();
       hero.loadBagFromJson(bag);
-      hero.loadWorehouseFromJson(worehouse);
       return true;
     } else {
       return false;
