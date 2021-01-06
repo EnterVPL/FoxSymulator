@@ -36,7 +36,7 @@ class Fight {
 
     if (winner is Fox) {
       loser.acctualHp = loser.maxHp;
-      lootMeesage(doLoot(winner, loser));
+      lootMeesage(doLoot(winner, loser), loser);
       winner.addExp(loser.dropExp);
     } else {
       winner.acctualHp = winner.maxHp;
@@ -77,7 +77,7 @@ class Fight {
     return items;
   }
 
-  void lootMeesage(List<Item> items) {
+  void lootMeesage(List<Item> items, Animals loser) {
     String trans(String key) {
       return Language.getTranslation(LanguagesTypes.INVENTORY, key);
     }
@@ -85,6 +85,7 @@ class Fight {
     if (items.length > 0) {
       print('');
       print(trans("{Loot_title}"));
+      print("${trans('{drop_exp_title}')}: ${loser.dropExp}");
       sleep(Duration(seconds: 1));
       items.forEach((item) {
         print(item.tName);
