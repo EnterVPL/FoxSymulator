@@ -11,5 +11,6 @@
     "{Armmor}": "Armmor",
     "{Weapon}": "Weapon",
     "{WarehouseMenuItemTitle}" : "Choose item\nClose - don't write anything and press enter\n",
-    "{Loot_title}": "You get"
+    "{Loot_title}": "You get",
+    "{drop_exp_title}": "Experience"
 }

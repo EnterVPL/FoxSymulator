@@ -11,5 +11,6 @@
     "{Armmor}": "Pancerz",
     "{Weapon}": "Broń",
     "{WarehouseMenuItemTitle}" : "Wybierz przedmiot\nZamknięcie - nic nie pisz i naciśnij enter\n",
-    "{Loot_title}": "Zdobywasz"
+    "{Loot_title}": "Zdobywasz",
+    "{drop_exp_title}": "Dóświadczenie"
 }
