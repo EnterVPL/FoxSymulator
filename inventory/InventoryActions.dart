@@ -11,12 +11,6 @@ class InventoryActions {
       {type = 0}) {
     if (type == 0) {
       switch (typeOfAction) {
-        case WarehouseMenuActionTypes.GET:
-          getItem(itemType, itemId);
-          break;
-        case WarehouseMenuActionTypes.PUT:
-          putItem(itemType, itemId);
-          break;
         case WarehouseMenuActionTypes.REMOVE:
           removeItem(itemType, itemId, inventor);
           break;
@@ -33,24 +27,6 @@ class InventoryActions {
           useItem(itemType, itemId, inventor);
           break;
       }
-    }
-  }
-
-  static void getItem(int itemType, int itemId) {
-    Item itemWarehouse = Game.hero.warehouse.items[itemType][itemId];
-    if (itemWarehouse.count > 0) {
-      Item itemBag = Game.hero.bag.items[itemType][itemId];
-      itemBag.count += 1;
-      itemWarehouse.count -= 1;
-    }
-  }
-
-  static void putItem(int itemType, int itemId) {
-    Item itemBag = Game.hero.bag.items[itemType][itemId];
-    if (itemBag.count > 0) {
-      Item itemWarehouse = Game.hero.warehouse.items[itemType][itemId];
-      itemBag.count -= 1;
-      itemWarehouse.count += 1;
     }
   }
 

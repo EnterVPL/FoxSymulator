@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import '../inventory/BagMenu.dart';
-import '../inventory/WarehouseMenu.dart';
 import '../langs/Language.dart';
 import '../langs/LanguagesTypes.dart';
 
@@ -20,7 +19,6 @@ class Handlers {
     'game_over_satiety': gameOverSatiety,
     'game_over_hp': gameOverHP,
     'gotoHome': gotoHome,
-    'warehouseInventory': warehouseInventory,
     'bagInventory': bagInventory
   };
 
@@ -119,10 +117,6 @@ class Handlers {
   static void gotoHome() {
     Game.clearConsole();
     Game.hero.changeLocation(Game.locations[0]);
-  }
-
-  static void warehouseInventory() {
-    WarehouseMenu.show(restart: true);
   }
 
   static void bagInventory() {
