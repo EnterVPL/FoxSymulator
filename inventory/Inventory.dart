@@ -1,12 +1,10 @@
 import '../items/Item.dart';
 
 class Inventory {
-  int owned;
   // map<type, <id, item>>
   Map<int, Map<int, Item>> items;
 
   Inventory() {
-    this.owned = 0;
     this.items = new Map();
   }
 
