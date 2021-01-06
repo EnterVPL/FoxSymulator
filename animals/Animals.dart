@@ -112,8 +112,8 @@ class Animals {
       }
     }
 
-    if (acctualWidth < maxWidth) {
-      for (int i = 1; i < maxWidth - acctualWidth; i++) {
+    if (currentHp.length < maxWidth) {
+      for (int i = 1; i < maxWidth - currentHp.length; i++) {
         spaces += " ";
       }
     }
