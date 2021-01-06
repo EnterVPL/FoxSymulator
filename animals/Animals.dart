@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import '../game/Color.dart';
 import '../langs/Language.dart';
 import '../langs/LanguagesTypes.dart';
 import 'Stats.dart';
@@ -97,6 +98,37 @@ class Animals {
       defending.isLive = false;
     }
     return damage;
+  }
+
+  String get hpBar {
+    String bar = Color.cyanBold("[");
+    double maxWidth = 25;
+    double acctualWidth = (((acctualHp / maxHp) * 100) / (100 / maxWidth));
+    String currentHp = "";
+    String spaces = "";
+    if (acctualWidth > 0) {
+      for (int i = 1; i < acctualWidth; i++) {
+        currentHp += "=";
+      }
+    }
+
+    if (acctualWidth < maxWidth) {
+      for (int i = 1; i < maxWidth - acctualWidth; i++) {
+        spaces += " ";
+      }
+    }
+
+    if (acctualWidth <= maxWidth / 4) {
+      currentHp = Color.redBold(currentHp);
+    } else if (acctualWidth <= maxWidth / 2) {
+      currentHp = Color.yellowBold(currentHp);
+    } else {
+      currentHp = Color.greenBold(currentHp);
+    }
+
+    bar += currentHp + spaces;
+    bar += Color.cyanBold("]");
+    return bar;
   }
 }
 
