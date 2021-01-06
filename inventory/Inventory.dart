@@ -2,11 +2,10 @@ import '../items/Item.dart';
 
 class Inventory {
   int owned;
-  final int maxSize;
   // map<type, <id, item>>
   Map<int, Map<int, Item>> items;
 
-  Inventory(this.maxSize) {
+  Inventory() {
     this.owned = 0;
     this.items = new Map();
   }
