@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'dart:math';
 
 import '../inventory/BagMenu.dart';
 import '../inventory/WarehouseMenu.dart';
@@ -72,7 +71,7 @@ class Handlers {
 
   /// Go sleep and save the game
   static void goSleep() {
-    Game.hero.energy = Game.hero.minMaxComfort.reduce(max);
+    Game.hero.energy = Game.hero.comfort;
     Game.hero.acctualHp += 3;
     if (Game.hero.acctualHp > Game.hero.maxHp) {
       Game.hero.acctualHp = Game.hero.maxHp;
