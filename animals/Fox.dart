@@ -19,13 +19,10 @@ class Fox extends Animals {
   Location location;
   Inventory bag;
   Inventory warehouse;
-  Item usingWeapon;
-  Item usingShield;
-  Item usingArmmor;
+  Map<int, Item> usingItems = new Map();
   int _skill_points;
   int _toNextLvl = 100;
 
-  List<int> minMaxComfort = [1, 10];
   int get satiety {
     return stats[StatsType.SATIETY];
   }
@@ -74,6 +71,42 @@ class Fox extends Animals {
     return _toNextLvl;
   }
 
+  int get speed {
+    int speed_stat = stats[StatsType.SPEED];
+    usingItems.forEach((type, item) {
+      if (item != null) {
+        item.benefits.forEach((stat, count) {
+          if (stat == StatsType.SPEED) speed_stat += count;
+        });
+      }
+    });
+    return speed_stat;
+  }
+
+  int get strengh {
+    int strengh_stat = stats[StatsType.STRENGH];
+    usingItems.forEach((type, item) {
+      if (item != null) {
+        item.benefits.forEach((stat, count) {
+          if (stat == StatsType.STRENGH) strengh_stat += count;
+        });
+      }
+    });
+    return strengh_stat;
+  }
+
+  int get defence {
+    int defence_stat = stats[StatsType.DEFENCE];
+    usingItems.forEach((type, item) {
+      if (item != null) {
+        item.benefits.forEach((stat, count) {
+          if (stat == StatsType.DEFENCE) defence_stat += count;
+        });
+      }
+    });
+    return defence_stat;
+  }
+
   Fox(String name, Location location) {
     this.name = name;
     this.acctualHp = this.maxHp = 28;
@@ -102,7 +135,7 @@ class Fox extends Animals {
 
   @override
   String toString() {
-    return 'name:$name,acctualHp:$acctualHp,maxHp:$maxHp,speed:$speed,strengh:$strengh,defence:$defence,isLive:$isLive,location:${location.toString()},satiety:$satiety,energy:$energy,comfort:$comfort,exp:$exp,lvl:$lvl,lvl_points:$_skill_points';
+    return 'name:$name,acctualHp:$acctualHp,maxHp:$maxHp,speed:${stats[StatsType.SPEED]},strengh:${stats[StatsType.STRENGH]},defence:${stats[StatsType.DEFENCE]},isLive:$isLive,location:${location.toString()},satiety:$satiety,energy:$energy,comfort:$comfort,exp:$exp,lvl:$lvl,lvl_points:$_skill_points';
   }
 
   static Fox loadFromString(String data) {
@@ -223,17 +256,8 @@ class Fox extends Animals {
       inventor.items[item["type"]][item["id"]].count = item["count"];
       inventor.items[item["type"]][item["id"]].isWear = item["isWear"];
       if (item["isWear"]) {
-        switch (item["type"]) {
-          case ItemTypes.ARMMOR:
-            usingArmmor = inventor.items[item["type"]][item["id"]];
-            break;
-          case ItemTypes.WEAPON:
-            usingWeapon = inventor.items[item["type"]][item["id"]];
-            break;
-          case ItemTypes.SHIELD:
-            usingShield = inventor.items[item["type"]][item["id"]];
-            break;
-        }
+        usingItems.putIfAbsent(
+            item["type"], () => inventor.items[item["type"]][item["id"]]);
       }
     });
   }
