@@ -1,0 +1,67 @@
+{
+    "missions": [
+        {
+            "required_level": 1,
+            "list": [
+                {
+                    "id": 0,
+                    "required_before_completed_missions": [],
+                    "title": "{id_0_title}",
+                    "description": "{id_0_des}",
+                    "todo": {
+                        "has_items": [
+                            {
+                                "type": "FOOD",
+                                "id": 1,
+                                "count": 3,
+                                "lose_after_completing": false
+                            }
+                        ],
+                        "kill": [
+                            {
+                                "key": "Chicken",
+                                "count": 3
+                            }
+                        ]
+                    },
+                    "reward": {
+                        "exp": 20,
+                        "items": []
+                    }
+                },
+                {
+                    "id": 1,
+                    "required_before_completed_missions_ids": [0],
+                    "title": "{id_0_title}",
+                    "description": "{id_0_des}",
+                    "todo": {
+                        "has_items": [
+                            {
+                                "type": "FOOD",
+                                "id": 1,
+                                "count": 3,
+                                "lose_after_completing": true
+                            }
+                        ],
+                        "kill": [
+                            {
+                                "key": "Chicken",
+                                "count": 3
+                            }
+                        ]
+                    },
+                    "reward": {
+                        "exp": 50,
+                        "items": [
+                            {
+                                "type": "WEAPON",
+                                "id": 0,
+                                "count": 1
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}
