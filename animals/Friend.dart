@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'Animals.dart';
 import '../game/Game.dart';
 import '../langs/Language.dart';
@@ -56,7 +54,6 @@ class Friend extends Animals {
     Game.printOptions(t("{sell_points_title}"), _optionsListSellPoints,
         sellPointsHandeler, handlerMistake,
         isPirntStats: true);
-    stdin.readLineSync();
   }
 
   static sellPointsHandeler(int choise) {
