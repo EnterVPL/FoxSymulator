@@ -110,8 +110,8 @@ class Fox extends Animals {
     this.name = name;
     this.acctualHp = this.maxHp = 28;
     this.speed = 50;
-    this.defence = 14;
-    this.strengh = 7;
+    this.defence = 7;
+    this.strengh = 14;
     this.location = location;
     this.satiety = 10;
     this.energy = 10;
@@ -281,30 +281,78 @@ class Fox extends Animals {
         cOfTab = " \t\t\t";
       }
 
-      if (animal.speed > Game.hero.speed * 2) {
+      Map<String, dynamic> hpStrMap = colorStatByDiff(StatsType.MAXHP, animal);
+      String hpStr = hpStrMap["str"];
+      int totalDifficult = hpStrMap["how_difficult"];
+      int difficultRev = hpStrMap["howdifficultRev"];
+
+      Map<String, dynamic> speedStrMap =
+          colorStatByDiff(StatsType.SPEED, animal);
+      String speedStr = speedStrMap["str"];
+      totalDifficult += speedStrMap["how_difficult"];
+      difficultRev += speedStrMap["howdifficultRev"];
+
+      Map<String, dynamic> strenghStrMap =
+          colorStatByDiff(StatsType.STRENGH, animal);
+      String strenghStr = strenghStrMap["str"];
+      totalDifficult += strenghStrMap["how_difficult"];
+      difficultRev += strenghStrMap["howdifficultRev"];
+
+      Map<String, dynamic> defenceStrMap =
+          colorStatByDiff(StatsType.DEFENCE, animal);
+      String defenceStr = defenceStrMap["str"];
+      totalDifficult += defenceStrMap["how_difficult"];
+      difficultRev += defenceStrMap["howdifficultRev"];
+
+      if (totalDifficult > difficultRev * 2) {
         str = Color.redBold(str);
-      } else if (animal.speed > Game.hero.speed) {
+      } else if (totalDifficult > difficultRev) {
         str = Color.yellowBold(str);
-      } else if (animal.speed == Game.hero.speed) {
+      } else if (totalDifficult == difficultRev) {
         str = Color.cyanBold(str);
       } else {
         str = Color.greenBold(str);
       }
-
-      String statTrans(String key) {
-        return Language.getTranslation(LanguagesTypes.STATS, key);
-      }
-
-      String hpStr = statTrans("{HP}") + ": ${animal.maxHp}";
-      String speedStr = statTrans("{speed}") + ": ${animal.speed}";
-      String strenghStr = statTrans("{strengh}") + ": ${animal.strengh}";
-      String defenceStr = statTrans("{defence}") + ": ${animal.defence}";
 
       str += cOfTab + "$hpStr | $speedStr | $strenghStr | $defenceStr";
 
       list.add(new AnimalSpecialName(str));
     });
     return list;
+  }
+
+  /// return how difficult is nemy
+  Map<String, dynamic> colorStatByDiff(int stat_type, Animals animal) {
+    String str = StatsType.getName(stat_type) + ": ${animal.stats[stat_type]}";
+    int howdifficult = 0;
+    int howdifficultRev = 0;
+
+    if (animal.stats[stat_type] > Game.hero.stats[stat_type] * 2) {
+      str = Color.redBold(str);
+      howdifficult = 3;
+    } else if (animal.stats[stat_type] > Game.hero.stats[stat_type]) {
+      str = Color.yellowBold(str);
+      howdifficult = 2;
+    } else if (animal.stats[stat_type] == Game.hero.stats[stat_type]) {
+      str = Color.cyanBold(str);
+      howdifficult = 1;
+    } else {
+      str = Color.greenBold(str);
+    }
+
+    if (Game.hero.stats[stat_type] > animal.stats[stat_type] * 2) {
+      howdifficultRev = 3;
+    } else if (Game.hero.stats[stat_type] > animal.stats[stat_type]) {
+      howdifficultRev = 2;
+    } else if (Game.hero.stats[stat_type] == animal.stats[stat_type]) {
+      howdifficultRev = 1;
+    }
+
+    return {
+      "str": str,
+      "how_difficult": howdifficult,
+      "howdifficultRev": howdifficultRev
+    };
   }
 
   void courseFight(choise) {
