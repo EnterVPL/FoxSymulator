@@ -314,6 +314,12 @@ class Fox extends Animals {
     String lost_hp =
         Language.getTranslation(LanguagesTypes.ANIMALS, "{lost_hp}");
     Game.clearConsole();
+    int counter_face_ignore = 0;
+    String fox_eyes_normal = "< . . >";
+    String fox_eyes = fox_eyes_normal;
+    String fox_eyes_lost = "< O O >";
+    String fox_eyes_avoid = "< ^ ^ >";
+    String fox_eyes_hitting = "< o ~ >";
 
     Animals winner = (new Fight(Game.hero, animal)).doFight((damage, an) {
       Game.clearConsole();
@@ -328,12 +334,31 @@ class Fox extends Animals {
             .replaceAll("{maxHp}", an.maxHp.toString());
       }
 
-      String interface = '\n';
-      interface += " 🦊\t" +
+      if (counter_face_ignore == 0) {
+        if (an is Fox) {
+          if (damage > 0) {
+            fox_eyes = fox_eyes_lost;
+          } else if (damage == 0) {
+            fox_eyes = fox_eyes_avoid;
+          }
+        } else {
+          if (damage > 0) {
+            fox_eyes = fox_eyes_hitting;
+          } else if (damage == 0) {
+            fox_eyes = fox_eyes_normal;
+          }
+        }
+        counter_face_ignore = 3;
+      } else {
+        --counter_face_ignore;
+      }
+
+      String interface = '/\\,,,/\\\n';
+      interface += "$fox_eyes\t" +
           Game.hero.name +
           "\t${Game.hero.acctualHp}/${Game.hero.maxHp}" +
           "\n";
-      interface += "\t  " + Game.hero.hpBar + "\n";
+      interface += "  \\_/\t  " + Game.hero.hpBar + "\n";
       interface += '\n\n';
       interface +=
           "\t" + animal.name + "\t${animal.acctualHp}/${animal.maxHp}" + "\n";
