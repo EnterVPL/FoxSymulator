@@ -315,6 +315,7 @@ class Fox extends Animals {
         Language.getTranslation(LanguagesTypes.ANIMALS, "{lost_hp}");
     Game.clearConsole();
     int counter_face_ignore = 0;
+    int ignore_for = 5;
     String fox_eyes_normal = "< . . >";
     String fox_eyes = fox_eyes_normal;
     String fox_eyes_lost = "< O O >";
@@ -334,22 +335,24 @@ class Fox extends Animals {
             .replaceAll("{maxHp}", an.maxHp.toString());
       }
 
-      if (counter_face_ignore == 0) {
-        if (an is Fox) {
-          if (damage > 0) {
-            fox_eyes = fox_eyes_lost;
-          } else if (damage == 0) {
-            fox_eyes = fox_eyes_avoid;
-          }
-        } else {
-          if (damage > 0) {
-            fox_eyes = fox_eyes_hitting;
-          } else if (damage == 0) {
-            fox_eyes = fox_eyes_normal;
-          }
+      if (an is Fox) {
+        if (damage > 0) {
+          fox_eyes = fox_eyes_lost;
+          counter_face_ignore = ignore_for;
+        } else if (damage == 0 && counter_face_ignore == 0) {
+          fox_eyes = fox_eyes_avoid;
+          counter_face_ignore = ignore_for;
         }
-        counter_face_ignore = 3;
       } else {
+        if (damage > 0 && counter_face_ignore == 0) {
+          fox_eyes = fox_eyes_hitting;
+          counter_face_ignore = ignore_for;
+        } else if (damage == 0 && counter_face_ignore == 0) {
+          fox_eyes = fox_eyes_normal;
+          counter_face_ignore = ignore_for;
+        }
+      }
+      if (counter_face_ignore > 0) {
         --counter_face_ignore;
       }
 
