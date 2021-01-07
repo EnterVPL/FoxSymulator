@@ -32,8 +32,8 @@
                 {
                     "id": 1,
                     "required_before_completed_missions_ids": [0],
-                    "title": "{id_0_title}",
-                    "description": "{id_0_des}",
+                    "title": "{id_1_title}",
+                    "description": "{id_1_des}",
                     "todo": {
                         "has_items": [
                             {
@@ -57,6 +57,31 @@
                                 "type": "WEAPON",
                                 "id": 0,
                                 "count": 1
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": 2,
+                    "required_before_completed_missions_ids": [0],
+                    "title": "{id_2_title}",
+                    "description": "{id_2_des}",
+                    "todo": {
+                        "has_items": [],
+                        "kill": [
+                            {
+                                "key": "Small_dog",
+                                "count": 5
+                            }
+                        ]
+                    },
+                    "reward": {
+                        "exp": 50,
+                        "items": [
+                            {
+                                "type": "FOOD",
+                                "id": 0,
+                                "count": 5
                             }
                         ]
                     }
