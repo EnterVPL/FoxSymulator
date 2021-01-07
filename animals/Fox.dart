@@ -320,7 +320,7 @@ class Fox extends Animals {
     String fox_eyes = fox_eyes_normal;
     String fox_eyes_lost = "< O O >";
     String fox_eyes_avoid = "< ^ ^ >";
-    String fox_eyes_hitting = "< o ~ >";
+    String fox_eyes_hitting = "< ^ ~ >";
 
     Animals winner = (new Fight(Game.hero, animal)).doFight((damage, an) {
       Game.clearConsole();
