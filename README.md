@@ -1,5 +1,11 @@
-![Logo](https://raw.githubusercontent.com/EnterVPL/FoxSymulator/master/logo.png)
+![Logo](https://raw.githubusercontent.com/EnterVPL/FoxSymulator/master/logo.png) ![Icon](https://raw.githubusercontent.com/EnterVPL/FoxSymulator/master/FOXY.png)
 # FoxSimulator
+```
+/\,,,/\
+< o o >
+  \_/
+    Fox face by KateRio22
+```
 ## About project:
 It's my a first dart project what I created. I don't have a big plan.
 My plan is very simple:
