@@ -9,8 +9,7 @@ class Language {
   static Map<String, dynamic> translations = new Map();
   static List<ActiveLanguage> activeLangs = [
     new ActiveLanguage("EN"),
-    new ActiveLanguage("PL"),
-    new ActiveLanguage("JP")
+    new ActiveLanguage("PL")
   ];
 
   static String getTranslation(int type, String key) {

@@ -31,6 +31,7 @@ class Friend extends Animals {
 
     List<FriendActionName> optionsList = [
       new FriendActionName(t("{I want to strengthen myself}")),
+      new FriendActionName(t("{Give me missions}")),
       new FriendActionName(t("{exit}"))
     ];
     Game.printOptions(title, optionsList, handlerFirst, handlerMistake);
