@@ -9,7 +9,7 @@ class Animals {
   String _name;
   Map<int, int> stats = new Map();
   bool isLive = true;
-  List<Map<String, dynamic>> loots = new List();
+  List<Map<String, dynamic>> loots = [];
   int dropExp;
 
   int get acctualHp {

@@ -79,7 +79,7 @@ class BagMenu {
   }
 
   static void selectType() {
-    List<BagAction> listType = new List();
+    List<BagAction> listType = [];
     List<String> itemTypesList = ItemTypes.asList();
     itemTypesList.forEach((element) {
       listType.add(new BagAction(_translate(element)));
@@ -92,7 +92,7 @@ class BagMenu {
   }
 
   static void selectItem() {
-    List<BagAction> listType = new List();
+    List<BagAction> listType = [];
     Map<int, Item> items = Game.hero.bag.items[_itemType];
     items.forEach((key, item) {
       int highTextLen = Color.cyanBold("").length;
