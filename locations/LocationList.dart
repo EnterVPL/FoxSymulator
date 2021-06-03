@@ -80,6 +80,7 @@ class LocationList {
           AnimalsList.getter["Rat"],
           AnimalsList.getter["Too_big_spider"],
           AnimalsList.getter["Forester"],
+          AnimalsList.getter["Guinea pig"]
         ],
         'actions': globalActions
       },

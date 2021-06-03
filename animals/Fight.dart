@@ -58,7 +58,7 @@ class Fight {
 
   List<Item> getRandomItems(List<Map<String, dynamic>> loots, Inventory bag) {
     Random rnd = new Random();
-    List<Item> items = new List();
+    List<Item> items = [];
     int maxDrop = 0;
     loots.forEach((items) {
       maxDrop += items["ids"].length;

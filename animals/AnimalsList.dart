@@ -441,6 +441,22 @@ class AnimalsList {
         ],
         "exp": 1000
       },
+    },
+    "Guinea pig": {
+      'name': '{Guinea pig}',
+      'maxHp': 1,
+      'speed': 21,
+      'strengh': 2,
+      'defence': 1,
+      'drop': {
+        "items": [
+          {
+            "type": ItemTypes.FOOD,
+            "ids": [2],
+          }
+        ],
+        "exp": 1
+      },
     }
   };
 }

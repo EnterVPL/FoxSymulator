@@ -56,7 +56,7 @@ class Game {
 
   /// Initialize locations
   static List<Location> initLocations() {
-    List<Location> locs = new List<Location>();
+    List<Location> locs = [];
     dynamic locationList = LocationList.getJsonLocationList();
     for (var loc in locationList) {
       Location newLoc = new Location(loc['name']);

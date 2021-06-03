@@ -10,10 +10,10 @@ class Location
     final String name;
 
     /// Location's animal list
-    List<Animals> animalList = List<Animals>();
+    List<Animals> animalList = [];
 
     // Location's actions list
-    List<Actions> actions = List<Actions>();
+    List<Actions> actions = [];
 
     /// Constructor
     Location(this.name);
