@@ -268,7 +268,7 @@ class Fox extends Animals {
   }
 
   List<AnimalSpecialName> getAnimalsNamesWithStats() {
-    List<AnimalSpecialName> list = new List();
+    List<AnimalSpecialName> list =[];
     Game.hero.location.animalList.forEach((animal) {
       String str = animal.name;
       int anNameLen = str.length;
